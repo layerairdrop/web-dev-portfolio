@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="ChainVault — Secure DeFi Dashboard">
+<meta property="og:description" content="ChainVault — Secure DeFi Dashboard">
+<meta property="og:image" content="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&q=80">
+<meta property="og:url" content="https://ralies.biz.id/sites/05-crypto-web3.html">
+<meta property="og:type" content="website">
+<title>ChainVault — Secure DeFi Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+a,button{transition:all .2s ease}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem}
+.skip-link:focus{top:16px}
+:root{
+  --bg:#09090b;--surface:#0f0f12;--card:#151518;--border:#1f1f25;
+  --text:#e4e4e7;--muted:#6b6b7b;
+  --blue:#3b82f6;--purple:#8b5cf6;--cyan:#06b6d4;--green:#10b981;
+  --red:#ef4444;
+  --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.6)
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px}
+.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn-connect{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:8px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.85rem;display:flex;align-items:center;gap:6px;transition:opacity .2s}
+.btn-connect:hover{opacity:.85}
+.btn-connect:active{transform:scale(.97)}
+
+/* HERO — Neural Interface / Web3 EOS */
+.hero{padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;background:#050508}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.08) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);animation:grid-move 20s linear infinite}
+@keyframes grid-move{to{background-position:60px 60px}}
+.hero::after{content:"";position:absolute;top:50%;left:50%;width:600px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(59,130,246,.18),rgba(139,92,246,.12) 40%,transparent 70%);pointer-events:none;animation:hero-pulse 6s ease-in-out infinite}
+@keyframes hero-pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}}
+.hero-badge{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:20px;position:relative;z-index:1;color:#fff;text-shadow:0 0 40px rgba(59,130,246,.25)}
+.hero h1 .grad{background:linear-gradient(135deg,#3b82f6,#8b5cf6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(59,130,246,.3))}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.7);max-width:580px;margin:0 auto 36px;position:relative;z-index:1;text-shadow:0 0 20px rgba(59,130,246,.1)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:15px 36px;border-radius:12px;text-decoration:none;font-weight:600;transition:all .25s;box-shadow:0 8px 24px rgba(59,130,246,.25),inset 0 1px 0 rgba(255,255,255,.1)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,130,246,.4),inset 0 1px 0 rgba(255,255,255,.15)}
+.btn-primary:active{transform:translateY(0);box-shadow:0 4px 12px rgba(59,130,246,.2)}
+.btn-ghost{color:rgba(255,255,255,.8);padding:14px 32px;text-decoration:none;font-weight:500;border:1px solid rgba(255,255,255,.15);border-radius:12px;transition:all .25s;backdrop-filter:blur(8px);background:rgba(255,255,255,.04)}
+.btn-ghost:hover{border-color:rgba(59,130,246,.5);color:#fff;background:rgba(59,130,246,.08)}
+.btn-ghost:active{transform:scale(.97)}
+
+/* DASHBOARD PREVIEW — glassmorphism */
+.dash-preview{max-width:900px;margin:60px auto 0;background:rgba(15,15,18,.8);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;position:relative;z-index:1;box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05)}
+.dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dash-title{font-size:1rem;font-weight:600}
+.dash-chips{display:flex;gap:8px}
+.chip{padding:8px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-size:.75rem;color:var(--muted);min-height:36px;display:inline-flex;align-items:center}
+.chip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.stat-label{font-size:.75rem;color:var(--muted);margin-bottom:4px}
+.stat-value{font-size:1.3rem;font-weight:700}
+.stat-change{font-size:.75rem;margin-top:4px}
+.stat-change.up{color:var(--green)}
+.stat-change.down{color:var(--red)}
+.dash-chart{background:var(--card);border:1px solid var(--border);border-radius:12px;height:200px;display:flex;align-items:flex-end;justify-content:center;gap:8px;padding:20px 40px}
+.chart-bar{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--blue),var(--purple));opacity:.7;transition:opacity .2s}
+.chart-bar:hover{opacity:1}
+
+/* FEATURES */
+.section{padding:80px 0}
+.section-label{font-size:.8rem;color:var(--purple);text-transform:uppercase;letter-spacing:.15em;text-align:center;margin-bottom:8px}
+.section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s,transform .2s}
+.feat-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+.feat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px}
+.feat-card:nth-child(1) .feat-icon{background:rgba(59,130,246,.15)}
+.feat-card:nth-child(2) .feat-icon{background:rgba(139,92,246,.15)}
+.feat-card:nth-child(3) .feat-icon{background:rgba(6,182,212,.15)}
+.feat-card:nth-child(4) .feat-icon{background:rgba(16,185,129,.15)}
+.feat-card:nth-child(5) .feat-icon{background:rgba(239,68,68,.15)}
+.feat-card:nth-child(6) .feat-icon{background:rgba(245,158,11,.15)}
+.feat-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.feat-card p{font-size:.9rem;color:var(--muted)}
+
+/* PROTOCOLS */
+.protos{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.proto{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem;font-weight:500}
+.proto-dot{width:10px;height:10px;border-radius:50%}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:border-color .2s}
+.price-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 8px 24px rgba(59,130,246,.12)}
+.price-card.featured{border-color:var(--purple);position:relative;box-shadow:0 0 40px rgba(139,92,246,.1)}
+.featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:4px 16px;border-radius:999px;font-size:.75rem;font-weight:600}
+.price-card .tier{font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:8px}
+.price-card .price{font-size:2rem;font-weight:800;margin-bottom:4px}
+.price-card .price-sub{font-size:.8rem;color:var(--muted);margin-bottom:24px}
+.price-card ul{list-style:none;text-align:left;margin-bottom:24px}
+.price-card li{padding:8px 0;font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
+.price-card li:last-child{border:none}
+.price-card li::before{content:"→";color:var(--blue);font-weight:700}
+.btn-card{display:block;width:100%;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s;text-align:center}
+.btn-card.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-card.outline:hover{border-color:var(--blue);background:rgba(59,130,246,.1)}
+.btn-card.filled:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+.btn-card.filled:active{transform:translateY(0)}
+.btn-card.filled{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none}
+
+/* CTA */
+.cta{text-align:center;padding:80px 0;position:relative}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(139,92,246,.06),transparent 70%);pointer-events:none}
+.cta h2{font-size:2rem;font-weight:700;margin-bottom:12px;position:relative}
+.cta p{color:var(--muted);margin-bottom:32px;position:relative}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center}
+footer p{font-size:.85rem;color:var(--muted)}
+footer .links{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
+footer .links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+footer .links a:hover{color:var(--text)}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px;min-width:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(9,9,11,.95);backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+ .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center}
+  .dash-stats{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .protos{gap:16px}
+}
+@media(max-width:428px){
+  .hero{padding:60px 0 40px}
+  .hero h1{font-size:1.8rem}
+  .hero p{font-size:1rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.6rem}
+  .dash-stats{grid-template-columns:1fr}
+  .dash-preview{padding:16px}
+}
+
+/* === Premium Animations === */
+.ken-burns{animation:ken-burns 18s ease-in-out infinite alternate;will-change:transform}
+@keyframes ken-burns{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.stagger-item{opacity:0;transform:translateY(25px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+.stagger-item.visible{opacity:1;transform:translateY(0)}
+.zoom-hover{overflow:hidden}
+.zoom-hover img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.zoom-hover:hover img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in,.stagger-item{opacity:1!important;transform:none!important}.ken-burns{animation:none!important}}
+
+/* iOS FADE-IN FIX */
+.fade-in{opacity:1!important;transform:none!important;transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1!important;transform:none!important}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);z-index:1001;transform-origin:left;transform:scaleX(0);width:100%" id="pb"></div>
+<a href="/" style="position:fixed;top:16px;left:16px;z-index:999;background:rgba(0,0,0,.7);color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;backdrop-filter:blur(8px);transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.9)'" onmouseout="this.style.background='rgba(0,0,0,.7)'">← Portfolio</a>
+
+<a href="#fitur" class="skip-link">Skip to content</a>
+
+<nav>
+<div class="nav-inner">
+  <div class="logo"><div class="logo-icon">🔐</div> ChainVault</div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="#fitur">Fitur</a></li>
+    <li><a href="#protokol">Protokol</a></li>
+    <li><a href="#harga">Harga</a></li>
+    <li><a href="#">Docs</a></li>
+  </ul>
+  <a href="#" class="btn-connect">🔗 Connect Wallet</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+  <div class="hero-badge"><span class="dot"></span> Live on Mainnet — 12 Chains Supported</div>
+  <div style="display:flex;justify-content:center;gap:12px;margin-bottom:24px;flex-wrap:wrap"><span style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 14px;border-radius:8px;font-size:.8rem;color:var(--green)">🛡️ Audited by CertiK</span><span style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 14px;border-radius:8px;font-size:.8rem;color:var(--blue)">✓ Open Source</span><span style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);padding:6px 14px;border-radius:8px;font-size:.8rem;color:var(--purple)">🔒 Non-Custodial</span></div>
+  <h1>Manage Your DeFi<br><span class="grad">Portfolio Securely</span></h1>
+  <p>Dashboard all-in-one untuk pantau, kelola, dan optimasi portofolio DeFi Anda. Multi-chain, real-time, non-custodial.</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-primary">🔗 Connect Wallet</a>
+    <a href="#" class="btn-ghost">Lihat Demo</a>
+  </div>
+  <div class="dash-preview">
+    <div class="dash-header">
+      <div class="dash-title">Portfolio Overview</div>
+      <div class="dash-chips">
+        <span class="chip active">7D</span>
+        <span class="chip">30D</span>
+        <span class="chip">90D</span>
+        <span class="chip">1Y</span>
+      </div>
+    </div>
+    <div class="dash-stats">
+      <div class="stat-card">
+        <div class="stat-label">Total Value</div>
+        <div class="stat-value">$24,832</div>
+        <div class="stat-change up">+12.4%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">PnL (7D)</div>
+        <div class="stat-value">+$2,740</div>
+        <div class="stat-change up">+8.2%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Positions</div>
+        <div class="stat-value">14</div>
+        <div class="stat-change">Across 5 chains</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Gas Saved</div>
+        <div class="stat-value">$342</div>
+        <div class="stat-change up">This month</div>
+      </div>
+    </div>
+    <div class="dash-chart">
+      <div class="chart-bar" style="height:40%"></div>
+      <div class="chart-bar" style="height:55%"></div>
+      <div class="chart-bar" style="height:45%"></div>
+      <div class="chart-bar" style="height:70%"></div>
+      <div class="chart-bar" style="height:60%"></div>
+      <div class="chart-bar" style="height:85%"></div>
+      <div class="chart-bar" style="height:75%"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="fitur">
+<div class="container">
+  <div class="section-label">Features</div>
+  <h2 class="section-title">Built for DeFi Power Users</h2>
+  <p class="section-sub">Semua tools yang Anda butuhkan dalam satu dashboard</p>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon">📊</div>
+      <h3>Portfolio Tracker</h3>
+      <p>Pantau semua posisi DeFi lintas chain secara real-time. PnL otomatis terhitung.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔄</div>
+      <h3>Smart Swap</h3>
+      <p>Aggregator 500+ DEX. Selalu dapat rate terbaik dengan slippage protection.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🌉</div>
+      <h3>Cross-Chain Bridge</h3>
+      <p>Bridge aset antar 12 chain dengan satu klik. Gas fee optimal.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🛡️</div>
+      <h3>Security Scanner</h3>
+      <p>Scan smart contract sebelum approve. Deteksi honeypot, rug pull, phishing.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📈</div>
+      <h3>Yield Optimizer</h3>
+      <p>Auto-compound yield farming. AI rekomendasikan strategi terbaik.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔔</div>
+      <h3>Price Alerts</h3>
+      <p>Notifikasi real-time via Telegram/Discord saat target price tercapai.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="protokol">
+<div class="container protos">
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">Ξ Ethereum</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">⬡ Polygon</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">◆ Arbitrum</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">⬟ Base</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">⬢ BSC</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">○ Optimism</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">🔺 Avalanche</div>
+  <div class="proto" style="background:var(--card);padding:8px 16px;border-radius:8px;border:1px solid var(--border)">◎ Solana</div>
+</div>
+</section>
+
+<section class="section" id="harga">
+<div class="container">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title">Simple, Transparent Pricing</h2>
+  <p class="section-sub">Mulai gratis, upgrade saat Anda butuh</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="tier">Free</div>
+      <div class="price">$0</div>
+      <div class="price-sub">Forever free</div>
+      <ul>
+        <li>Portfolio tracker</li>
+        <li>3 chain support</li>
+        <li>Basic swap</li>
+        <li>Community support</li>
+      </ul>
+      <a href="#" class="btn-card outline">Get Started</a>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="tier">Pro</div>
+      <div class="price">$19<span style="font-size:.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+      <div class="price-sub">Billed annually</div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>12 chain support</li>
+        <li>Smart swap + bridge</li>
+        <li>Security scanner</li>
+        <li>Yield optimizer</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="#" class="btn-card filled">Start Free Trial</a>
+    </div>
+    <div class="price-card">
+      <div class="tier">Whale</div>
+      <div class="price">$49<span style="font-size:.9rem;font-weight:400;color:var(--muted)">/mo</span></div>
+      <div class="price-sub">For power users</div>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Unlimited chains</li>
+        <li>AI trading signals</li>
+        <li>Tax reporting</li>
+        <li>API access</li>
+        <li>Dedicated support</li>
+      </ul>
+      <a href="#" class="btn-card outline">Contact Sales</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+  <h2>Ready to Take Control?</h2>
+  <p>Join 10,000+ DeFi users managing their portfolio with ChainVault</p>
+  <a href="#" class="btn-primary" style="display:inline-flex">🔗 Connect Wallet — Start Free</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <div class="links">
+    <a href="#">Documentation</a>
+    <a href="#">GitHub</a>
+    <a href="#">Twitter</a>
+    <a href="#">Discord</a>
+    <a href="#">Blog</a>
+  </div>
+  <p>© 2026 ChainVault. Dibuat oleh LYID Web Development</p>
+  <p style="font-size:.75rem;color:var(--muted)">Non-custodial. We never hold your keys.</p>
+</div>
+<div style="text-align:center;padding:24px;background:rgba(37,211,102,.1);border-top:1px solid rgba(37,211,102,.2)">
+<a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20mau%20konsultasi" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.9rem">💬 Chat WhatsApp</a>
+</div>
+</footer>
+
+<script>document.querySelector('.hamburger').addEventListener('click',function(){this.classList.toggle('active');var n=document.querySelector('.nav-links');n.classList.toggle('active');this.setAttribute('aria-expanded',n.classList.contains('active'))});
+document.querySelectorAll('.section,.hero,.protos,.feat-card,.price-card,.cta,.dash-preview').forEach(function(el,i){el.classList.add('fade-in');el.style.transitionDelay=(i%8)*.06+'s'});var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+</script>
+<script>
+// Scroll progress
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var b=document.getElementById('pb');if(b&&h>0)b.style.transform='scaleX('+window.scrollY/h+')'},{passive:true});
+// Fade in
+document.querySelectorAll('section,.fade-up').forEach(function(el,i){el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .7s ease,transform .7s ease';el.style.transitionDelay=(i%6)*.08+'s'});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';obs.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('section,.fade-up').forEach(function(el){obs.observe(el)});
+
+// Stagger support
+document.querySelectorAll('[data-stagger]').forEach(function(g){g.querySelectorAll('.stagger-item').forEach(function(el,i){el.style.transitionDelay=(i*.08)+'s'})});
+</script>
+</body>
+</html>

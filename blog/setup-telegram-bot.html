@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Telegram Bot dari Nol: Dari Daftar Hingga Auto-Reply — LYID Blog</title>
+<meta name="description" content="Panduan step-by-step membuat Telegram bot yang bisa auto-reply, handle command, dan jualan produk digital. Semua pakai JavaScript.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--radius:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.back{color:var(--muted);text-decoration:none;font-size:.85rem}.back:hover{color:var(--text)}
+article{padding:60px 0 80px}
+.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:24px;color:var(--muted);font-size:.85rem}
+.article-tag{background:rgba(34,197,94,.15);color:#22c55e;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:600;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;line-height:1.2;margin-bottom:16px}
+h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:1.15rem;color:var(--muted);margin-bottom:40px}
+h2{font-size:1.4rem;font-weight:700;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}
+h3{font-size:1.15rem;font-weight:600;margin:32px 0 12px}
+p{margin-bottom:16px;font-size:.95rem}
+ul,ol{margin:0 0 24px 24px;font-size:.95rem}li{margin-bottom:8px}
+code{background:var(--card);padding:2px 8px;border-radius:4px;font-size:.85rem}
+pre{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin:0 0 24px;font-size:.85rem;line-height:1.5}pre code{background:none;padding:0}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:12px;padding:20px;margin:0 0 24px;font-size:.9rem}
+.callout.success{border-left-color:#22c55e}
+.cta-box{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.1));border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;margin:48px 0}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.9rem}
+.author-box{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin:48px 0}
+.author-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.author-name{font-weight:600}.author-bio{color:var(--muted);font-size:.8rem;margin:0}
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><span class="logo-mark">LYID</span> Blog</a>
+  <a href="/blog.html" class="back">← Kembali ke Blog</a>
+</div></nav>
+
+<article><div class="container">
+
+<div class="article-meta">
+  <span class="article-tag">Tutorial</span>
+  <span>1 Juli 2026</span>
+  <span>•</span>
+  <span>10 min baca</span>
+</div>
+
+<h1>Setup Telegram Bot dari <span class="grad">Nol</span>: Dari Daftar Hingga Auto-Reply</h1>
+
+<p class="lead">Telegram bot adalah tools powerful untuk automasi. Dari customer service otomatis sampai jualan produk digital — semuanya bisa di-handle bot. Tutorial ini ajarkan cara membuat Telegram bot dari nol menggunakan JavaScript.</p>
+
+<h2>Step 1: Daftar Bot di BotFather</h2>
+
+<ol>
+  <li>Buka Telegram, cari <code>@BotFather</code></li>
+  <li>Kirim <code>/newbot</code></li>
+  <li>Berikan nama bot (contoh: "LYID Support Bot")</li>
+  <li>Berikan username (harus berakhir dengan "bot", contoh: "lyid_support_bot")</li>
+  <li>Simpan token yang diberikan (contoh: <code>123456789:ABCdefGHIjklMNOpqrsTUVwxyz</code>)</li>
+</ol>
+
+<div class="callout">
+<strong>💡 Tips:</strong> Token ini adalah "password" bot kamu. Jangan pernah share atau commit ke git. Simpan di file .env.
+</div>
+
+<h2>Step 2: Setup Project</h2>
+
+<pre><code># Buat folder project
+mkdir my-telegram-bot
+cd my-telegram-bot
+
+# Init Node.js project
+npm init -y
+
+# Install dependency
+npm install node-telegram-bot-api dotenv
+
+# Buat file .env
+echo "BOT_TOKEN=your_token_here" > .env</code></pre>
+
+<h2>Step 3: Bot Dasar dengan Auto-Reply</h2>
+
+<pre><code>// bot.js
+require('dotenv').config();
+const TelegramBot = require('node-telegram-bot-api');
+
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+
+// Handle /start command
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  const name = msg.from.first_name;
+  
+  bot.sendMessage(chatId, 
+    `Halo ${name}! 👋\n\n` +
+    `Selamat datang di bot kami.\n\n` +
+    `Perintah yang tersedia:\n` +
+    `/help - Bantuan\n` +
+    `/produk - Lihat produk\n` +
+    `/status - Cek status`
+  );
+});
+
+// Handle /help command
+bot.onText(/\/help/, (msg) => {
+  bot.sendMessage(msg.chat.id, 
+    'Ini adalah bot bantuan kami.\n\n' +
+    'Hubungi admin: @username'
+  );
+});
+
+// Handle semua pesan teks (auto-reply)
+bot.on('message', (msg) => {
+  if (msg.text && !msg.text.startsWith('/')) {
+    bot.sendMessage(msg.chat.id, 
+      'Terima kasih atas pesannya! Tim kami akan segera merespons.'
+    );
+  }
+});
+
+console.log('Bot berjalan...');</code></pre>
+
+<h2>Step 4: Inline Keyboard (Tombol Interaktif)</h2>
+
+<p>Inline keyboard membuat bot lebih interaktif. User bisa klik tombol tanpa mengetik:</p>
+
+<pre><code>// Handle /produk command dengan inline keyboard
+bot.onText(/\/produk/, (msg) => {
+  const chatId = msg.chat.id;
+  
+  bot.sendMessage(chatId, 'Pilih produk yang kamu minati:', {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          { text: '🤖 Bot Airdrop', callback_data: 'product_airdrop' },
+          { text: '🌐 Jasa Website', callback_data: 'product_web' }
+        ],
+        [
+          { text: '📚 Paket Hemat', callback_data: 'product_bundle' }
+        ]
+      ]
+    }
+  });
+});
+
+// Handle callback dari inline keyboard
+bot.on('callback_query', (query) => {
+  const chatId = query.message.chat.id;
+  const data = query.data;
+  
+  if (data === 'product_airdrop') {
+    bot.sendMessage(chatId, 
+      '🤖 Bot Airdrop LYID\n\n' +
+      'Harga: Rp 100.000 - 150.000\n' +
+      'Fitur: Auto-claim, multi-wallet, proxy support\n\n' +
+      'Klik /buy untuk membeli'
+    );
+  }
+  
+  // Answer callback query (hilangkan loading icon)
+  bot.answerCallbackQuery(query.id);
+});</code></pre>
+
+<h2>Step 5: Database untuk Menyimpan Data</h2>
+
+<p>Untuk bot yang serius, kamu butuh database. SQLite adalah pilihan terbaik untuk bot kecil-menengah:</p>
+
+<pre><code>const Database = require('better-sqlite3');
+const db = new Database('bot.db');
+
+// Buat tabel users
+db.exec(`
+  CREATE TABLE IF NOT EXISTS users (
+    chat_id INTEGER PRIMARY KEY,
+    username TEXT,
+    first_name TEXT,
+    joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    is_premium INTEGER DEFAULT 0
+  )
+`);
+
+// Simpan user baru
+function saveUser(msg) {
+  db.prepare(`
+    INSERT OR IGNORE INTO users (chat_id, username, first_name)
+    VALUES (?, ?, ?)
+  `).run(msg.chat.id, msg.from.username, msg.from.first_name);
+}
+
+// Cek apakah user premium
+function isPremium(chatId) {
+  const user = db.prepare('SELECT is_premium FROM users WHERE chat_id = ?')
+    .get(chatId);
+  return user?.is_premium === 1;
+}</code></pre>
+
+<h2>Step 6: Deploy ke Server</h2>
+
+<p>Bot harus berjalan 24/7. Ada beberapa opsi:</p>
+
+<ul>
+  <li><strong>VPS</strong> (Rp 50-100rb/bulan) — kontrol penuh, recommended</li>
+  <li><strong>Railway</strong> (gratis tier) — mudah, tapi limited</li>
+  <li><strong>PM2 di PC sendiri</strong> — gratis, tapi PC harus menyala</li>
+</ul>
+
+<pre><code># Deploy dengan PM2 (di PC sendiri)
+npm install -g pm2
+pm2 start bot.js --name my-bot
+pm2 save
+pm2 startup  # auto-start saat boot</code></pre>
+
+<div class="callout success">
+<strong>✅ Selesai!</strong> Bot kamu sekarang berjalan 24/7 dan bisa menerima pesan dari siapa saja.
+</div>
+
+<h2>Best Practices</h2>
+
+<ol>
+  <li><strong>Simpan token di .env</strong> — jangan hardcode di source</li>
+  <li><strong>Handle error</strong> — wrap setiap handler dengan try/catch</li>
+  <li><strong>Rate limiting</strong> — jangan spam API Telegram (max 30 msg/detik)</li>
+  <li><strong>Logging</strong> — catat semua interaksi untuk debugging</li>
+  <li><strong>Graceful shutdown</strong> — handle SIGTERM untuk cleanup</li>
+</ol>
+
+<div class="cta-box">
+  <h3>Mau Bot Telegram yang Sudah Jadi?</h3>
+  <p>LYID punya bot Telegram untuk berbagai kebutuhan — dari airdrop automation sampai license management.</p>
+  <a href="https://t.me/OG_LYID_bot" class="btn-primary">Lihat Bot di @OG_LYID_bot</a>
+  <a href="/lyid-scripts.html" style="display:inline-block;margin-left:12px;color:var(--muted);text-decoration:none;font-weight:600;font-size:.9rem;border:1px solid var(--border);padding:12px 28px;border-radius:10px;transition:all .2s">Lihat Semua Script →</a>
+</div>
+
+<div class="author-box">
+  <img src="/foto-profil.jpg" alt="Manday" class="author-avatar">
+  <div>
+    <div class="author-name">Manday</div>
+    <p class="author-bio">Founder LYID — Layer Airdrop ID. Membangun bot automasi crypto sejak 2024.</p>
+  </div>
+</div>
+
+</div></article>
+<footer><div class="container"><p>&copy; 2026 LYID — Layer Airdrop ID. <a href="/blog.html" style="color:var(--blue)">Kembali ke Blog</a></p></div></footer>
+</body>
+</html>

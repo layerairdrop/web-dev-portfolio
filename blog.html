@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Blog — LYID | Crypto Automation & Web Development</title>
+<meta name="description" content="Artikel seputar crypto airdrop automation, bot development, web development, dan tips digital marketing dari tim LYID.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;
+  --text:#e4e4e7;--muted:#71717a;
+  --blue:#3b82f6;--purple:#8b5cf6;--cyan:#06b6d4;--green:#22c55e;
+  --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.5)
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+a{transition:all .2s ease}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text)}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.btn-cta{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:10px 24px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.85rem}
+.btn-cta:hover{opacity:.85}
+
+/* HERO */
+.blog-hero{padding:80px 0 40px;text-align:center}
+.blog-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px}
+.blog-hero h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.blog-hero p{color:var(--muted);max-width:560px;margin:0 auto;font-size:1.05rem}
+
+/* FILTER */
+.filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:24px 0 40px}
+.filter-btn{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:8px 20px;border-radius:99px;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+.filter-btn:hover{border-color:var(--blue);color:var(--text)}
+.filter-btn.active{background:linear-gradient(135deg,var(--blue),var(--purple));border-color:transparent;color:#fff}
+
+/* GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;padding-bottom:80px}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .3s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.blog-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 12px 40px rgba(59,130,246,.15)}
+.card-img{width:100%;height:200px;object-fit:cover;background:var(--card)}
+.card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.card-meta{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.card-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:6px;background:rgba(59,130,246,.15);color:var(--blue)}
+.card-tag.web{background:rgba(139,92,246,.15);color:var(--purple)}
+.card-tag.academic{background:rgba(34,197,94,.15);color:var(--green)}
+.card-date{font-size:.75rem;color:var(--muted)}
+.card-title{font-size:1.15rem;font-weight:700;margin-bottom:8px;line-height:1.3}
+.card-excerpt{font-size:.85rem;color:var(--muted);flex:1;line-height:1.6}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.card-read{font-size:.8rem;font-weight:600;color:var(--blue);transition:color .2s}
+.blog-card:hover .card-read{color:var(--purple)}
+.card-time{font-size:.75rem;color:var(--muted)}
+
+/* FEATURED */
+.featured{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:48px;margin-bottom:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;text-decoration:none;color:var(--text);transition:all .3s}
+.featured:hover{border-color:var(--blue);box-shadow:0 12px 40px rgba(59,130,246,.15)}
+.featured-img{width:100%;height:280px;object-fit:cover;border-radius:12px;background:var(--card)}
+.featured-tag{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:6px;background:rgba(59,130,246,.15);color:var(--blue);margin-bottom:12px}
+.featured h2{font-size:1.6rem;font-weight:800;margin-bottom:12px;line-height:1.2}
+.featured p{color:var(--muted);font-size:.95rem;line-height:1.6;margin-bottom:20px}
+.featured .btn-read{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--blue);font-size:.9rem}
+
+/* NEWSLETTER */
+.newsletter{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:48px;text-align:center;margin-bottom:80px}
+.newsletter h3{font-size:1.5rem;font-weight:800;margin-bottom:8px}
+.newsletter p{color:var(--muted);margin-bottom:24px;font-size:.95rem}
+.newsletter-form{display:flex;gap:8px;max-width:440px;margin:0 auto}
+.newsletter-form input{flex:1;background:var(--card);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:10px;font-size:.9rem;font-family:inherit}
+.newsletter-form input:focus{outline:none;border-color:var(--blue)}
+.newsletter-form button{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer;font-family:inherit;font-size:.9rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* MOBILE */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px}
+.hamburger{min-width:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(9,9,11,.95);backdrop-filter:blur(16px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+  .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center;font-size:.9rem}
+  .btn-cta{display:none}
+  .featured{grid-template-columns:1fr;padding:24px}
+  .newsletter-form{flex-direction:column}
+  .blog-grid{grid-template-columns:1fr}
+  .filter-btn{min-height:44px;padding:10px 20px;font-size:.85rem}
+  .blog-hero{padding:60px 0 30px}
+  .card-body{padding:16px}
+  footer{padding:24px 0}
+  .newsletter{padding:32px 20px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "LYID Blog",
+  "description": "Tutorial, tips, dan insight seputar crypto automation, web development, dan digital marketing.",
+  "url": "https://www.ralies.biz.id/blog.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "LYID — Layer Airdrop ID",
+    "logo": {"@type": "ImageObject", "url": "https://www.ralies.biz.id/LYID_OG_LOGO.png"}
+  },
+  "blogPost": [
+    {"@type": "BlogPosting", "headline": "Cara Automasi Airdrop Crypto dengan Bot", "url": "https://www.ralies.biz.id/blog/automasi-airdrop-crypto-bot.html", "datePublished": "2026-07-01"},
+    {"@type": "BlogPosting", "headline": "10 Airdrop Gratis yang Worth It di Juli 2026", "url": "https://www.ralies.biz.id/blog/10-airdrop-gratis-juli-2026.html", "datePublished": "2026-07-05"},
+    {"@type": "BlogPosting", "headline": "WordPress vs Custom Code untuk UMKM", "url": "https://www.ralies.biz.id/blog/wordpress-vs-custom-code.html", "datePublished": "2026-07-03"},
+    {"@type": "BlogPosting", "headline": "Setup Telegram Bot dari Nol", "url": "https://www.ralies.biz.id/blog/setup-telegram-bot.html", "datePublished": "2026-07-01"},
+    {"@type": "BlogPosting", "headline": "Multi-Wallet Strategy: Farming Airdrop Tanpa Sybil", "url": "https://www.ralies.biz.id/blog/multi-wallet-strategy.html", "datePublished": "2026-06-28"},
+    {"@type": "BlogPosting", "headline": "5 Kesalahan SEO Website Baru", "url": "https://www.ralies.biz.id/blog/kesalahan-seo-website-baru.html", "datePublished": "2026-06-25"},
+    {"@type": "BlogPosting", "headline": "Tips Menulis Skripsi Lolos Turnitin", "url": "https://www.ralies.biz.id/blog/menulis-skripsi-lolos-turnitin.html", "datePublished": "2026-06-22"},
+    {"@type": "BlogPosting", "headline": "Cara Aman Simpan Seed Phrase AES-256", "url": "https://www.ralies.biz.id/blog/simpan-seed-phrase-aman.html", "datePublished": "2026-06-20"},
+    {"@type": "BlogPosting", "headline": "Screening 1000+ Crypto Project dengan Python", "url": "https://www.ralies.biz.id/blog/screening-crypto-python.html", "datePublished": "2026-06-18"},
+    {"@type": "BlogPosting", "headline": "Deploy Website ke Vercel dalam 5 Menit", "url": "https://www.ralies.biz.id/blog/deploy-vercel-5-menit.html", "datePublished": "2026-06-15"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Web Dev</a>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="/#portofolio">Portofolio</a></li>
+    <li><a href="/#harga">Harga</a></li>
+    <li><a href="/#proses">Proses</a></li>
+    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li><a href="/lyid-scripts.html">Bot Scripts</a></li>
+    <li><a href="/sites/">All Demos</a></li>
+  </ul>
+  <a href="https://wa.me/6287897299985" class="btn-cta">Konsultasi Gratis</a>
+</div>
+</nav>
+
+<section class="blog-hero">
+<div class="container">
+  <h1>Blog <span class="grad">LYID</span></h1>
+  <p>Tutorial, tips, dan insight seputar crypto automation, web development, dan digital marketing.</p>
+</div>
+</section>
+
+<div class="container">
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">Semua</button>
+  <button class="filter-btn" data-filter="crypto">Crypto & Airdrop</button>
+  <button class="filter-btn" data-filter="web">Web Development</button>
+  <button class="filter-btn" data-filter="tutorial">Tutorial</button>
+  <button class="filter-btn" data-filter="academic">Akademik</button>
+</div>
+
+<!-- FEATURED POST -->
+<a href="blog/automasi-airdrop-crypto-bot.html" class="featured" data-cat="crypto">
+  <div class="featured-img" style="background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(139,92,246,.2));display:flex;align-items:center;justify-content:center;font-size:4rem">🤖</div>
+  <div>
+    <span class="featured-tag">Featured</span>
+    <h2>Cara Automasi Airdrop Crypto dengan Bot: Panduan Lengkap 2026</h2>
+    <p>Airdrop crypto semakin kompetitif. Di artikel ini, kita bahas bagaimana membangun bot automasi yang efisien untuk farming airdrop — dari setup wallet hingga auto-claim reward. Cocok untuk pemula maupun advanced.</p>
+    <span class="btn-read">Baca Selengkapnya →</span>
+  </div>
+</a>
+
+<!-- BLOG GRID -->
+<div class="blog-grid">
+
+  <a href="blog/10-airdrop-gratis-juli-2026.html" class="blog-card" data-cat="crypto">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">🔗</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag">Crypto</span>
+        <span class="card-date">5 Jul 2026</span>
+      </div>
+      <h3 class="card-title">10 Airdrop Gratis yang Worth It di Juli 2026</h3>
+      <p class="card-excerpt">Daftar airdrop gratis tanpa modal yang bisa kamu ikuti bulan ini. Semua sudah terverifikasi dan memiliki potensi listing di exchange besar.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">5 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/wordpress-vs-custom-code.html" class="blog-card" data-cat="web">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(6,182,212,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">🎨</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag web">Web Dev</span>
+        <span class="card-date">3 Jul 2026</span>
+      </div>
+      <h3 class="card-title">Perbandingan: WordPress vs Custom Code untuk UMKM</h3>
+      <p class="card-excerpt">Mana yang lebih cocok untuk bisnis kamu? Kami bandingkan dari sisi cost, performa, SEO, dan maintenance. Plus: kapan harus pilih yang mana.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">7 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/setup-telegram-bot.html" class="blog-card" data-cat="tutorial">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(59,130,246,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">📚</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag" style="background:rgba(34,197,94,.15);color:var(--green)">Tutorial</span>
+        <span class="card-date">1 Jul 2026</span>
+      </div>
+      <h3 class="card-title">Setup Telegram Bot dari Nol: Dari Daftar Hingga Auto-Reply</h3>
+      <p class="card-excerpt">Panduan step-by-step membuat Telegram bot yang bisa auto-reply, handle command, dan bahkan jualan produk digital. Semua pakai JavaScript.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">10 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/multi-wallet-strategy.html" class="blog-card" data-cat="crypto">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(34,197,94,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">💰</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag">Crypto</span>
+        <span class="card-date">28 Jun 2026</span>
+      </div>
+      <h3 class="card-title">Multi-Wallet Strategy: Cara Farming Airdrop Tanpa Kena Sybil</h3>
+      <p class="card-excerpt">Tips dan trik menjalankan multiple wallet untuk airdrop farming tanpa terdeteksi sybil. Cover: proxy, fingerprint, wallet rotation, dan best practices.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">8 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/kesalahan-seo-website-baru.html" class="blog-card" data-cat="web">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(59,130,246,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">⚡</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag web">Web Dev</span>
+        <span class="card-date">25 Jun 2026</span>
+      </div>
+      <h3 class="card-title">5 Kesalahan SEO yang Sering Dilakukan Website Baru</h3>
+      <p class="card-excerpt">Website baru sering gagal di Google karena kesalahan dasar SEO. Kami bahas 5 kesalahan paling umum dan cara fix-nya. Plus checklist SEO on-page gratis.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">6 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/menulis-skripsi-lolos-turnitin.html" class="blog-card" data-cat="academic">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(139,92,246,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">🎓</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag academic">Akademik</span>
+        <span class="card-date">22 Jun 2026</span>
+      </div>
+      <h3 class="card-title">Tips Menulis Skripsi yang Lolos Turnitin: Anti-Plagiarisme</h3>
+      <p class="card-excerpt">Panduan menulis skripsi yang orisinal dan lolos cek plagiarisme. Dari parafrase yang benar hingga teknik sitasi APA 7th edition. Cocok untuk mahasiswa S1.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">12 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/simpan-seed-phrase-aman.html" class="blog-card" data-cat="tutorial">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(6,182,212,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">🛡️</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag" style="background:rgba(34,197,94,.15);color:var(--green)">Tutorial</span>
+        <span class="card-date">20 Jun 2026</span>
+      </div>
+      <h3 class="card-title">Cara Aman Simpan Seed Phrase: AES-256 Encryption untuk Bot</h3>
+      <p class="card-excerpt">Jangan simpan seed phrase di plain text! Tutorial ini ajarkan cara encrypt wallet seed phrase dengan AES-256-GCM untuk bot automation kamu.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">6 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/screening-crypto-python.html" class="blog-card" data-cat="crypto">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">📊</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag">Crypto</span>
+        <span class="card-date">18 Jun 2026</span>
+      </div>
+      <h3 class="card-title">Cara Screening 1000+ Crypto Project Otomatis Pakai Python</h3>
+      <p class="card-excerpt">Tutorial membangun pipeline screening crypto project dari CryptoRank API. Auto-filter berdasarkan funding, airdrop allocation, dan investor quality.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">9 min baca</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="blog/deploy-vercel-5-menit.html" class="blog-card" data-cat="web">
+    <div class="card-img" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(34,197,94,.1));display:flex;align-items:center;justify-content:center;font-size:3rem">🚀</div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="card-tag web">Web Dev</span>
+        <span class="card-date">15 Jun 2026</span>
+      </div>
+      <h3 class="card-title">Deploy Website ke Vercel dalam 5 Menit (Gratis)</h3>
+      <p class="card-excerpt">Step-by-step deploy website ke Vercel gratis. Cover: GitHub integration, custom domain, SSL, dan tips optimasi performa. Cocok untuk portfolio dan landing page.</p>
+      <div class="card-footer">
+        <span class="card-read">Baca →</span>
+        <span class="card-time">5 min baca</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <h3>Dapatkan Update Terbaru</h3>
+  <p>Subscribe untuk tips crypto automation, web development, dan diskon eksklusif LYID Scripts.</p>
+  <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed! ✓';this.querySelector('button').style.background='var(--green)'">
+    <input type="email" placeholder="Email kamu..." required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
+
+</div>
+
+<footer>
+<div class="container">
+  <p>&copy; 2026 LYID — Layer Airdrop ID. <a href="/" style="color:var(--blue)">Home</a> · <a href="/lyid-scripts.html" style="color:var(--blue)">Bot Scripts</a> · <a href="/community.html" style="color:var(--blue)">Community</a></p>
+</div>
+</footer>
+
+<script>
+// Hamburger
+document.querySelector('.hamburger').addEventListener('click',function(){
+  this.classList.toggle('active');
+  var n=document.querySelector('.nav-links');
+  n.classList.toggle('active');
+  this.setAttribute('aria-expanded',n.classList.contains('active'));
+});
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const f=this.dataset.filter;
+    document.querySelectorAll('.blog-card,.featured').forEach(card=>{
+      if(f==='all'||card.dataset.cat===f){card.style.display=''}else{card.style.display='none'}
+    });
+  });
+});
+</script>
+</body>
+</html>

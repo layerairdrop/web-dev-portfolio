@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Everafter Studio — Wedding & Event Organizer Jakarta">
+<meta property="og:description" content="Everafter Studio — Wedding & Event Organizer Jakarta">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80">
+<meta property="og:url" content="https://ralies.biz.id/sites/07-wedding.html">
+<meta property="og:type" content="website">
+<title>Everafter Studio — Wedding & Event Organizer Jakarta</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+a,button{transition:all .2s ease}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--rose);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--rose);color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem}
+.skip-link:focus{top:16px}
+:root{
+  --bg:#fdfbf9;--surface:#fff;--card:#fff;--border:#ebe5de;
+  --text:#2c2420;--muted:#8a7e74;
+  --rose:#c9796b;--rose-dark:#b5685a;--rose-light:#f5e6e2;
+  --gold:#c4a265;--gold-light:#f8f0dd;
+  --green:#7a9e7e;
+  --radius:16px;--shadow:0 4px 24px rgba(44,36,32,.08)
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+img{max-width:100%;display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,249,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.02em}
+.logo span{color:var(--rose)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--rose)}
+.btn-cta{background:var(--rose);color:#fff;padding:10px 24px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.85rem;transition:all .2s}
+.btn-cta:hover{background:var(--rose-dark)}
+.btn-cta:active{transform:scale(.97)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(253,251,249,.92) 0%,rgba(253,251,249,.7) 50%,rgba(253,251,249,.4) 100%)}
+.hero-content{position:relative;z-index:1;padding:80px 0}
+.hero-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--rose);text-transform:uppercase;letter-spacing:.2em;margin-bottom:16px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.1;margin-bottom:20px;font-weight:400}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:480px;margin-bottom:36px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--rose);color:#fff;padding:14px 36px;border-radius:999px;text-decoration:none;font-weight:600;transition:all .2s}
+.btn-primary:hover{background:var(--rose-dark);transform:translateY(-2px)}
+.btn-primary:active{transform:translateY(0)}
+.btn-outline{border:1.5px solid var(--rose);color:var(--rose);padding:12px 36px;border-radius:999px;text-decoration:none;font-weight:600;transition:all .2s}
+.btn-outline:hover{background:var(--rose);color:#fff}
+.btn-outline:active{transform:scale(.97)}
+/* hero-float removed — unused at all breakpoints */
+
+/* STATS */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stat{text-align:center}
+.stat h3{font-size:2.2rem;color:var(--rose);font-weight:400}
+.stat p{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+/* SERVICES */
+.section{padding:80px 0}
+.section-label{font-size:.8rem;color:var(--rose);text-transform:uppercase;letter-spacing:.2em;text-align:center;margin-bottom:8px}
+.section-title{text-align:center;font-size:2.2rem;margin-bottom:12px;font-weight:400}
+.section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.serv-card{display:grid;grid-template-columns:180px 1fr;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.serv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.serv-img{height:100%;min-height:200px;position:relative;overflow:hidden}
+.serv-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.serv-card:hover .serv-img img{transform:scale(1.05)}
+.serv-body{padding:24px}
+.serv-body h3{font-size:1.3rem;margin-bottom:8px}
+.serv-body p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.serv-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:600;color:var(--rose)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:250px 250px;gap:12px}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.08)}
+.gallery-item:nth-child(1){grid-column:1/3;grid-row:1/3}
+.gallery-item .gallery-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.5));opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:20px}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay span{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.2rem}
+
+/* PACKAGES */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.pkg-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:all .2s}
+.pkg-card:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:var(--shadow)}
+.pkg-card.featured{border-color:var(--rose);box-shadow:0 0 30px rgba(201,121,107,.1)}
+.pkg-card .tier{font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--rose);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.pkg-card .price{font-size:2rem;margin-bottom:4px}
+.pkg-card .price-sub{font-size:.8rem;color:var(--muted);margin-bottom:24px}
+.pkg-card ul{list-style:none;text-align:left;margin-bottom:24px}
+.pkg-card li{padding:8px 0;font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.pkg-card li:last-child{border:none}
+.pkg-card li::before{content:"~";color:var(--rose);font-weight:700}
+.btn-card{display:block;width:100%;padding:12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s;text-align:center}
+.btn-card.outline{background:transparent;border:1.5px solid var(--border);color:var(--text)}
+.btn-card.outline:hover{border-color:var(--rose);color:var(--rose)}
+.btn-card.outline:active{transform:scale(.97)}
+.btn-card.filled{background:var(--rose);color:#fff;border:none}
+.btn-card.filled:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,121,107,.3)}
+.btn-card.filled:active{transform:translateY(0)}
+
+/* TESTIMONIALS */
+.testi-section{background:var(--rose-light);padding:80px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.testi-card{background:var(--surface);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(44,36,32,.12)}
+.testi-card .stars{color:var(--gold);margin-bottom:12px}
+.testi-card p{font-style:italic;color:var(--muted);margin-bottom:16px;font-size:.95rem;line-height:1.7}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--rose-light)}
+.testi-name{font-weight:600;font-size:.9rem}
+.testi-role{font-size:.8rem;color:var(--muted)}
+
+/* CTA */
+.cta{text-align:center;padding:80px 0;position:relative}
+.cta h2{font-size:2.5rem;margin-bottom:12px}
+.cta p{color:var(--muted);margin-bottom:32px;max-width:450px;margin-left:auto;margin-right:auto}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 32px;border-radius:999px;text-decoration:none;font-weight:600;transition:all .2s}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.25)}
+.btn-wa:active{transform:translateY(0);box-shadow:none}
+
+/* FOOTER */
+footer{background:var(--text);color:#c4b5a5;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-col h4{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:16px}
+.footer-col p,.footer-col a{font-size:.85rem;color:#8a7e74;text-decoration:none;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--rose)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;color:#5a5047}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px;min-width:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .hero h1{font-size:2.5rem}
+}
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(253,251,249,.98);backdrop-filter:blur(16px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+  .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center}
+  .stats-bar{grid-template-columns:1fr 1fr}
+  .serv-card{grid-template-columns:1fr}
+  .serv-img{height:200px}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery-item:nth-child(1){grid-column:1/3}
+  .gallery-item{height:200px}
+  .gallery-item:nth-child(1){height:300px}
+  .pkg-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:2.5rem}
+}
+@media(max-width:428px){
+  .hero h1{font-size:1.8rem}
+  .hero p{font-size:1rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.8rem}
+  .stats-bar{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* === Premium Animations === */
+.ken-burns{animation:ken-burns 18s ease-in-out infinite alternate;will-change:transform}
+@keyframes ken-burns{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.stagger-item{opacity:0;transform:translateY(25px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+.stagger-item.visible{opacity:1;transform:translateY(0)}
+.zoom-hover{overflow:hidden}
+.zoom-hover img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.zoom-hover:hover img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in,.stagger-item{opacity:1!important;transform:none!important}.ken-burns{animation:none!important}}
+
+/* iOS FADE-IN FIX */
+.fade-in{opacity:1!important;transform:none!important;transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1!important;transform:none!important}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);z-index:1001;transform-origin:left;transform:scaleX(0);width:100%" id="pb"></div>
+<a href="/" style="position:fixed;top:16px;left:16px;z-index:999;background:rgba(0,0,0,.7);color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;backdrop-filter:blur(8px);transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.9)'" onmouseout="this.style.background='rgba(0,0,0,.7)'">← Portfolio</a>
+
+<a href="#layanan" class="skip-link">Skip to content</a>
+
+<nav>
+<div class="nav-inner">
+  <div class="logo">Ever<span>after</span></div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#galeri">Galeri</a></li>
+    <li><a href="#paket">Paket</a></li>
+    <li><a href="#ulasan">Ulasan</a></li>
+  </ul>
+  <a href="https://wa.me/6287897299985" class="btn-cta">Konsultasi Gratis</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-bg">
+  <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1400&q=80" alt="Wedding decoration" loading="eager">
+  <div class="hero-overlay"></div>
+</div>
+<div class="container hero-content">
+  <div class="hero-label">Wedding & Event Organizer Jakarta</div>
+  <h1>Wujudkan<br>Momen <em>Istimewa</em><br>Anda</h1>
+  <p>Dari pernikahan intimate sampai event besar — kami bantu dari konsep sampai hari-H. Profesional, detail, dan penuh cinta.</p>
+  <div class="hero-btns">
+    <a href="#paket" class="btn-primary">Lihat Paket</a>
+    <a href="https://wa.me/6287897299985" class="btn-outline">Chat WhatsApp</a>
+  </div>
+</div>
+</section>
+
+<section class="container stats-bar">
+  <div class="stat"><h3>200+</h3><p>Event Terselenggara</p></div>
+  <div class="stat"><h3>98%</h3><p>Klien Puas</p></div>
+  <div class="stat"><h3>8</h3><p>Tahun Pengalaman</p></div>
+  <div class="stat"><h3>15</h3><p>Tim Profesional</p></div>
+</section>
+
+<section style="padding:40px 0;text-align:center;background:var(--rose-light)">
+<div class="container">
+  <div style="font-size:.8rem;color:var(--rose);text-transform:uppercase;letter-spacing:.2em;margin-bottom:8px">Save The Date</div>
+  <h3 style="font-size:1.5rem;margin-bottom:24px">Pernikahan Putri & Andika</h3>
+  <div id="countdown" style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+    <div style="background:var(--surface);border-radius:12px;padding:20px 28px;min-width:80px;box-shadow:var(--shadow)">
+      <div id="cd-days" style="font-size:2rem;font-weight:700;color:var(--rose);font-family:'Cormorant Garamond',serif">--</div>
+      <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase">Hari</div>
+    </div>
+    <div style="background:var(--surface);border-radius:12px;padding:20px 28px;min-width:80px;box-shadow:var(--shadow)">
+      <div id="cd-hours" style="font-size:2rem;font-weight:700;color:var(--rose);font-family:'Cormorant Garamond',serif">--</div>
+      <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase">Jam</div>
+    </div>
+    <div style="background:var(--surface);border-radius:12px;padding:20px 28px;min-width:80px;box-shadow:var(--shadow)">
+      <div id="cd-mins" style="font-size:2rem;font-weight:700;color:var(--rose);font-family:'Cormorant Garamond',serif">--</div>
+      <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase">Menit</div>
+    </div>
+    <div style="background:var(--surface);border-radius:12px;padding:20px 28px;min-width:80px;box-shadow:var(--shadow)">
+      <div id="cd-secs" style="font-size:2rem;font-weight:700;color:var(--rose);font-family:'Cormorant Garamond',serif">--</div>
+      <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase">Detik</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="layanan">
+<div class="container">
+  <div class="section-label">Layanan</div>
+  <h2 class="section-title">Apa yang Kami Kerjakan</h2>
+  <p class="section-sub">Full-service wedding dan event organizer untuk setiap momen spesial Anda</p>
+  <div class="serv-grid">
+    <div class="serv-card">
+      <div class="serv-img">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Wedding" loading="lazy">
+      </div>
+      <div class="serv-body">
+        <h3>Wedding Organizer</h3>
+        <p>Pernikahan impian dari A-Z. Dekorasi, catering, dokumentasi, entertainment — semua diurus.</p>
+        <div class="serv-price">Mulai Rp 25jt</div>
+      </div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-img">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" alt="Event" loading="lazy">
+      </div>
+      <div class="serv-body">
+        <h3>Corporate Event</h3>
+        <p>Gathering, seminar, launching produk, gala dinner. Konsep kreatif, eksekusi profesional.</p>
+        <div class="serv-price">Mulai Rp 15jt</div>
+      </div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-img">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&q=80" alt="Decoration" loading="lazy">
+      </div>
+      <div class="serv-body">
+        <h3>Dekorasi & Styling</h3>
+        <p>Transformasi venue jadi magical. Rustic, elegant, modern, traditional — sesuai tema Anda.</p>
+        <div class="serv-price">Mulai Rp 8jt</div>
+      </div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-img">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&q=80" alt="Documentation" loading="lazy">
+      </div>
+      <div class="serv-body">
+        <h3>Dokumentasi</h3>
+        <p>Foto + video cinematic. Drone, same-day edit, album premium. Abadikan momen selamanya.</p>
+        <div class="serv-price">Mulai Rp 5jt</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="galeri" style="background:var(--surface)">
+<div class="container">
+  <div class="section-label">Galeri</div>
+  <h2 class="section-title">Momen yang Kami Ciptakan</h2>
+  <p class="section-sub">Beberapa hasil karya kami</p>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=800&q=80" alt="Wedding ceremony" loading="lazy">
+      <div class="gallery-overlay"><span>Pernikahan Adat Jawa</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80" alt="Flower arrangement" loading="lazy">
+      <div class="gallery-overlay"><span>Dekorasi Bunga</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80" alt="Wedding rings" loading="lazy">
+      <div class="gallery-overlay"><span>Detail Cincin</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Event setup" loading="lazy">
+      <div class="gallery-overlay"><span>Gala Dinner</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" alt="Event lighting" loading="lazy">
+      <div class="gallery-overlay"><span>Festival Lights</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="paket">
+<div class="container">
+  <div class="section-label">Paket</div>
+  <h2 class="section-title">Pilih Paket Impian Anda</h2>
+  <p class="section-sub">Paket fleksibel yang bisa dikustomisasi sesuai kebutuhan</p>
+  <div class="pkg-grid">
+    <div class="pkg-card">
+      <div class="tier">Intimate</div>
+      <div class="price">Rp 25jt</div>
+      <div class="price-sub">50-100 tamu</div>
+      <ul>
+        <li>Venue coordination</li>
+        <li>Dekorasi basic</li>
+        <li>Catering 50 pax</li>
+        <li>Foto + video</li>
+        <li>MC + music</li>
+        <li>Wedding organizer</li>
+      </ul>
+      <a href="https://wa.me/6287897299985" class="btn-card outline">Pilih Paket</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="tier">Classic</div>
+      <div class="price">Rp 65jt</div>
+      <div class="price-sub">100-300 tamu</div>
+      <ul>
+        <li>Semua fitur Intimate</li>
+        <li>Dekorasi premium</li>
+        <li>Catering 200 pax</li>
+        <li>Drone + SDE video</li>
+        <li>Entertainment band</li>
+        <li>Bridal makeup</li>
+        <li>Invitation design</li>
+      </ul>
+      <a href="https://wa.me/6287897299985" class="btn-card filled">Pilih Paket</a>
+    </div>
+    <div class="pkg-card">
+      <div class="tier">Grand</div>
+      <div class="price">Rp 150jt+</div>
+      <div class="price-sub">300-1000 tamu</div>
+      <ul>
+        <li>Semua fitur Classic</li>
+        <li>Dekorasi luxury custom</li>
+        <li>Catering 500+ pax</li>
+        <li>3 hari rangkaian acara</li>
+        <li>Celebrity entertainer</li>
+        <li>Full documentation team</li>
+        <li>VIP guest management</li>
+      </ul>
+      <a href="https://wa.me/6287897299985" class="btn-card outline">Konsultasi</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="testi-section" id="ulasan">
+<div class="container">
+  <div class="section-label">Testimoni</div>
+  <h2 class="section-title">Cerita Mereka</h2>
+  <p class="section-sub">Kebahagiaan klien adalah hadiah terbesar kami</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p>"Tim Everafter luar biasa! Dari konsultasi pertama sampai hari-H, semuanya berjalan sempurna. Dekorasi-nya beautiful beyond my dreams."</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Client" class="testi-avatar" loading="lazy">
+        <div><div class="testi-name">Putri & Andika</div><div class="testi-role">Wedding, Desember 2025</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p>"Company gathering kami jadi event terbaik tahun ini. Klien kami impressed banget. Terima kasih Everafter!"</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Client" class="testi-avatar" loading="lazy">
+        <div><div class="testi-name">Rudi Hartono</div><div class="testi-role">Corporate Event, PT Maju Jaya</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★ ★ ★ ★ ★</div>
+      <p>"Budget kami terbatas tapi hasilnya tetap wow. Tim-nya kreatif dan solution-oriented. Highly recommended!"</p>
+      <div class="testi-author">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Client" class="testi-avatar" loading="lazy">
+        <div><div class="testi-name">Sari & Budi</div><div class="testi-role">Wedding, Maret 2026</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+  <h2>Siap Wujudkan Momen Impian?</h2>
+  <p>Konsultasi gratis. Ceritakan visi Anda, kami yang eksekusi.</p>
+  <a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20wedding%2Fevent%20organizer" class="btn-wa">💬 Chat WhatsApp</a>
+</div>
+</section>
+
+<section class="section" id="rsvp" style="background:var(--rose-light)">
+<div class="container" style="max-width:600px">
+  <div class="section-label">RSVP</div>
+  <h2 class="section-title">Konfirmasi Kehadiran</h2>
+  <p class="section-sub">Mohon konfirmasi kehadiran Anda</p>
+  <div style="display:grid;gap:12px">
+    <label for="rsvp-name" class="sr-only">Nama Lengkap</label><input type="text" id="rsvp-name" placeholder="Nama Lengkap" style="padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:16px;background:var(--surface)">
+    <label for="rsvp-wa" class="sr-only">No. WhatsApp</label><input type="tel" id="rsvp-wa" placeholder="No. WhatsApp" style="padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:16px;background:var(--surface)">
+    <label for="rsvp-confirm" class="sr-only">Konfirmasi Kehadiran</label><select id="rsvp-confirm" style="padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:16px;background:var(--surface)">
+      <option>Konfirmasi Kehadiran</option>
+      <option>Hadir (1 orang)</option>
+      <option>Hadir (2 orang)</option>
+      <option>Hadir (3-4 orang)</option>
+      <option>Berhalangan hadir</option>
+    </select>
+    <label for="rsvp-msg" class="sr-only">Ucapan untuk pasangan</label><textarea id="rsvp-msg" placeholder="Ucapan untuk pasangan (opsional)" style="padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:16px;background:var(--surface);min-height:80px;resize:vertical"></textarea>
+    <button style="padding:14px;background:var(--rose);color:#fff;border:none;border-radius:999px;font-weight:600;font-size:1rem;cursor:pointer;font-family:inherit">Kirim RSVP</button>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Everafter Studio</h4>
+      <p>Wedding & Event Organizer profesional di Jakarta. Mewujudkan momen impian Anda dengan penuh cinta dan dedikasi.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Layanan</h4>
+      <a href="#">Wedding Organizer</a>
+      <a href="#">Corporate Event</a>
+      <a href="#">Dekorasi</a>
+      <a href="#">Dokumentasi</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informasi</h4>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Portofolio</a>
+      <a href="#">Blog</a>
+      <a href="#">Karir</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <a href="#">+62 878-9729-9985</a>
+      <a href="#">everafterstudio.jkt@gmail.com</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Everafter Studio. Dibuat oleh LYID Web Development</div>
+</div>
+</footer>
+
+<script>document.querySelector('.hamburger').addEventListener('click',function(){this.classList.toggle('active');var n=document.querySelector('.nav-links');n.classList.toggle('active');this.setAttribute('aria-expanded',n.classList.contains('active'))});
+document.querySelectorAll('.section,.hero,.stats-bar,.serv-card,.testi-card,.pkg-card,.gallery-item,.cta').forEach(function(el,i){el.classList.add('fade-in');el.style.transitionDelay=(i%8)*.06+'s'});var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+</script>
+<script>
+(function(){
+  var target=new Date();target.setMonth(target.getMonth()+3);target.setDate(15);
+  function update(){
+    var now=new Date(),diff=target-now;
+    if(diff<=0)return;
+    var d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
+    document.getElementById("cd-days").textContent=d;
+    document.getElementById("cd-hours").textContent=h;
+    document.getElementById("cd-mins").textContent=m;
+    document.getElementById("cd-secs").textContent=s;
+  }
+  update();setInterval(update,1000);
+})();
+</script>
+<script>
+// Scroll progress
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var b=document.getElementById('pb');if(b&&h>0)b.style.transform='scaleX('+window.scrollY/h+')'},{passive:true});
+// Fade in
+document.querySelectorAll('section,.fade-up').forEach(function(el,i){el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .7s ease,transform .7s ease';el.style.transitionDelay=(i%6)*.08+'s'});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';obs.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('section,.fade-up').forEach(function(el){obs.observe(el)});
+
+// Stagger support
+document.querySelectorAll('[data-stagger]').forEach(function(g){g.querySelectorAll('.stagger-item').forEach(function(el,i){el.style.transitionDelay=(i*.08)+'s'})});
+</script>
+</body>
+</html>

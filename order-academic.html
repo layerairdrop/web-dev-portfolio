@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Academic — Form Order</title>
+<meta name="description" content="Form order jasa bimbingan & editing akademik. Essay, makalah, skripsi, ujian online, presentasi.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;
+  --text:#e4e4e7;--muted:#71717a;--placeholder:#52525b;
+  --blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--red:#ef4444;
+  --radius:12px;--shadow:0 8px 32px rgba(0,0,0,.5)
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+
+/* SKIP */
+.skip{position:absolute;top:-100px;left:0;background:var(--blue);color:#fff;padding:8px 16px;z-index:100;font-size:.85rem}
+.skip:focus{top:0}
+
+/* NAV */
+nav{background:rgba(17,17,19,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 24px;position:sticky;top:0;z-index:50}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-weight:700;font-size:1.1rem;color:var(--text)}
+.nav-brand span{color:var(--blue)}
+.nav-links{display:flex;gap:16px;align-items:center}
+.nav-links a{color:var(--muted);font-size:.85rem;transition:color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--text)}
+.nav-links a.active{color:var(--blue);font-weight:600}
+.nav-cta{background:var(--blue);color:#fff!important;padding:6px 16px;border-radius:8px;font-size:.8rem;font-weight:600}
+.nav-cta:hover{background:#2563eb;text-decoration:none}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;padding:4px;min-height:44px;min-width:44px}
+@media(max-width:768px){
+  .nav-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);flex-direction:column;padding:16px;gap:12px}
+  .nav-links.open{display:flex}
+  .nav-cta,.nav-inner .nav-cta{display:none!important}
+}
+
+/* CONTAINER */
+.container{max-width:640px;margin:0 auto;padding:0 20px}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:.8rem;margin:24px 0 8px;transition:color .2s}
+.back-link:hover{color:var(--text);text-decoration:none}
+
+/* HERO */
+.hero{text-align:center;padding:40px 20px 24px}
+.hero h1{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;margin-bottom:8px}
+.hero h1 span{background:linear-gradient(to right,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);font-size:.9rem}
+
+/* FORM */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin:20px 0 40px}
+.form-step{display:none}
+.form-step.active{display:block}
+.step-indicator{display:flex;gap:8px;margin-bottom:24px;justify-content:center}
+.step-dot{width:32px;height:4px;border-radius:2px;background:var(--border);transition:background .3s}
+.step-dot.active{background:var(--blue)}
+.step-dot.done{background:var(--green)}
+
+label{display:block;font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:6px}
+label .required{color:var(--red)}
+
+input,select,textarea{
+  width:100%;padding:12px 16px;background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;color:var(--text);font-size:16px;font-family:inherit;
+  transition:border-color .2s;appearance:none
+}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none}
+input::placeholder,textarea::placeholder{color:var(--placeholder)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2371717a' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+textarea{resize:vertical;min-height:80px}
+
+.radio-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:4px}
+.radio-card{position:relative;cursor:pointer}
+.radio-card input{position:absolute;opacity:0}
+.radio-card .radio-box{
+  display:block;padding:14px 12px;background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;text-align:center;transition:all .2s;font-size:.85rem
+}
+.radio-card input:checked+.radio-box{border-color:var(--blue);background:rgba(59,130,246,.1);box-shadow:0 0 12px rgba(59,130,246,.15)}
+.radio-card input:focus-visible+.radio-box{outline:2px solid var(--blue);outline-offset:2px}
+.radio-box .radio-icon{font-size:1.4rem;display:block;margin-bottom:4px}
+.radio-box .radio-label{font-weight:600;color:var(--text)}
+.radio-box .radio-desc{font-size:.75rem;color:var(--muted);margin-top:2px}
+
+.btn-row{display:flex;gap:12px;margin-top:24px}
+.btn{flex:1;padding:14px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;font-family:inherit;transition:all .2s;min-height:48px}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
+.btn-primary:hover{opacity:.9}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--muted)}
+
+/* SUMMARY */
+.summary{background:var(--surface);border-radius:10px;padding:16px;margin:16px 0}
+.summary-row{display:flex;justify-content:space-between;padding:6px 0;font-size:.85rem;border-bottom:1px solid var(--border)}
+.summary-row:last-child{border:none}
+.summary-row .label{color:var(--muted)}
+.summary-row .value{color:var(--text);font-weight:600;text-align:right}
+
+/* SUCCESS */
+.success-screen{text-align:center;padding:40px 20px}
+.success-icon{font-size:4rem;margin-bottom:16px}
+.success-screen h2{font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.success-screen p{color:var(--muted);margin-bottom:24px;font-size:.9rem}
+.wa-link{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;transition:opacity .2s}
+.wa-link:hover{opacity:.85;text-decoration:none}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;color:var(--muted);font-size:.75rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/lyid-academic" class="nav-brand">LYID <span>Academic</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="/lyid-academic">Pricing</a>
+      <a href="/order" class="active">Order</a>
+      <a href="https://wa.me/628211383640" class="nav-cta">📱 Chat WA</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<div class="hero">
+  <h1>Form <span>Order</span></h1>
+  <p>Isi form di bawah, lalu chat WhatsApp untuk konfirmasi</p>
+</div>
+
+<div class="container">
+
+<a href="/lyid-academic" class="back-link">← Kembali ke Pricing</a>
+
+<div class="form-card">
+
+  <!-- STEP INDICATOR -->
+  <div class="step-indicator">
+    <div class="step-dot active" id="dot1"></div>
+    <div class="step-dot" id="dot2"></div>
+    <div class="step-dot" id="dot3"></div>
+    <div class="step-dot" id="dot4"></div>
+  </div>
+
+  <!-- STEP 1: JENIS TUGAS -->
+  <div class="form-step active" id="step1">
+    <label>Jenis Tugas <span class="required">*</span></label>
+    <div class="radio-group">
+      <label class="radio-card">
+        <input type="radio" name="jenis" value="Essay / Makalah" required>
+        <span class="radio-box">
+          <span class="radio-icon">📝</span>
+          <span class="radio-label">Essay / Makalah</span>
+          <span class="radio-desc">Mulai Rp 20rb/hal</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="jenis" value="UTS / UAS Online">
+        <span class="radio-box">
+          <span class="radio-icon">📋</span>
+          <span class="radio-label">UTS / UAS Online</span>
+          <span class="radio-desc">Mulai Rp 75rb</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="jenis" value="Skripsi S1">
+        <span class="radio-box">
+          <span class="radio-icon">🎓</span>
+          <span class="radio-label">Skripsi S1</span>
+          <span class="radio-desc">Mulai Rp 3jt</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="jenis" value="PPT Presentasi">
+        <span class="radio-box">
+          <span class="radio-icon">💻</span>
+          <span class="radio-label">PPT Presentasi</span>
+          <span class="radio-desc">Mulai Rp 25rb/slide</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="jenis" value="Analisis Data / SPSS">
+        <span class="radio-box">
+          <span class="radio-icon">📊</span>
+          <span class="radio-label">Analisis Data</span>
+          <span class="radio-desc">Mulai Rp 300rb</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="jenis" value="Lainnya">
+        <span class="radio-box">
+          <span class="radio-icon">📄</span>
+          <span class="radio-label">Lainnya</span>
+          <span class="radio-desc">Laporan, jurnal, dll</span>
+        </span>
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="nextStep(1)">Selanjutnya →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: DETAIL -->
+  <div class="form-step" id="step2">
+    <label for="nama">Nama Lengkap <span class="required">*</span></label>
+    <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required style="margin-bottom:16px">
+    
+    <label for="universitas">Universitas <span class="required">*</span></label>
+    <input type="text" id="universitas" placeholder="Contoh: Universitas Indonesia" required style="margin-bottom:16px">
+    
+    <label for="matkul">Mata Kuliah <span class="required">*</span></label>
+    <input type="text" id="matkul" placeholder="Contoh: Manajemen Strategi" required style="margin-bottom:16px">
+    
+    <label for="halaman">Jumlah Halaman</label>
+    <input type="number" id="halaman" placeholder="Contoh: 10" min="1" style="margin-bottom:16px">
+    
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prevStep(2)">← Kembali</button>
+      <button class="btn btn-primary" onclick="nextStep(2)">Selanjutnya →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: DEADLINE & TIER -->
+  <div class="form-step" id="step3">
+    <label for="deadline">Deadline <span class="required">*</span></label>
+    <input type="date" id="deadline" required style="margin-bottom:16px">
+    
+    <label>Tier Waktu <span class="required">*</span></label>
+    <div class="radio-group" style="margin-bottom:16px">
+      <label class="radio-card">
+        <input type="radio" name="tier" value="Reguler (5-7 hari)">
+        <span class="radio-box">
+          <span class="radio-label">Reguler</span>
+          <span class="radio-desc">5-7 hari</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="tier" value="Ekspres (2-3 hari)">
+        <span class="radio-box">
+          <span class="radio-label">Ekspres +50%</span>
+          <span class="radio-desc">2-3 hari</span>
+        </span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="tier" value="Kilat (<24 jam)">
+        <span class="radio-box">
+          <span class="radio-label">Kilat +100%</span>
+          <span class="radio-desc">&lt;24 jam</span>
+        </span>
+      </label>
+    </div>
+    
+    <label for="instruksi">Instruksi Khusus</label>
+    <textarea id="instruksi" placeholder="Detail soal, format yang diminta, catatan dari dosen, dll. Upload file soal via WhatsApp setelah submit form ini."></textarea>
+    
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prevStep(3)">← Kembali</button>
+      <button class="btn btn-primary" onclick="nextStep(3)">Review Pesanan →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: REVIEW & SUBMIT -->
+  <div class="form-step" id="step4">
+    <label style="margin-bottom:12px">📋 Review Pesanan Anda</label>
+    <div class="summary" id="summary"></div>
+    
+    <p style="font-size:.8rem;color:var(--muted);margin:12px 0;text-align:center">
+      Setelah submit, Anda akan diarahkan ke WhatsApp untuk kirim file soal & konfirmasi.
+    </p>
+    
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prevStep(4)">← Edit</button>
+      <button class="btn btn-primary" onclick="submitOrder()">📱 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="form-step" id="step5">
+    <div class="success-screen">
+      <div class="success-icon">✅</div>
+      <h2>Form Terkirim!</h2>
+      <p>Anda akan diarahkan ke WhatsApp. Kirim file soal (foto/PDF/docx) di chat WhatsApp.</p>
+      <a id="waLink" href="#" class="wa-link" target="_blank" rel="noopener">📱 Buka WhatsApp</a>
+      <p style="margin-top:16px;font-size:.8rem;color:var(--muted)">
+        Tidak terbuka? <a href="#" id="waLinkCopy" onclick="copyWA(event)">Copy pesan</a> dan kirim manual ke 0821-1383-640
+      </p>
+    </div>
+  </div>
+
+</div>
+</div>
+</main>
+
+<footer>
+  LYID Academic © 2026 • WhatsApp: <a href="https://wa.me/628211383640">0821-1383-640</a>
+</footer>
+
+<script>
+let currentStep = 1;
+
+function showStep(n) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+  for (let i = 1; i <= 4; i++) {
+    const dot = document.getElementById('dot' + i);
+    dot.classList.remove('active', 'done');
+    if (i < n) dot.classList.add('done');
+    if (i === n) dot.classList.add('active');
+  }
+  currentStep = n;
+}
+
+function nextStep(from) {
+  // Validation
+  if (from === 1) {
+    if (!document.querySelector('input[name="jenis"]:checked')) {
+      alert('Pilih jenis tugas dulu ya!');
+      return;
+    }
+  }
+  if (from === 2) {
+    const nama = document.getElementById('nama').value.trim();
+    const univ = document.getElementById('universitas').value.trim();
+    const matkul = document.getElementById('matkul').value.trim();
+    if (!nama || !univ || !matkul) {
+      alert('Isi nama, universitas, dan mata kuliah ya!');
+      return;
+    }
+  }
+  if (from === 3) {
+    if (!document.getElementById('deadline').value) {
+      alert('Isi deadline ya!');
+      return;
+    }
+    if (!document.querySelector('input[name="tier"]:checked')) {
+      alert('Pilih tier waktu ya!');
+      return;
+    }
+    buildSummary();
+  }
+  showStep(from + 1);
+}
+
+function prevStep(from) {
+  showStep(from - 1);
+}
+
+function getVal(id) { return document.getElementById(id).value.trim() || '-'; }
+function getRadio(name) { const r = document.querySelector('input[name="'+name+'"]:checked'); return r ? r.value : '-'; }
+
+function buildSummary() {
+  const rows = [
+    ['Jenis Tugas', getRadio('jenis')],
+    ['Nama', getVal('nama')],
+    ['Universitas', getVal('universitas')],
+    ['Mata Kuliah', getVal('matkul')],
+    ['Halaman', getVal('halaman') + ' halaman'],
+    ['Deadline', getVal('deadline')],
+    ['Tier', getRadio('tier')],
+    ['Instruksi', getVal('instruksi')],
+  ];
+  let html = '';
+  rows.forEach(([label, value]) => {
+    html += '<div class="summary-row"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>';
+  });
+  document.getElementById('summary').innerHTML = html;
+}
+
+function buildWAMessage() {
+  const lines = [
+    '📋 *ORDER LYID ACADEMIC*',
+    '',
+    '📝 Jenis: ' + getRadio('jenis'),
+    '👤 Nama: ' + getVal('nama'),
+    '🏛 Universitas: ' + getVal('universitas'),
+    '📚 Matkul: ' + getVal('matkul'),
+    '📄 Halaman: ' + getVal('halaman'),
+    '⏰ Deadline: ' + getVal('deadline'),
+    '⚡ Tier: ' + getRadio('tier'),
+    '💬 Instruksi: ' + getVal('instruksi'),
+    '',
+    '📎 File soal menyusul di chat ini.',
+  ];
+  return lines.join('\n');
+}
+
+function submitOrder() {
+  const msg = buildWAMessage();
+  const encoded = encodeURIComponent(msg);
+  const waUrl = 'https://wa.me/628211383640?text=' + encoded;
+  
+  document.getElementById('waLink').href = waUrl;
+  document.getElementById('waLinkCopy').onclick = function(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText(msg).then(() => alert('Pesan tersalin! Paste di WhatsApp.'));
+  };
+  
+  // Try open WhatsApp
+  window.open(waUrl, '_blank');
+  
+  showStep(5);
+}
+
+function copyWA(e) {
+  e.preventDefault();
+  const msg = buildWAMessage();
+  navigator.clipboard.writeText(msg).then(() => alert('Pesan tersalin!'));
+}
+
+// Set min date to today
+document.getElementById('deadline').min = new Date().toISOString().split('T')[0];
+</script>
+
+</body>
+</html>

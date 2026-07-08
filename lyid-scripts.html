@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Scripts — Bot Airdrop Crypto Otomatis | Auto Farming</title>
+<meta name="description" content="Bot airdrop crypto otomatis untuk farming multi-wallet. 19+ bot siap pakai. Auto-claim, proxy support, referral system. Mulai Rp 100rb.">
+<meta property="og:title" content="LYID Scripts — Bot Airdrop Crypto Otomatis">
+<meta property="og:description" content="19+ bot airdrop siap pakai. Auto-claim, multi-wallet, proxy support.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+a,button{transition:all .2s ease}
+:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--cyan:#06b6d4;--green:#22c55e;--radius:16px;--shadow:0 8px 32px rgba(0,0,0,.5)}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.2}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:8px}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.btn-cta{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:10px 24px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.85rem}
+.btn-cta:hover{opacity:.85}
+
+/* HERO */
+.hero{padding:100px 0 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.1) 0%,rgba(139,92,246,.06) 40%,transparent 70%);pointer-events:none}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;margin-bottom:20px}
+.hero h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:600}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.3)}
+.btn-ghost{color:var(--muted);padding:14px 32px;text-decoration:none;font-weight:500;border:1px solid var(--border);border-radius:12px}
+.btn-ghost:hover{border-color:var(--blue);color:var(--text)}
+.badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.badge{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:99px;font-size:.8rem;color:var(--muted)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:40px 0;text-align:center}
+.stat-num{font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{color:var(--muted);font-size:.8rem;margin-top:4px}
+
+/* BOT GRID */
+.section{padding:80px 0}
+.section-title{text-align:center;font-size:2rem;font-weight:800;margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px;font-size:.95rem}
+.bot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.bot-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .3s}
+.bot-card:hover{border-color:var(--blue);transform:translateY(-4px)}
+.bot-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.bot-name{font-weight:700;font-size:1.05rem}
+.bot-price{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.bot-desc{color:var(--muted);font-size:.85rem;margin-bottom:16px;line-height:1.5}
+.bot-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.bot-tag{background:var(--card);border:1px solid var(--border);padding:4px 10px;border-radius:6px;font-size:.7rem;color:var(--muted)}
+.bot-status{display:flex;justify-content:space-between;align-items:center}
+.status-active{color:var(--green);font-size:.75rem;font-weight:600}
+.btn-buy{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:8px 20px;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:none}
+
+/* HOW */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.how-step{text-align:center;padding:32px 20px}
+.how-num{width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 16px}
+.how-title{font-weight:700;margin-bottom:8px}
+.how-desc{color:var(--muted);font-size:.85rem}
+
+/* FAQ */
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+.faq-q{font-weight:600;margin-bottom:8px}
+.faq-a{color:var(--muted);font-size:.9rem}
+
+/* CTA */
+.cta-section{text-align:center;padding:80px 0}
+.cta-section h2{font-size:2rem;font-weight:800;margin-bottom:12px}
+.cta-section p{color:var(--muted);margin-bottom:32px;font-size:1.05rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+footer a{color:var(--blue);text-decoration:none}
+
+/* MOBILE */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px}
+.hamburger{min-width:44px;min-height:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(9,9,11,.95);flex-direction:column;padding:16px 24px;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+  .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center;font-size:.9rem}
+  .btn-cta{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .how-grid{grid-template-columns:1fr}
+  .bot-grid{grid-template-columns:1fr}
+  .hero{padding:60px 0 40px}
+  .hero h1{font-size:1.6rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.6rem}
+  .btn-buy{min-height:44px;padding:10px 20px}
+  footer{padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Scripts</a>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="#bots">Bot List</a></li>
+    <li><a href="#how">Cara Beli</a></li>
+    <li><a href="/setup-guide.html">Setup Guide</a></li>
+    <li><a href="/case-studies.html">Hasil</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+  </ul>
+  <a href="https://t.me/OG_LYID_bot" class="btn-cta">Beli Bot</a>
+</div></nav>
+
+<section class="hero">
+<img src="/Mascot-Images/MASCOT-HOLDING-PACKAGE.png" alt="" style="position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:420px;opacity:0.08;pointer-events:none;z-index:0">
+<div class="container">
+  <h1>Bot Airdrop Crypto<br><span class="grad">Otomatis & Terpercaya</span></h1>
+  <p>19+ bot siap pakai untuk farming airdrop multi-wallet. Auto-claim, proxy support, referral system. Dari setup sampai jalan, tinggal config dan gas.</p>
+  <div class="hero-btns">
+    <a href="#bots" class="btn-primary">Lihat Semua Bot</a>
+    <a href="https://t.me/OG_LYID_bot" class="btn-ghost">Chat Admin</a>
+  </div>
+  <div class="badges">
+    <div class="badge">🤖 19+ Bot Aktif</div>
+    <div class="badge">👥 Multi-Wallet</div>
+    <div class="badge">🔒 Proxy Support</div>
+    <div class="badge">🎯 Auto-Claim</div>
+  </div>
+</div>
+</section>
+
+<section class="container">
+<div class="stats">
+  <div><div class="stat-num">19+</div><div class="stat-label">Bot Aktif</div></div>
+  <div><div class="stat-num">50+</div><div class="stat-label">Pengguna</div></div>
+  <div><div class="stat-num">15+</div><div class="stat-label">Chain Supported</div></div>
+  <div><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
+</div>
+</section>
+
+<section id="bots" class="section">
+<div class="container">
+  <h2 class="section-title">Daftar Bot</h2>
+  <p class="section-sub">Semua bot sudah tested dan siap pakai. Tinggal config wallet dan jalankan.</p>
+  
+  <div class="bot-grid">
+    <div class="bot-card">
+      <div class="bot-header">
+        <span class="bot-name">🤖 PeakAI Bot</span>
+        <span class="bot-price">Rp 80K</span>
+      </div>
+      <p class="bot-desc">Daily check-in automation untuk PeakAI Genesis Incentive. Auto-streak, referral system, Turnstile captcha solver.</p>
+      <div class="bot-features">
+        <span class="bot-tag">Daily Check-in</span>
+        <span class="bot-tag">Referral</span>
+        <span class="bot-tag">Capsolver</span>
+      </div>
+      <div class="bot-status">
+        <span class="status-active">● Active</span>
+        <a href="https://t.me/OG_LYID_bot?start=buy_peakai" class="btn-buy">Beli →</a>
+      </div>
+    </div>
+
+    <div class="bot-card">
+      <div class="bot-header">
+        <span class="bot-name">🤖 MeyHub Bot</span>
+        <span class="bot-price">Rp 80K</span>
+      </div>
+      <p class="bot-desc">Quiz automation untuk Mey Network (MEY) di Base chain. LLM-powered answer engine, 6 questions/day, text-based cache.</p>
+      <div class="bot-features">
+        <span class="bot-tag">LLM Quiz</span>
+        <span class="bot-tag">Base Chain</span>
+        <span class="bot-tag">Auto-Task</span>
+      </div>
+      <div class="bot-status">
+        <span class="status-active">● Active</span>
+        <a href="https://t.me/OG_LYID_bot?start=buy_meyhub" class="btn-buy">Beli →</a>
+      </div>
+    </div>
+
+    <div class="bot-card">
+      <div class="bot-header">
+        <span class="bot-name">🤖 Unicity Bot</span>
+        <span class="bot-price">Rp 95K</span>
+      </div>
+      <p class="bot-desc">SphereQuests automation untuk Unicity Network. BIP32 auth, ECDSA signing, 30 quests, 5 epochs, GitHub automation.</p>
+      <div class="bot-features">
+        <span class="bot-tag">30 Quests</span>
+        <span class="bot-tag">GitHub Auto</span>
+        <span class="bot-tag">ECDSA</span>
+      </div>
+      <div class="bot-status">
+        <span class="status-active">● Active</span>
+        <a href="https://t.me/OG_LYID_bot?start=buy_unicity" class="btn-buy">Beli →</a>
+      </div>
+    </div>
+
+    <div class="bot-card">
+      <div class="bot-header">
+        <span class="bot-name">🤖 Canopy Bot</span>
+        <span class="bot-price">Rp 80K</span>
+      </div>
+      <p class="bot-desc">Canopy Network automation. Daily mining, quest completion, referral farming. Multi-wallet support.</p>
+      <div class="bot-features">
+        <span class="bot-tag">Daily Mining</span>
+        <span class="bot-tag">Referral</span>
+        <span class="bot-tag">Multi-Wallet</span>
+      </div>
+      <div class="bot-status">
+        <span class="status-active">● Active</span>
+        <a href="https://t.me/OG_LYID_bot?start=buy_canopy" class="btn-buy">Beli →</a>
+      </div>
+    </div>
+
+    <div class="bot-card">
+      <div class="bot-header">
+        <span class="bot-name">🤖 HertzFlow Bot</span>
+        <span class="bot-price">Rp 80K</span>
+      </div>
+      <p class="bot-desc">HertzFlow network automation. Task completion, daily rewards, referral system. Proxy support included.</p>
+      <div class="bot-features">
+        <span class="bot-tag">Daily Rewards</span>
+        <span class="bot-tag">Proxy</span>
+        <span class="bot-tag">Auto-Claim</span>
+      </div>
+      <div class="bot-status">
+        <span class="status-active">● Active</span>
+        <a href="https://t.me/OG_LYID_bot?start=buy_hertzflow" class="btn-buy">Beli →</a>
+      </div>
+    </div>
+
+    <div class="bot-card">
+      <div class="bot-header">
+        <span class="bot-name">🤖 + 14 Bot Lainnya</span>
+        <span class="bot-price">Rp 65-150K</span>
+      </div>
+      <p class="bot-desc">Kiedex, Flpp, SimpleChain, Watt2Trade, Convallax, Afyniti, Orbition, UpOnly, dan banyak lagi. Semua tested dan aktif.</p>
+      <div class="bot-features">
+        <span class="bot-tag">14+ Bot</span>
+        <span class="bot-tag">Berbagai Chain</span>
+        <span class="bot-tag">Tested</span>
+      </div>
+      <div class="bot-status">
+        <span class="status-active">● All Active</span>
+        <a href="https://t.me/OG_LYID_bot" class="btn-buy">Lihat Semua →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="how" class="section" style="background:var(--surface)">
+<div class="container">
+  <h2 class="section-title">Cara Beli & Pakai</h2>
+  <p class="section-sub">3 langkah mudah dari beli sampai bot jalan.</p>
+  
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <div class="how-title">Pilih Bot</div>
+      <p class="how-desc">Chat @OG_LYID_bot, pilih bot yang kamu mau. Bayar via DANA, GoPay, BCA, atau crypto.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <div class="how-title">Download & Config</div>
+      <p class="how-desc">Download script, masukkan wallet address, API key, dan proxy (opsional). Ikuti <a href="/setup-guide.html" style="color:var(--blue)">Setup Guide</a>.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <div class="how-title">Jalankan</div>
+      <p class="how-desc">Run bot, duduk manis. Bot akan otomatis complete task dan claim reward. Monitor via log.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="faq" class="section">
+<div class="container">
+  <h2 class="section-title">FAQ</h2>
+  
+  <div class="faq-item">
+    <div class="faq-q">Apakah bot ini aman?</div>
+    <div class="faq-a">Ya. Bot menggunakan wallet kamu sendiri (private key milik kamu). Kami tidak menyimpan data wallet. Semua kode transparan dan bisa di-review.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Berapa lama lisensi berlaku?</div>
+    <div class="faq-a">Lisensi berlaku 3 bulan dari tanggal pembelian. Bisa diperpanjang dengan harga yang sama.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Apakah butuh proxy?</div>
+    <div class="faq-a">Untuk multi-wallet, sangat disarankan. Untuk 1-3 wallet, tidak wajib. Kami rekomendasikan residential proxy.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Bot support chain apa saja?</div>
+    <div class="faq-a">Tergantung bot. Kebanyakan support EVM (Ethereum, Base, BSC, Arbitrum, Polygon). Beberapa support Solana dan chain lainnya.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Ada garansi?</div>
+    <div class="faq-a">Ya. Jika bot tidak berjalan dalam 24 jam pertama karena masalah dari sisi kami, uang kembali 100%.</div>
+  </div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+  <h2>Siap Mulai <span style="background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Farming</span>?</h2>
+  <p>Chat admin untuk konsultasi gratis atau langsung beli bot yang kamu butuhkan.</p>
+  <a href="https://t.me/OG_LYID_bot" class="btn-primary" style="font-size:1rem;padding:16px 40px">Chat @OG_LYID_bot →</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <p><a href="/">LYID</a> — Layer Airdrop ID &copy; 2026</p>
+  <p style="margin-top:8px"><a href="https://t.me/layerairdrop">Telegram</a> · <a href="https://x.com/mandayXBT">Twitter</a> · <a href="https://github.com/rmndkyl">GitHub</a> · <a href="/community.html">Community</a> · <a href="/case-studies.html">Hasil</a></p>
+</div>
+</footer>
+
+<script>
+document.querySelector('.hamburger').addEventListener('click',function(){this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('active')});
+</script>
+</body>
+</html>

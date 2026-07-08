@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Klinik Sehat Sentosa — Kesehatan Anda Prioritas Kami">
+<meta property="og:description" content="Klinik Sehat Sentosa — Kesehatan Anda Prioritas Kami">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80">
+<meta property="og:url" content="https://ralies.biz.id/sites/06-klinik.html">
+<meta property="og:type" content="website">
+<title>Klinik Sehat Sentosa — Kesehatan Anda Prioritas Kami</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+a,button{transition:all .2s ease}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem}
+.skip-link:focus{top:16px}
+:root{
+  --bg:#f8fafc;--surface:#ffffff;--card:#ffffff;--border:#e2e8f0;
+  --text:#0f172a;--muted:#64748b;
+  --blue:#0ea5e9;--blue-dark:#0284c7;--blue-light:#e0f2fe;
+  --green:#10b981;--green-light:#d1fae5;
+  --teal:#14b8a6;
+  --radius:16px;--shadow:0 4px 20px rgba(0,0,0,.06)
+}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.btn-wa{background:var(--green);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.85rem;display:flex;align-items:center;gap:6px;transition:opacity .2s}
+.btn-wa:hover{opacity:.85}
+.btn-wa:active{transform:scale(.97)}
+
+/* HERO */
+.hero{padding:80px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(14,165,233,.08),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);color:var(--green);padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:600;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--blue)}
+.hero p{color:var(--muted);margin-bottom:28px;font-size:1.05rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:600;transition:all .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(14,165,233,.25)}
+.btn-primary:active{transform:translateY(0);box-shadow:none}
+.btn-outline{border:2px solid var(--blue);color:var(--blue);padding:12px 32px;border-radius:12px;text-decoration:none;font-weight:600;transition:all .2s}
+.btn-outline:hover{background:var(--blue);color:#fff}
+.btn-outline:active{transform:scale(.97)}
+.hero-visual{position:relative}
+.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+.hero-card-icon{font-size:4rem;margin-bottom:16px}
+.hero-card h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.hero-card p{font-size:.85rem;color:var(--muted)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.h-stat{background:var(--blue-light);border-radius:12px;padding:14px;text-align:center}
+.h-stat h4{font-size:1.4rem;font-weight:800;color:var(--blue)}
+.h-stat p{font-size:.75rem;color:var(--muted)}
+
+/* QUICK INFO BAR */
+.info-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.info-item{display:flex;align-items:center;gap:12px}
+.info-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.info-item:nth-child(1) .info-icon{background:var(--blue-light)}
+.info-item:nth-child(2) .info-icon{background:var(--green-light)}
+.info-item:nth-child(3) .info-icon{background:#fef3c7}
+.info-item:nth-child(4) .info-icon{background:#fce7f3}
+.info-text h4{font-size:.85rem;font-weight:600}
+.info-text p{font-size:.75rem;color:var(--muted)}
+
+/* SERVICES */
+.section{padding:80px 0}
+.section-label{font-size:.8rem;color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.1em;text-align:center;margin-bottom:8px}
+.section-title{text-align:center;font-size:2rem;font-weight:800;margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.serv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all .2s;cursor:pointer}
+.serv-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:var(--shadow)}
+.serv-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px}
+.serv-card:nth-child(1) .serv-icon{background:#dbeafe}
+.serv-card:nth-child(2) .serv-icon{background:#d1fae5}
+.serv-card:nth-child(3) .serv-icon{background:#fef3c7}
+.serv-card:nth-child(4) .serv-icon{background:#fce7f3}
+.serv-card:nth-child(5) .serv-icon{background:#e0e7ff}
+.serv-card:nth-child(6) .serv-icon{background:#ccfbf1}
+.serv-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.serv-card p{font-size:.85rem;color:var(--muted)}
+.serv-arrow{margin-top:12px;font-size:.85rem;color:var(--blue);font-weight:600}
+
+/* DOCTORS */
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s}
+.doc-card:hover{transform:translateY(-4px)}
+.doc-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.doc-card:nth-child(1) .doc-img{background:linear-gradient(135deg,#dbeafe,#bfdbfe);position:relative}
+.doc-card:nth-child(2) .doc-img{background:linear-gradient(135deg,#d1fae5,#a7f3d0)}
+.doc-card:nth-child(3) .doc-img{background:linear-gradient(135deg,#fef3c7,#fde68a)}
+.doc-card:nth-child(4) .doc-img{background:linear-gradient(135deg,#fce7f3,#fbcfe8)}
+.doc-body{padding:20px}
+.doc-body h3{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.doc-spec{font-size:.8rem;color:var(--blue);font-weight:600;margin-bottom:8px}
+.doc-body p{font-size:.8rem;color:var(--muted);margin-bottom:12px}
+.doc-schedule{display:flex;gap:6px;flex-wrap:wrap}
+.doc-chip{padding:4px 10px;background:var(--blue-light);border-radius:6px;font-size:.7rem;color:var(--blue);font-weight:600}
+
+/* BOOKING */
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.booking-info h3{font-size:1.3rem;font-weight:700;margin-bottom:16px}
+.booking-step{display:flex;gap:16px;margin-bottom:20px}
+.booking-num{width:40px;height:40px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+.booking-step h4{font-size:.95rem;font-weight:600;margin-bottom:4px}
+.booking-step p{font-size:.85rem;color:var(--muted)}
+.booking-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.booking-form h3{font-size:1.1rem;font-weight:700;margin-bottom:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-group{display:flex;flex-direction:column;gap:4px}
+.form-group label{font-size:.8rem;font-weight:600;color:var(--muted)}
+.form-group input,.form-group select{padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:.9rem;background:var(--bg)}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(14,165,233,.1)}
+.form-full{grid-column:1/-1}
+.btn-book{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border:none;border-radius:12px;font-weight:600;font-size:1rem;cursor:pointer;transition:opacity .2s;margin-top:16px}
+.btn-book:hover{opacity:.85}
+.btn-book:active{transform:translateY(0)}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.testi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.testi-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 8px 24px rgba(14,165,233,.08)}
+.testi-stars{color:#f59e0b;margin-bottom:12px;font-size:.9rem}
+.testi-card p{font-style:italic;color:var(--muted);margin-bottom:16px;font-size:.95rem}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.testi-card:nth-child(1) .testi-avatar{background:#dbeafe}
+.testi-card:nth-child(2) .testi-avatar{background:#d1fae5}
+.testi-card:nth-child(3) .testi-avatar{background:#fef3c7}
+.testi-name{font-weight:600;font-size:.9rem}
+.testi-info{font-size:.8rem;color:var(--muted)}
+
+/* FAQ */
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:var(--surface)}
+.faq-q{padding:16px 20px;font-weight:600;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:"+"}
+.faq-a{padding:0 20px 16px;font-size:.9rem;color:var(--muted);display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q::after{content:"−"}
+
+/* CTA */
+.cta{text-align:center;padding:60px 0;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border-radius:24px;margin:0 24px 80px}
+.cta h2{font-size:1.8rem;font-weight:800;margin-bottom:12px}
+.cta p{opacity:.85;margin-bottom:28px}
+.btn-white{background:#fff;color:var(--blue);padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:transform .2s}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-white:active{transform:translateY(0)}
+
+/* FOOTER */
+footer{background:var(--text);color:#94a3b8;padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-col h4{color:#fff;font-weight:700;margin-bottom:16px;font-size:.95rem}
+.footer-col p,.footer-col a{font-size:.85rem;color:#64748b;text-decoration:none;display:block;margin-bottom:8px}
+.footer-col a:hover{color:var(--blue)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid #1e293b;font-size:.8rem;color:#475569}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px;min-width:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+  .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center}
+  .hero-grid,.booking-grid{grid-template-columns:1fr}
+  .info-bar{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .cta{margin:0 16px 60px;border-radius:16px}
+  .form-group input,.form-group select{font-size:16px}
+}
+@media(max-width:428px){
+  .hero{padding:60px 0 40px}
+  .hero h1{font-size:1.8rem}
+  .hero p{font-size:1rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.6rem}
+  .info-bar{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* === Premium Animations === */
+.ken-burns{animation:ken-burns 18s ease-in-out infinite alternate;will-change:transform}
+@keyframes ken-burns{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.stagger-item{opacity:0;transform:translateY(25px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+.stagger-item.visible{opacity:1;transform:translateY(0)}
+.zoom-hover{overflow:hidden}
+.zoom-hover img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.zoom-hover:hover img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in,.stagger-item{opacity:1!important;transform:none!important}.ken-burns{animation:none!important}}
+
+/* iOS FADE-IN FIX */
+.fade-in{opacity:1!important;transform:none!important;transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1!important;transform:none!important}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);z-index:1001;transform-origin:left;transform:scaleX(0);width:100%" id="pb"></div>
+<a href="/" style="position:fixed;top:16px;left:16px;z-index:999;background:rgba(0,0,0,.7);color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;backdrop-filter:blur(8px);transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.9)'" onmouseout="this.style.background='rgba(0,0,0,.7)'">← Portfolio</a>
+
+<a href="#layanan" class="skip-link">Skip to content</a>
+
+<nav>
+<div class="nav-inner">
+  <div class="logo"><div class="logo-icon">🏥</div> Klinik Sehat Sentosa</div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#dokter">Dokter</a></li>
+    <li><a href="#booking">Booking</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="tel:+6287897299985" style="background:var(--red);color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.8rem;display:flex;align-items:center;gap:4px">🚑 IGD 24 Jam</a>
+  <a href="https://wa.me/6287897299985" class="btn-wa">💬 Chat Dokter</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge">🟢 Buka Setiap Hari</div>
+      <h1>Kesehatan Anda<br><span>Prioritas Kami</span></h1>
+      <p>Klinik modern dengan dokter berpengalaman, fasilitas lengkap, dan pelayanan ramah. Booking online, tanpa antre.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary">Booking Sekarang</a>
+        <a href="https://wa.me/6287897299985" class="btn-outline">💬 Konsultasi Gratis</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon" style="overflow:hidden;border-radius:12px;height:80px"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=200&q=80" alt="Medical" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <h3>Pelayanan Terpadu</h3>
+        <p>Umum, Gigi, Mata, Kulit, Anak, dan Laboratorium dalam satu lokasi.</p>
+        <div class="hero-stats">
+          <div class="h-stat"><h4>15+</h4><p>Dokter Spesialis</p></div>
+          <div class="h-stat"><h4>10K+</h4><p>Pasien Puas</p></div>
+          <div class="h-stat"><h4>4.9</h4><p>Rating Google</p></div>
+          <div class="h-stat"><h4>24/7</h4><p>IGD Aktif</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="container info-bar">
+  <div class="info-item">
+    <div class="info-icon">🕐</div>
+    <div class="info-text"><h4>Jam Operasional</h4><p>Senin-Sabtu 08:00-21:00</p></div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">📞</div>
+    <div class="info-text"><h4>Telepon</h4><p>+62 878-9729-9985</p></div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">📍</div>
+    <div class="info-text"><h4>Lokasi</h4><p>Jl. RS Fatmawati Raya No. 78, Jakarta Selatan</p></div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">🚑</div>
+    <div class="info-text"><h4>IGD 24 Jam</h4><p>Siap melayani darurat</p></div>
+  </div>
+</section>
+
+<section class="section" id="layanan">
+<div class="container">
+  <div class="section-label">Layanan</div>
+  <h2 class="section-title">Layanan Kami</h2>
+  <p class="section-sub">Pelayanan kesehatan lengkap untuk seluruh keluarga</p>
+  <div class="serv-grid">
+    <div class="serv-card">
+      <div class="serv-icon">🩺</div>
+      <h3>Dokter Umum</h3>
+      <p>Konsultasi umum, pemeriksaan rutin, surat keterangan sehat, vaksinasi.</p>
+      <div class="serv-arrow">Selengkapnya →</div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">🦷</div>
+      <h3>Dokter Gigi</h3>
+      <p>Tambal gigi, cabut, scaling, bleaching, behel, dan perawatan gigi lainnya.</p>
+      <div class="serv-arrow">Selengkapnya →</div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">👶</div>
+      <h3>Dokter Anak</h3>
+      <p>Imunisasi, tumbuh kembang, konsultasi gizi, pemeriksaan rutin bayi.</p>
+      <div class="serv-arrow">Selengkapnya →</div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">👁️</div>
+      <h3>Dokter Mata</h3>
+      <p>Pemeriksaan mata, resep kacamata, konsultasi glaukoma dan katarak.</p>
+      <div class="serv-arrow">Selengkapnya →</div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">🧴</div>
+      <h3>Dokter Kulit</h3>
+      <p>Facial, treatment jerawat, konsultasi alergi, perawatan anti-aging.</p>
+      <div class="serv-arrow">Selengkapnya →</div>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">🔬</div>
+      <h3>Laboratorium</h3>
+      <p>Tes darah lengkap, tes urine, rapid test, PCR, dan pemeriksaan lab lainnya.</p>
+      <div class="serv-arrow">Selengkapnya →</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="container" style="padding:32px 0">
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+    <span style="display:flex;align-items:center;gap:8px;background:var(--green-light);padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--green)">✓ BPJS Kesehatan</span>
+    <span style="display:flex;align-items:center;gap:8px;background:var(--blue-light);padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--blue-dark)">✓ Asuransi Swasta</span>
+    <span style="display:flex;align-items:center;gap:8px;background:#fef3c7;padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:600;color:#92400e">✓ BPJS Ketenagakerjaan</span>
+    <span style="display:flex;align-items:center;gap:8px;background:#fce7f3;padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:600;color:#9d174d">✓ Pembayaran Tunai/Kartu</span>
+  </div>
+</section>
+
+<section class="section" id="dokter" style="background:var(--surface)">
+<div class="container">
+  <div class="section-label">Tim Dokter</div>
+  <h2 class="section-title">Dokter Kami</h2>
+  <p class="section-sub">Dokter berpengalaman dan bersertifikat</p>
+  <div class="doc-grid">
+    <div class="doc-card">
+      <div class="doc-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dr Ahmad" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="doc-body">
+        <h3>dr. Ahmad Fauzi, Sp.PD</h3>
+        <div class="doc-spec">Spesialis Penyakit Dalam</div>
+        <p>15 tahun pengalaman. Alumni FKUI. Praktek di RS Cipto Mangunkusumo.</p>
+        <div class="doc-schedule">
+          <span class="doc-chip">Senin</span>
+          <span class="doc-chip">Rabu</span>
+          <span class="doc-chip">Jumat</span>
+          <span class="doc-chip">08:00-14:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="Drg Siti" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="doc-body">
+        <h3>drg. Siti Nurhaliza</h3>
+        <div class="doc-spec">Dokter Gigi Umum</div>
+        <p>8 tahun pengalaman. Spesialisasi: orthodonti (behel) dan estetika gigi.</p>
+        <div class="doc-schedule">
+          <span class="doc-chip">Selasa</span>
+          <span class="doc-chip">Kamis</span>
+          <span class="doc-chip">Sabtu</span>
+          <span class="doc-chip">09:00-17:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-img"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&q=80" alt="Dr Budi" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="doc-body">
+        <h3>dr. Budi Santoso, Sp.A</h3>
+        <div class="doc-spec">Spesialis Anak</div>
+        <p>12 tahun pengalaman. Fokus: tumbuh kembang anak dan alergi pediatrik.</p>
+        <div class="doc-schedule">
+          <span class="doc-chip">Senin</span>
+          <span class="doc-chip">Selasa</span>
+          <span class="doc-chip">Kamis</span>
+          <span class="doc-chip">14:00-20:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80" alt="Dr Maya" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="doc-body">
+        <h3>dr. Maya Putri, Sp.KK</h3>
+        <div class="doc-spec">Spesialis Kulit & Kelamin</div>
+        <p>10 tahun pengalaman. Fokus: dermatologi estetik dan alergi kulit.</p>
+        <div class="doc-schedule">
+          <span class="doc-chip">Rabu</span>
+          <span class="doc-chip">Jumat</span>
+          <span class="doc-chip">Sabtu</span>
+          <span class="doc-chip">10:00-18:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="booking">
+<div class="container">
+  <div class="section-label">Booking Online</div>
+  <h2 class="section-title">Buat Janji Temu</h2>
+  <p class="section-sub">Booking mudah, tanpa antre. Konfirmasi via WhatsApp.</p>
+  <div class="booking-grid">
+    <div class="booking-info">
+      <h3>Cara Booking</h3>
+      <div class="booking-step">
+        <div class="booking-num">1</div>
+        <div><h4>Isi Formulir</h4><p>Pilih dokter, jadwal, dan keluhan Anda.</p></div>
+      </div>
+      <div class="booking-step">
+        <div class="booking-num">2</div>
+        <div><h4>Konfirmasi WhatsApp</h4><p>Tim kami akan mengirimkan konfirmasi via WhatsApp.</p></div>
+      </div>
+      <div class="booking-step">
+        <div class="booking-num">3</div>
+        <div><h4>Datang ke Klinik</h4><p>Tunjukkan bukti booking, langsung dilayani tanpa antre.</p></div>
+      </div>
+    </div>
+    <form class="booking-form">
+      <h3>Form Booking</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="book-name">Nama Lengkap</label>
+          <input type="text" id="book-name" placeholder="Nama Anda" required>
+        </div>
+        <div class="form-group">
+          <label for="book-wa">No. WhatsApp</label>
+          <input type="tel" id="book-wa" placeholder="08xxx" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="book-doc">Pilih Dokter</label>
+          <select id="book-doc" required>
+            <option value="">Pilih dokter...</option>
+            <option>dr. Ahmad Fauzi — Penyakit Dalam</option>
+            <option>drg. Siti Nurhaliza — Gigi</option>
+            <option>dr. Budi Santoso — Anak</option>
+            <option>dr. Maya Putri — Kulit</option>
+            <option>Dokter Umum</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="book-date">Tanggal Kunjungan</label>
+          <input type="date" id="book-date" required>
+        </div>
+      </div>
+      <div class="form-group form-full">
+        <label for="book-notes">Keluhan / Catatan</label>
+        <input type="text" id="book-notes" placeholder="Jelaskan keluhan Anda secara singkat">
+      </div>
+      <button type="submit" class="btn-book">Booking Sekarang</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<section class="section" style="background:var(--surface)">
+<div class="container">
+  <div class="section-label">Testimoni</div>
+  <h2 class="section-title">Apa Kata Pasien</h2>
+  <p class="section-sub">Ulasan dari pasien yang sudah merasakan pelayanan kami</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"Pelayanan ramah, dokternya sabar menjelaskan. Anak saya yang biasanya takut dokter, di sini mau diperiksa dengan tenang."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div><div class="testi-name">Ibu Ratna</div><div class="testi-info">Pasien Dokter Anak</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"Gigi saya yang berlubang ditambal dengan rapi. Harganya juga transparan, tidak ada biaya tersembunyi."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div><div class="testi-name">Pak Hendra</div><div class="testi-info">Pasien Dokter Gigi</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"Booking online-nya praktis. Datang langsung dilayani, tidak perlu antre berjam-jam. Sangat recommended!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div><div class="testi-name">Dewi Lestari</div><div class="testi-info">Pasien Umum</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="faq">
+<div class="container">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Pertanyaan Umum</h2>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <div class="faq-q">Apakah bisa menggunakan BPJS?</div>
+      <div class="faq-a">Ya, kami menerima BPJS Kesehatan untuk layanan dokter umum dan beberapa spesialis. Silakan tunjukkan kartu BPJS saat registrasi.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Berapa biaya konsultasi dokter spesialis?</div>
+      <div class="faq-a">Biaya konsultasi spesialis mulai dari Rp 150.000 - Rp 350.000 tergantung spesialisasi. Silakan hubungi kami untuk info detail.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Apakah bisa home visit?</div>
+      <div class="faq-a">Ya, untuk wilayah Jakarta Selatan dan sekitarnya, kami menyediakan layanan home visit dengan biaya tambahan transport Rp 50.000 - Rp 100.000.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Bagaimana cara mendapatkan hasil lab?</div>
+      <div class="faq-a">Hasil lab bisa diambil langsung di klinik atau dikirim via WhatsApp/email. Tersedia juga fitur cek hasil online di website kami.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="cta">
+<div class="container">
+  <h2>Butuh Konsultasi?</h2>
+  <p>Chat dokter kami via WhatsApp untuk konsultasi gratis</p>
+  <a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20ingin%20konsultasi%20kesehatan" class="btn-white">💬 Chat WhatsApp</a>
+</div>
+</div>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Klinik Sehat Sentosa</h4>
+      <p>Klinik modern dengan dokter berpengalaman dan fasilitas lengkap. Melayani dengan sepenuh hati.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Layanan</h4>
+      <a href="#">Dokter Umum</a>
+      <a href="#">Dokter Gigi</a>
+      <a href="#">Dokter Anak</a>
+      <a href="#">Laboratorium</a>
+    </div>
+    <div class="footer-col">
+      <h4>Informasi</h4>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Tim Dokter</a>
+      <a href="#">Fasilitas</a>
+      <a href="#">Karir</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <a href="#">+62 878-9729-9985</a>
+      <a href="#">kliniksehatsentosa@gmail.com</a>
+      <a href="#">Instagram</a>
+      <a href="#">Google Maps</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Klinik Sehat Sentosa. Dibuat oleh LYID Web Development</div>
+</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    q.closest('.faq-item').classList.toggle('open');
+  });
+});
+</script>
+<script>document.querySelector('.hamburger').addEventListener('click',function(){this.classList.toggle('active');var n=document.querySelector('.nav-links');n.classList.toggle('active');this.setAttribute('aria-expanded',n.classList.contains('active'))});
+document.querySelectorAll('.section,.hero,.info-bar,.serv-card,.doc-card,.testi-card,.faq-item,.booking-form').forEach(function(el,i){el.classList.add('fade-in');el.style.transitionDelay=(i%8)*.06+'s'});var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+</script>
+<script>
+// Scroll progress
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var b=document.getElementById('pb');if(b&&h>0)b.style.transform='scaleX('+window.scrollY/h+')'},{passive:true});
+// Fade in
+document.querySelectorAll('section,.fade-up').forEach(function(el,i){el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .7s ease,transform .7s ease';el.style.transitionDelay=(i%6)*.08+'s'});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';obs.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('section,.fade-up').forEach(function(el){obs.observe(el)});
+
+// Stagger support
+document.querySelectorAll('[data-stagger]').forEach(function(g){g.querySelectorAll('.stagger-item').forEach(function(el,i){el.style.transitionDelay=(i*.08)+'s'})});
+</script>
+</body>
+</html>

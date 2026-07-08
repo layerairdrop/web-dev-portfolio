@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Academic — Jasa Bimbingan & Editing Akademik</title>
+<meta name="description" content="Jasa bimbingan akademik untuk mahasiswa Indonesia. Essay, makalah, skripsi, ujian online, presentasi. Mulai Rp 15.000/halaman.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;
+  --text:#e4e4e7;--muted:#71717a;
+  --blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--cyan:#06b6d4;
+  --gold:#f59e0b;--pink:#ec4899;
+  --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.5)
+}
+html{scroll-padding-top:60px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* SKIP */
+.skip{position:absolute;top:-100px;left:0;background:var(--blue);color:#fff;padding:12px 20px;z-index:100;font-size:1rem;min-height:44px;display:inline-flex;align-items:center}
+.skip:focus{top:0}
+
+/* NAV */
+nav{background:rgba(17,17,19,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 24px;position:sticky;top:0;z-index:50}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-weight:700;font-size:1.1rem;color:var(--text)}
+.nav-brand span{color:var(--blue)}
+.nav-links{display:flex;gap:16px;align-items:center}
+.nav-links a{color:var(--muted);font-size:.85rem;transition:color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--text)}
+.nav-links a.active{color:var(--blue);font-weight:600}
+.nav-cta{background:var(--blue);color:#fff!important;padding:10px 18px;border-radius:8px;font-size:.85rem;font-weight:600;min-height:44px;display:inline-flex;align-items:center}
+.nav-cta:hover{background:#2563eb;text-decoration:none}
+
+/* MOBILE NAV */
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;padding:10px;min-width:44px;min-height:44px}
+@media(max-width:768px){
+  .nav-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);flex-direction:column;padding:16px;gap:4px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 8px;min-height:44px;display:flex;align-items:center;font-size:1rem}
+  .nav-cta,.nav-inner .nav-cta{display:none!important}
+  .svc-grid{grid-template-columns:1fr}
+  .tier-grid{grid-template-columns:1fr}
+  .container{padding:0 16px}
+  .hero{padding:40px 16px 32px}
+  .cta-section{padding:32px 16px;margin:24px 0}
+  .cta-section h2{font-size:1.3rem}
+}
+
+/* HERO */
+.hero{text-align:center;padding:56px 24px 40px;background:linear-gradient(135deg,#1e1b4b 0%,#0f172a 50%,#020617 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(99,102,241,.12) 0%,transparent 50%);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);background:linear-gradient(to right,#818cf8,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;position:relative;font-weight:800}
+.hero p{color:#94a3b8;font-size:1rem;max-width:560px;margin:0 auto;position:relative}
+.hero .tag{display:inline-block;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.25);color:#a5b4fc;padding:6px 18px;border-radius:20px;font-size:.8rem;margin-top:16px;position:relative;font-weight:500}
+
+@media(max-width:480px){
+  .svc-grid{grid-template-columns:1fr}
+  .tier-grid{grid-template-columns:1fr}
+  .container{padding:0 16px}
+  .surcharge-table{font-size:.8rem}
+  .surcharge-table th,.surcharge-table td{padding:8px 10px}
+}
+
+/* CONTAINER */
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+.section{padding:48px 0}
+.section-title{font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:8px}
+.section-sub{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+
+/* SERVICE CARDS */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.svc-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;transition:border-color .2s,transform .15s}
+.svc-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.svc-card .icon{font-size:1.6rem;margin-bottom:6px}
+.svc-card h3{color:var(--text);font-size:.95rem;font-weight:600;margin-bottom:3px}
+.svc-card .desc{color:var(--muted);font-size:.8rem;line-height:1.4}
+.svc-card .price{color:var(--blue);font-weight:700;margin-top:8px;font-size:1rem}
+
+/* TIER CARDS */
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.tier{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;transition:border-color .2s}
+.tier:hover{border-color:var(--purple)}
+.tier.popular{border-color:var(--purple);box-shadow:0 0 24px rgba(139,92,246,.12)}
+.tier.popular::before{content:'POPULER';position:absolute;top:-10px;right:16px;background:var(--purple);color:#fff;padding:3px 14px;border-radius:8px;font-size:.65rem;font-weight:700;letter-spacing:.5px}
+.tier h3{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.tier .tier-price{font-size:1.8rem;font-weight:800;color:var(--purple);margin:10px 0}
+.tier .tier-price small{font-size:.8rem;color:var(--muted);font-weight:400}
+.tier ul{list-style:none;margin:14px 0 0}
+.tier ul li{padding:5px 0;color:#94a3b8;font-size:.85rem;border-bottom:1px solid rgba(39,39,42,.5)}
+.tier ul li:last-child{border:none}
+.tier ul li::before{content:'✓ ';color:var(--green);font-weight:700}
+
+/* SURCHARGE TABLE */
+.surcharge-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:.85rem;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.surcharge-table th{background:var(--surface);color:var(--text);padding:10px 14px;text-align:left;font-weight:600}
+.surcharge-table td{padding:8px 14px;color:var(--muted);border-bottom:1px solid var(--border)}
+.surcharge-table td:last-child{color:var(--blue);font-weight:600}
+.surcharge-table tr:last-child td{border:none}
+
+/* CTA */
+.cta-section{text-align:center;padding:48px 24px;background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:16px;margin:32px 0}
+.cta-section h2{font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.cta-section p{color:#a5b4fc;margin-bottom:20px;font-size:.95rem}
+.cta-btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 32px;border-radius:8px;font-weight:600;font-size:.95rem;transition:background .2s}
+.cta-btn:hover{background:#2563eb;text-decoration:none}
+.cta-btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* FOOTER */
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.75rem;border-top:1px solid var(--border)}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--text)}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:.85rem;margin-bottom:16px;transition:color .2s;min-height:44px;padding:8px 0}
+.back-link:hover{color:var(--text);text-decoration:none}
+
+/* FOCUS */
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">LYID <span>Academic</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var nl=document.querySelector('.nav-links'),btn=this;nl.classList.toggle('open');btn.setAttribute('aria-expanded',nl.classList.contains('open'))">☰</button>
+    <div class="nav-links">
+      <a href="/" class="active">Pricing</a>
+      <a href="/order">Order</a>
+      <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20tugas%20kuliah" class="nav-cta">📱 Chat WA</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<div class="hero">
+  <h1>LYID Academic</h1>
+  <p>Bimbingan & editing akademik untuk mahasiswa Indonesia. Dari bingung jadi lulus.</p>
+  <div class="tag">🎓 14 Jenis Layanan • Harga Mulai Rp 15.000</div>
+</div>
+
+<div class="container">
+
+<a href="/" class="back-link">← Kembali ke Portfolio</a>
+
+<!-- LAYANAN -->
+<section class="section" id="layanan">
+  <h2 class="section-title">📚 Layanan Kami</h2>
+  <p class="section-sub">Klik layanan untuk langsung chat WhatsApp</p>
+  <div class="svc-grid">
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20Essay/Makalah" class="svc-card" style="text-decoration:none">
+      <div class="icon">📝</div><h3>Essay / Makalah</h3>
+      <div class="desc">Kertas pendek 5-20 halaman, semua mata kuliah</div>
+      <div class="price">Mulai Rp 20.000/halaman</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20UTS/UAS%20Online" class="svc-card" style="text-decoration:none">
+      <div class="icon">📋</div><h3>UTS / UAS Online</h3>
+      <div class="desc">Ujian via LMS, Google Forms, Quizizz</div>
+      <div class="price">Mulai Rp 75.000/sesi</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20Skripsi" class="svc-card" style="text-decoration:none">
+      <div class="icon">🎓</div><h3>Skripsi S1</h3>
+      <div class="desc">Full BAB 1-5, formatting, revisi, PPT sidang</div>
+      <div class="price">Mulai Rp 3.000.000</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20Analisis%20Data/SPSS" class="svc-card" style="text-decoration:none">
+      <div class="icon">📊</div><h3>Analisis Data / SPSS</h3>
+      <div class="desc">Statistik deskriptif, regresi, SEM, EViews</div>
+      <div class="price">Mulai Rp 300.000</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20PPT%20Presentasi" class="svc-card" style="text-decoration:none">
+      <div class="icon">💻</div><h3>PPT Presentasi</h3>
+      <div class="desc">Slide deck profesional 10-50+ slides</div>
+      <div class="price">Mulai Rp 25.000/slide</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20Artikel%20Jurnal" class="svc-card" style="text-decoration:none">
+      <div class="icon">📄</div><h3>Artikel Jurnal</h3>
+      <div class="desc">SINTA indexed, Scopus, dari riset sampai submit</div>
+      <div class="price">Mulai Rp 1.500.000</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20Laporan%20Praktikum" class="svc-card" style="text-decoration:none">
+      <div class="icon">🔬</div><h3>Laporan Praktikum</h3>
+      <div class="desc">Lab, KKL, KKN, kerja praktik</div>
+      <div class="price">Mulai Rp 25.000/halaman</div>
+    </a>
+    <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20Coding/Programming" class="svc-card" style="text-decoration:none">
+      <div class="icon">⚙️</div><h3>Coding / Programming</h3>
+      <div class="desc">Python, Java, C++, web development</div>
+      <div class="price">Mulai Rp 100.000/tugas</div>
+    </a>
+  </div>
+</section>
+
+<!-- PAKET SKRIPSI -->
+<section class="section" id="skripsi">
+  <h2 class="section-title">🎓 Paket Skripsi</h2>
+  <p class="section-sub">Full project dari BAB 1 sampai sidang</p>
+  <div class="tier-grid">
+    <div class="tier">
+      <h3>Basic</h3>
+      <div class="tier-price">Rp 3 Juta<small> / full project</small></div>
+      <ul>
+        <li>BAB 1-5 lengkap</li>
+        <li>Formatting standar</li>
+        <li>Daftar pustaka</li>
+        <li>2x revisi</li>
+        <li>File .docx + .pdf</li>
+      </ul>
+    </div>
+    <div class="tier popular">
+      <h3>Standard</h3>
+      <div class="tier-price">Rp 6 Juta<small> / full project</small></div>
+      <ul>
+        <li>Semua fitur Basic</li>
+        <li>Konsultasi via chat</li>
+        <li>5x revisi</li>
+        <li>PPT sidang</li>
+        <li>Anti-plagiarism check</li>
+        <li>Turnitin report</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <h3>Premium</h3>
+      <div class="tier-price">Rp 12 Juta<small> / full project</small></div>
+      <ul>
+        <li>Semua fitur Standard</li>
+        <li>Bimbingan sidang</li>
+        <li>Revisi unlimited</li>
+        <li>Konsultasi video call</li>
+        <li>Garansi lulus</li>
+        <li>Revisi sampai dosen approve</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SURCHARGE -->
+<section class="section" id="harga">
+  <h2 class="section-title">⚡ Surcharge & Diskon</h2>
+  <p class="section-sub">Harga final tergantung kompleksitas & deadline</p>
+  <table class="surcharge-table">
+    <thead><tr><th>Faktor</th><th>Dampak</th></tr></thead>
+    <tbody>
+      <tr><td>Deadline &lt; 24 jam</td><td>+100%</td></tr>
+      <tr><td>Deadline 1-2 hari</td><td>+50%</td></tr>
+      <tr><td>Bahasa Inggris</td><td>+50%</td></tr>
+      <tr><td>Mata kuliah STEM / Kedokteran</td><td>+30%</td></tr>
+      <tr><td>Turnitin-safe guarantee</td><td>+30%</td></tr>
+      <tr><td>Universitas top (UI/ITB/UGM)</td><td>+20%</td></tr>
+      <tr><td>Order &gt; 20 halaman</td><td>-10%</td></tr>
+      <tr><td>Repeat customer</td><td>-10%</td></tr>
+      <tr><td>Referral</td><td>-5%</td></tr>
+      <tr><td>Paket semester (5+ tugas)</td><td>-15%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- TES TIMONI PLACEHOLDER -->
+<section class="section" id="testimoni">
+  <h2 class="section-title">💬 Testimoni</h2>
+  <p class="section-sub">Belum ada testimoni — jadi yang pertama!</p>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;color:var(--muted)">
+    <p style="font-size:.9rem">"Alhamdulillah skripsi selesai tepat waktu, revisi dari dosen juga dibantu. Recommended!"</p>
+    <p style="font-size:.8rem;margin-top:8px;color:var(--blue)">— Contoh testimoni (placeholder)</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Butuh Bantuan Tugas?</h2>
+  <p>Konsultasi gratis • DP 50% • Garansi revisi</p>
+  <a href="https://wa.me/628211383640?text=Halo%2C%20saya%20butuh%20bantuan%20tugas%20kuliah" class="cta-btn">📱 Chat WhatsApp</a>
+</div>
+
+</div><!-- container -->
+</main>
+
+<footer>
+  <p>LYID Academic © 2026 • Bimbingan & Editing Akademik</p>
+  <p style="margin-top:4px">WhatsApp: <a href="https://wa.me/628211383640">+62 878-9729-9985</a> • Portfolio: <a href="/">ralies.biz.id</a></p>
+</footer>
+
+<script>
+/* MOBILE NAV: ESC + click-outside close */
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){var nl=document.querySelector('.nav-links'),btn=document.querySelector('.nav-toggle');if(nl&&nl.classList.contains('open')){nl.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.focus()}}});
+document.addEventListener('click',function(e){var nl=document.querySelector('.nav-links'),btn=document.querySelector('.nav-toggle');if(nl&&nl.classList.contains('open')&&!nl.contains(e.target)&&e.target!==btn){nl.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){var nl=document.querySelector('.nav-links'),btn=document.querySelector('.nav-toggle');nl.classList.remove('open');btn.setAttribute('aria-expanded','false')})});
+</script>
+</body>
+</html>

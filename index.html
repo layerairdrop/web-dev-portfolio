@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>LYID Web Development — Jasa Pembuatan Website Profesional</title>
+<meta name="description" content="Jasa pembuatan website profesional untuk UMKM, startup, dan bisnis. Desain modern, responsif, SEO-friendly. Dari landing page hingga e-commerce. Mulai Rp 500rb.">
+<meta property="og:title" content="LYID Web Development — Jasa Pembuatan Website Profesional">
+<meta property="og:description" content="Jasa pembuatan website profesional untuk UMKM, startup, dan bisnis. Desain modern, responsif, SEO-friendly.">
+<meta property="og:image" content="https://www.ralies.biz.id/favicon.svg">
+<meta property="og:url" content="https://www.ralies.biz.id/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LYID Web Development — Jasa Pembuatan Website Profesional">
+<meta name="twitter:description" content="Jasa pembuatan website profesional untuk UMKM, startup, dan bisnis.">
+<link rel="canonical" href="https://www.ralies.biz.id/">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box;margin:0;padding:0}
+a,button{transition:all .2s ease}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+:root{
+  --bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;
+  --text:#e4e4e7;--muted:#71717a;
+  --blue:#3b82f6;--purple:#8b5cf6;--cyan:#06b6d4;--green:#22c55e;
+  --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.5)
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn-cta{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:10px 24px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.85rem;transition:opacity .2s}
+.btn-cta:hover{opacity:.85}
+.btn-cta:active{transform:scale(.97)}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px;min-width:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem}
+.skip-link:focus{top:16px}
+
+/* HERO */
+.hero{padding:100px 0 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.1) 0%,rgba(139,92,246,.06) 40%,transparent 70%);pointer-events:none}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:20px}
+.hero h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:600;transition:all .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.3)}
+.btn-primary:active{transform:translateY(0);box-shadow:none}
+.btn-ghost{color:var(--muted);padding:14px 32px;text-decoration:none;font-weight:500;border:1px solid var(--border);border-radius:12px;transition:all .2s}
+.btn-ghost:hover{border-color:var(--blue);color:var(--text)}
+.btn-ghost:active{transform:scale(.97)}
+
+/* BADGES */
+.badges{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:24px 0 40px}
+.badge{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--card);border:1px solid var(--border);border-radius:999px;font-size:.8rem;color:var(--muted)}
+
+/* PORTFOLIO SECTION */
+.section{padding:80px 0}
+.section-label{font-size:.8rem;color:var(--blue);text-transform:uppercase;letter-spacing:.15em;text-align:center;margin-bottom:8px}
+.section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);max-width:550px;margin:0 auto 24px}
+
+/* FILTER */
+.filter-bar{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.filter-btn{padding:8px 18px;background:transparent;border:1px solid var(--border);border-radius:999px;font-size:.8rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;font-family:inherit}
+.filter-btn:hover{border-color:var(--blue);color:var(--text)}
+.filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.port-card[data-hidden]{display:none}
+
+/* PORTFOLIO GRID */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.port-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;cursor:pointer;text-decoration:none;color:inherit;display:block}
+.port-card:hover{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 12px 40px rgba(59,130,246,.15)}
+.port-preview{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.port-preview img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s}
+.port-card:hover .port-preview img{transform:scale(1.05)}
+.port-preview::after{content:'';position:absolute;inset:0;opacity:.15}
+.port-card:nth-child(1) .port-preview{background:linear-gradient(135deg,#fffbf5,#fef3e2)}
+.port-card:nth-child(1) .port-preview::after{background:linear-gradient(135deg,#d35400,#e67e22)}
+.port-card:nth-child(2) .port-preview{background:linear-gradient(135deg,#09090b,#1a1a2e)}
+.port-card:nth-child(2) .port-preview::after{background:linear-gradient(135deg,#8b5cf6,#a78bfa)}
+.port-card:nth-child(3) .port-preview{background:linear-gradient(135deg,#0a0a0a,#1c1c1c)}
+.port-card:nth-child(3) .port-preview::after{background:linear-gradient(135deg,#ec4899,#f97316)}
+.port-card:nth-child(4) .port-preview{background:linear-gradient(135deg,#faf8f4,#f0e6d6)}
+.port-card:nth-child(4) .port-preview::after{background:linear-gradient(135deg,#8b4513,#d4a574)}
+.port-card:nth-child(5) .port-preview{background:linear-gradient(135deg,#09090b,#0f0f12)}
+.port-card:nth-child(5) .port-preview::after{background:linear-gradient(135deg,#3b82f6,#8b5cf6)}
+.port-card:nth-child(6) .port-preview{background:linear-gradient(135deg,#f8fafc,#e0f2fe)}
+.port-card:nth-child(6) .port-preview::after{background:linear-gradient(135deg,#0ea5e9,#14b8a6)}
+.port-card:nth-child(7) .port-preview{background:linear-gradient(135deg,#fdfbf9,#f5e6e2)}
+.port-card:nth-child(7) .port-preview::after{background:linear-gradient(135deg,#c9796b,#c4a265)}
+.port-tag{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);padding:4px 12px;border-radius:999px;font-size:.7rem;color:#fff;font-weight:600;z-index:2}
+.port-body{padding:20px}
+.port-body h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.port-body p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.port-meta{display:flex;gap:8px;flex-wrap:wrap}
+.mascot{position:absolute;pointer-events:none;z-index:-1;opacity:.12}
+.mascot img{width:100%;height:auto}
+.mascot-hero{right:-40px;bottom:-20px;width:250px}
+.mascot-process{right:-60px;top:0;width:280px}
+.section{position:relative;z-index:0}
+.section .container{position:relative;z-index:1}
+.hero{position:relative;z-index:0}
+.hero .container{position:relative;z-index:1}
+@media(max-width:768px){.mascot-hero{width:160px;right:-20px;bottom:-10px}.mascot-process{width:180px;right:-40px}}
+@media(max-width:428px){.mascot-hero{opacity:.06;width:120px}.mascot-process{display:none}}
+.port-chip{padding:4px 10px;background:var(--card);border:1px solid var(--border);border-radius:6px;font-size:.7rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in{opacity:1;transform:none!important}}
+
+/* PRICING SECTION */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:border-color .2s}
+.price-card:hover{border-color:var(--blue)}
+.price-card{transition:border-color .2s,transform .3s,box-shadow .3s}
+.price-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.price-card.featured{border-color:var(--purple);box-shadow:0 0 30px rgba(139,92,246,.1)}
+.price-card .tier{font-size:.85rem;font-weight:600;color:var(--blue);margin-bottom:4px}
+.price-card .price{font-size:1.8rem;font-weight:800;margin-bottom:4px}
+.price-card .price-sub{font-size:.8rem;color:var(--muted);margin-bottom:24px}
+.price-card ul{list-style:none;text-align:left;margin-bottom:24px}
+.price-card li{padding:6px 0;font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.price-card li::before{content:"✓";color:var(--blue);font-weight:700}
+.btn-card{display:block;width:100%;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s;text-align:center}
+.btn-card.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-card.outline:hover{border-color:var(--blue);background:rgba(59,130,246,.1)}
+.btn-card.filled:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
+.btn-card.filled:active{transform:translateY(0)}
+.btn-card.filled{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.process-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s}
+.process-card:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 8px 24px rgba(59,130,246,.12)}
+.process-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.process-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.process-card p{font-size:.85rem;color:var(--muted)}
+
+/* CTA */
+.cta{text-align:center;padding:80px 0;position:relative}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(139,92,246,.06),transparent 70%);pointer-events:none}
+.cta h2{font-size:2rem;font-weight:700;margin-bottom:12px;position:relative}
+.cta p{color:var(--muted);margin-bottom:32px;position:relative}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center}
+footer p{font-size:.85rem;color:var(--muted)}
+footer .links{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
+footer .links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+footer .links a:hover{color:var(--text)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(9,9,11,.95);backdrop-filter:blur(16px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+  .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center}
+  .btn-cta{display:none}
+  .port-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .hero-btns a{width:100%;text-align:center}
+  .filter-btn{min-height:44px;padding:10px 18px}
+  .section-title{font-size:1.6rem}
+  footer .links{flex-wrap:wrap;gap:16px}
+  .badges{gap:8px}
+  .badge{font-size:.7rem;padding:6px 12px}
+}
+@media(max-width:428px){
+  .hero{padding:60px 0 40px}
+  .hero h1{font-size:1.6rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.6rem}
+  .process-grid{grid-template-columns:1fr}
+  .container{padding:0 16px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "LYID Web Development",
+  "description": "Jasa pembuatan website profesional untuk UMKM, startup, dan bisnis digital di Indonesia.",
+  "url": "https://www.ralies.biz.id",
+  "logo": "https://www.ralies.biz.id/LYID_OG_LOGO.png",
+  "image": "https://www.ralies.biz.id/LYID_OG_LOGO.png",
+  "telephone": "+6287897299985",
+  "email": "ramandakayla72@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ID"
+  },
+  "sameAs": [
+    "https://github.com/rmndkyl",
+    "https://t.me/layerairdrop",
+    "https://x.com/mandayXBT"
+  ],
+  "priceRange": "Rp 500.000 - Rp 50.000.000+",
+  "areaServed": "ID",
+  "serviceType": ["Web Development", "Landing Page", "Company Profile", "E-Commerce", "Crypto Dashboard"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Development Packages",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Basic Website"}, "price": "1500000", "priceCurrency": "IDR"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Standard Website"}, "price": "5000000", "priceCurrency": "IDR"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Premium Website"}, "price": "10000000", "priceCurrency": "IDR"}
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--purple));z-index:1001;transform-origin:left;transform:scaleX(0);width:100%" id="progressBar"></div>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav>
+<div class="nav-inner">
+  <div class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Web Development</div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="#portofolio">Portofolio</a></li>
+    <li><a href="#harga">Harga</a></li>
+    <li><a href="/#proses">Proses</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/lyid-scripts.html">Bot Scripts</a></li>
+    <li><a href="/sites/">All Demos</a></li>
+    <li><a href="/company.html">Company</a></li>
+  </ul>
+  <a href="https://wa.me/6287897299985" class="btn-cta">Konsultasi Gratis</a>
+</div>
+</nav>
+
+<section class="hero">
+<img src="/Mascot-Images/MASCOT-WAVING.png" alt="" style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;opacity:0.07;pointer-events:none;z-index:0">
+<main id="main">
+<div class="container">
+  <h1>Bikin Website<br><span class="grad">Profesional & Modern</span></h1>
+  <p>Solusi website untuk bisnis Anda — dari landing page sampai e-commerce. Desain modern, responsif, SEO-friendly. Dikerjakan dengan AI + expertise.</p>
+  <div class="hero-btns">
+    <a href="#portofolio" class="btn-primary">Lihat Portofolio</a>
+    <a href="order.html" class="btn-ghost">Order Sekarang</a>
+  </div>
+  <div class="badges">
+    <div class="badge">🎨 Design Modern</div>
+    <div class="badge">📱 Mobile Friendly</div>
+    <div class="badge">🔍 SEO Optimized</div>
+    <div class="badge">⚡ Fast Delivery</div>
+    <div class="badge">🤝 After Sales Support</div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="portofolio">
+<div class="container">
+  <div class="section-label">Portofolio</div>
+  <h2 class="section-title">Demo Website Per Industri</h2>
+  <p class="section-sub">Klik untuk melihat live demo. Setiap desain bisa dikustomisasi sesuai kebutuhan bisnis Anda.</p>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">Semua (13)</button>
+    <button class="filter-btn" data-filter="company">Company Profile</button>
+    <button class="filter-btn" data-filter="landing">Landing Page</button>
+    <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+    <button class="filter-btn" data-filter="premium">Premium</button>
+    <button class="filter-btn" data-filter="industry">Industry</button>
+  </div>
+  <div class="port-grid">
+
+    <a href="sites/01-restoran" class="port-card" data-category="company,industry">
+      <div class="port-preview">
+        <span class="port-tag">F&B / Restoran</span>
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Restoran" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Sajiku Kitchen</h3>
+        <p>Website restoran dengan menu online, WhatsApp order, dan Google Maps. Warm, appetizing design.</p>
+        <div class="port-meta">
+          <span class="port-chip">Company Profile</span>
+          <span class="port-chip">Warm Theme</span>
+          <span class="port-chip">Rp 2.5jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/02-startup" class="port-card" data-category="landing">
+      <div class="port-preview">
+        <span class="port-tag">Tech / SaaS</span>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="SaaS" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>NexaFlow</h3>
+        <p>Landing page startup SaaS dengan pricing, fitur, social proof. Dark theme, modern, Linear-style.</p>
+        <div class="port-meta">
+          <span class="port-chip">Landing Page</span>
+          <span class="port-chip">Dark Theme</span>
+          <span class="port-chip">Rp 1.5jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/03-creative-agency" class="port-card" data-category="company">
+      <div class="port-preview">
+        <span class="port-tag">Creative / Agency</span>
+        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80" alt="Creative" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Kreasi Studio</h3>
+        <p>Portfolio creative agency dengan work showcase, services, dan client testimonials. Bold, vibrant.</p>
+        <div class="port-meta">
+          <span class="port-chip">Portfolio</span>
+          <span class="port-chip">Bold Design</span>
+          <span class="port-chip">Rp 3jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/04-toko-online" class="port-card" data-category="ecommerce">
+      <div class="port-preview">
+        <span class="port-tag">E-Commerce</span>
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="E-Commerce" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Batik Nusantara</h3>
+        <p>Toko online batik dengan product grid, cart, filter, dan WhatsApp checkout. Cultural, elegant.</p>
+        <div class="port-meta">
+          <span class="port-chip">Toko Online</span>
+          <span class="port-chip">Cultural</span>
+          <span class="port-chip">Rp 5jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/05-crypto-web3" class="port-card" data-category="premium">
+      <div class="port-preview">
+        <span class="port-tag">Crypto / Web3</span>
+        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&q=80" alt="Crypto" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>ChainVault</h3>
+        <p>DeFi dashboard dengan portfolio tracker, pricing, dan multi-chain support. LYID signature style.</p>
+        <div class="port-meta">
+          <span class="port-chip">Web App</span>
+          <span class="port-chip">Dark Gradient</span>
+          <span class="port-chip">Rp 10jt+</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/06-klinik" class="port-card" data-category="company,industry">
+      <div class="port-preview">
+        <span class="port-tag">Klinik / Dokter</span>
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Klinik" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Klinik Sehat Sentosa</h3>
+        <p>Website klinik dengan booking online, profil dokter, layanan, dan WhatsApp konsultasi. Clean, professional.</p>
+        <div class="port-meta">
+          <span class="port-chip">Company Profile</span>
+          <span class="port-chip">Trust Theme</span>
+          <span class="port-chip">Rp 3jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/07-wedding" class="port-card" data-category="company,industry">
+      <div class="port-preview">
+        <span class="port-tag">Wedding / Event</span>
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Everafter Studio</h3>
+        <p>Website wedding organizer dengan galeri foto, paket layanan, dan booking konsultasi. Elegant, romantic.</p>
+        <div class="port-meta">
+          <span class="port-chip">Service Page</span>
+          <span class="port-chip">Elegant</span>
+          <span class="port-chip">Rp 3jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/maju-bersama/" class="port-card" data-category="company,industry">
+      <div class="port-preview">
+        <span class="port-tag">Company Profile</span>
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Medical" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>PT Maju Bersama</h3>
+        <p>Website company profile distributor alat kesehatan. 6 halaman, katalog produk, form kontak, Google Maps, WhatsApp.</p>
+        <div class="port-meta">
+          <span class="port-chip">Company Profile</span>
+          <span class="port-chip">Medical</span>
+          <span class="port-chip">Rp 5jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/properti-premium/" class="port-card" data-category="premium,industry">
+      <div class="port-preview">
+        <span class="port-tag">Property / Real Estate</span>
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Property" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Premium Properti</h3>
+        <p>Website properti premium monochrome. 5 halaman, parallax hero, GSAP animations, accordion services, newsletter.</p>
+        <div class="port-meta">
+          <span class="port-chip">Premium</span>
+          <span class="port-chip">Real Estate</span>
+          <span class="port-chip">Rp 10jt+</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/edu-academy/" class="port-card" data-category="industry">
+      <div class="port-preview">
+        <span class="port-tag">Education / E-Learning</span>
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="Education" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>EduAcademy</h3>
+        <p>Platform e-learning dengan 200+ kursus, mentor, pricing tiers, dan sertifikat. Modern, clean design.</p>
+        <div class="port-meta">
+          <span class="port-chip">E-Learning</span>
+          <span class="port-chip">Education</span>
+          <span class="port-chip">Rp 3jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/yayasan-harapan/" class="port-card" data-category="industry">
+      <div class="port-preview">
+        <span class="port-tag">NGO / Yayasan</span>
+        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="NGO" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Yayasan Harapan Bersama</h3>
+        <p>Website yayasan sosial dengan program cards, donasi, impact stats, dan galeri. Warm, compassionate design.</p>
+        <div class="port-meta">
+          <span class="port-chip">NGO</span>
+          <span class="port-chip">Social</span>
+          <span class="port-chip">Rp 3jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/grand-hotel/" class="port-card" data-category="industry">
+      <div class="port-preview">
+        <span class="port-tag">Hotel / Hospitality</span>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Hotel" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Grand Hotel Bali</h3>
+        <p>Website hotel boutique dengan room cards, fasilitas, booking form, dan galeri. Luxury gold & cream design.</p>
+        <div class="port-meta">
+          <span class="port-chip">Hotel</span>
+          <span class="port-chip">Luxury</span>
+          <span class="port-chip">Rp 4jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="sites/hukum-pratama/" class="port-card" data-category="industry">
+      <div class="port-preview">
+        <span class="port-tag">Law Firm</span>
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80" alt="Law" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>Pratama & Associates</h3>
+        <p>Website firma hukum dengan practice areas, attorney profiles, konsultasi form, dan FAQ. Navy & gold design.</p>
+        <div class="port-meta">
+          <span class="port-chip">Law Firm</span>
+          <span class="port-chip">Professional</span>
+          <span class="port-chip">Rp 4jt</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/lyid-academic" class="port-card" data-category="industry">
+      <div class="port-preview">
+        <span class="port-tag">Academic Services</span>
+        <img src="/LYID-Academic.png" alt="LYID Academic" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      </div>
+      <div class="port-body">
+        <h3>LYID Academic</h3>
+        <p>Jasa bimbingan & editing akademik. Essay, makalah, skripsi, ujian online, presentasi. Pricing card dark theme.</p>
+        <div class="port-meta">
+          <span class="port-chip">Academic</span>
+          <span class="port-chip">Layanan</span>
+          <span class="port-chip">Mulai Rp 15rb</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+</section>
+
+<section class="section" id="harga" style="background:var(--surface)">
+<div class="container">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title">Paket & Harga</h2>
+  <p class="section-sub">Pilih paket sesuai kebutuhan bisnis Anda</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="tier">Basic</div>
+      <div class="price">Rp 500K - 2.5jt</div>
+      <div class="price-sub">Template-Based · 3-7 hari</div>
+      <ul>
+        <li>1-3 halaman</li>
+        <li>Template premium</li>
+        <li>Responsive mobile</li>
+        <li>Contact form + WhatsApp</li>
+        <li>SEO basic</li>
+        <li>Revisi 2x</li>
+      </ul>
+      <a href="order.html" class="btn-card outline">Pilih Paket</a>
+    </div>
+    <div class="price-card featured">
+      <div class="tier" style="color:var(--purple)">Standard ★</div>
+      <div class="price">Rp 2.5jt - 7jt</div>
+      <div class="price-sub">Customized · 1-3 minggu</div>
+      <ul>
+        <li>5-10 halaman</li>
+        <li>Custom design</li>
+        <li>CMS (WordPress/Webflow)</li>
+        <li>SEO on-page</li>
+        <li>Social media + Maps</li>
+        <li>Revisi 3-5x</li>
+      </ul>
+      <a href="order.html" class="btn-card filled">Pilih Paket</a>
+    </div>
+    <div class="price-card">
+      <div class="tier">Premium</div>
+      <div class="price">Rp 5jt - 50jt+</div>
+      <div class="price-sub">Custom Development · 1-3 bulan</div>
+      <ul>
+        <li>Unlimited halaman</li>
+        <li>Full custom code</li>
+        <li>Payment gateway</li>
+        <li>User system / API</li>
+        <li>Security + performance</li>
+        <li>Revisi unlimited</li>
+      </ul>
+      <a href="order.html" class="btn-card outline">Konsultasi</a>
+    <a href="/lyid-scripts.html" class="btn-card outline" style="margin-top:8px;background:var(--card);border-color:var(--purple);color:var(--purple)">Lihat Semua Layanan</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="proses" style="position:relative;overflow:visible">
+<div class="container">
+  <div class="mascot mascot-process"><img src="Mascot-Images/MASCOT-HOLDING-CODE-SCREEN.webp" alt="LYID mascot with code" loading="lazy"></div>
+  <div class="section-label">Proses</div>
+  <h2 class="section-title">Bagaimana Kami Bekerja</h2>
+  <p class="section-sub">7 fase profesional dari brief sampai maintenance</p>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <h3>Intake</h3>
+      <p>Terima brief, klasifikasi kebutuhan, estimasi harga & timeline</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <h3>Research</h3>
+      <p>Riset industri, kompetitor, dan referensi desain</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <h3>Design</h3>
+      <p>Wireframe, mockup 2-3 variant, approval klien</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <h3>Build</h3>
+      <p>Development sesuai design yang di-approve</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">05</div>
+      <h3>QA</h3>
+      <p>Testing responsive, SEO, performance, cross-browser</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">06</div>
+      <h3>Deliver</h3>
+      <p>Deploy, domain, training, handover ke klien</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">07</div>
+      <h3>Maintain</h3>
+      <p>Update konten, security patch, monitoring</p>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<section class="cta">
+<div class="container">
+  <h2>Siap Bikin Website?</h2>
+  <p>Konsultasi gratis. Hubungi kami sekarang!</p>
+  <a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">💬 Chat WhatsApp</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <div class="links">
+    <a href="https://x.com/mandayXBT">Twitter/X</a>
+    <a href="https://t.me/layerairdrop">Telegram</a>
+    <a href="https://github.com/rmndkyl">GitHub</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/lyid-scripts.html">Bot Scripts</a>
+    <a href="/community.html">Community</a>
+  </div>
+  <p>© 2026 LYID Web Development. By <a href="https://github.com/rmndkyl" style="color:var(--blue);text-decoration:none">rmndkyl</a></p>
+</div>
+</footer>
+
+<script>document.querySelector('.hamburger').addEventListener('click',function(){this.classList.toggle('active');var n=document.querySelector('.nav-links');n.classList.toggle('active');this.setAttribute('aria-expanded',n.classList.contains('active'))});
+document.querySelectorAll('.section,.hero,.cta,.port-card,.price-card,.process-card,.badge').forEach(function(el,i){el.classList.add('fade-in');el.style.transitionDelay=(i%8)*.06+'s'});
+var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.05,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+// Fallback: make all visible after 3s (mobile Safari fix)
+setTimeout(function(){document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el){el.classList.add('visible')})},3000);
+// Filter
+document.querySelectorAll('.filter-btn').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');var f=btn.dataset.filter;document.querySelectorAll('.port-card').forEach(function(card){if(f==='all'){card.removeAttribute('data-hidden')}else{var cats=(card.dataset.category||'').split(',');if(cats.indexOf(f)>=0){card.removeAttribute('data-hidden')}else{card.setAttribute('data-hidden','')}}})})});
+// Progress bar
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var bar=document.getElementById('progressBar');if(bar&&h>0)bar.style.transform='scaleX('+window.scrollY/h+')'},{passive:true});
+</script>
+
+</body>
+</html>

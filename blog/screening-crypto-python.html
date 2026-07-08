@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cara Screening 1000+ Crypto Project Otomatis Pakai Python — LYID Blog</title>
+<meta name="description" content="Tutorial membangun pipeline screening crypto project dari CryptoRank API. Auto-filter berdasarkan funding, airdrop allocation, dan investor quality.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--radius:16px}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}.container{max-width:760px;margin:0 auto;padding:0 24px}nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:0 24px}.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.back{color:var(--muted);text-decoration:none;font-size:.85rem}.back:hover{color:var(--text)}article{padding:60px 0 80px}.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:24px;color:var(--muted);font-size:.85rem}.article-tag{background:rgba(59,130,246,.15);color:var(--blue);padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:600;text-transform:uppercase}h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;line-height:1.2;margin-bottom:16px}h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.lead{font-size:1.15rem;color:var(--muted);margin-bottom:40px}h2{font-size:1.4rem;font-weight:700;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}h3{font-size:1.15rem;font-weight:600;margin:32px 0 12px}p{margin-bottom:16px;font-size:.95rem}ul,ol{margin:0 0 24px 24px;font-size:.95rem}li{margin-bottom:8px}code{background:var(--card);padding:2px 8px;border-radius:4px;font-size:.85rem}pre{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin:0 0 24px;font-size:.85rem;line-height:1.5}pre code{background:none;padding:0}.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:12px;padding:20px;margin:0 0 24px;font-size:.9rem}.callout.warn{border-left-color:#eab308}.callout.danger{border-left-color:#ef4444}table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:.9rem}th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}th{color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase}.cta-box{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.1));border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;margin:48px 0}.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.9rem}.author-box{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin:48px 0}.author-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover}.author-name{font-weight:600}.author-bio{color:var(--muted);font-size:.8rem;margin:0}footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="/" class="logo"><span class="logo-mark">LYID</span> Blog</a><a href="/blog.html" class="back">← Kembali ke Blog</a></div></nav>
+<article><div class="container">
+<div class="article-meta"><span class="article-tag">Crypto</span><span>18 Juni 2026</span><span>•</span><span>9 min baca</span></div>
+<h1>Cara Screening 1000+ Crypto Project Otomatis Pakai Python</h1>
+<p class="lead">Tutorial membangun pipeline screening crypto project dari CryptoRank API. Auto-filter berdasarkan funding, airdrop allocation, dan investor quality.</p>
+<h2>Mengapa Screening Otomatis?</h2>
+<p>Ada ribuan project crypto baru setiap bulan. Manual checking satu per satu butuh waktu berjam-jam. Dengan Python + CryptoRank API, kamu bisa screen 1000+ project dalam hitungan menit dan filter berdasarkan kriteria yang kamu tentukan.</p>
+<h2>Setup: CryptoRank API</h2>
+<p>CryptoRank punya API gratis (v0) yang mengembalikan data lengkap: funding, investor, tokenomics, airdrop allocation. Tidak perlu API key untuk endpoint dasar.</p>
+<pre><code>import urllib.request
+import json
+
+url = "https://api.cryptorank.io/v0/coins?limit=1000"
+req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+res = urllib.request.urlopen(req)
+data = json.loads(res.read())
+
+print(f"Total coins: {len(data)}")</code></pre>
+<h2>Filter Kriteria</h2>
+<h3>1. Funding Amount</h3>
+<p>Project dengan funding besar punya resource untuk reward user. Filter minimal $1M funding:</p>
+<pre><code>funded = [c for c in data if c.get('totalRaised', 0) > 1_000_000]
+print(f"Project funding >$1M: {len(funded)}")</code></pre>
+<h3>2. Airdrop Allocation</h3>
+<p>Project yang sudah confirm airdrop di tokenomics:</p>
+<pre><code>has_airdrop = [
+    c for c in funded
+    if any(
+        'airdrop' in (alloc.get('name','').lower())
+        for alloc in c.get('tokenomics', [])
+    )
+]
+print(f"With airdrop allocation: {len(has_airdrop)}")</code></pre>
+<h3>3. Investor Quality</h3>
+<p>Top investor = higher chance of legit project:</p>
+<pre><code>TOP_INVESTORS = [
+    'a16z', 'paradigm', 'sequoia', 'coinbase',
+    'binance labs', 'polychain', 'multicoin'
+]
+
+def has_top_investor(coin):
+    investors = [i.get('name','').lower() for i in coin.get('investors', [])]
+    return any(ti in ' '.join(investors) for ti in TOP_INVESTORS)
+
+quality = [c for c in has_airdrop if has_top_investor(c)]</code></pre>
+<h2>Pipeline Lengkap</h2>
+<pre><code>def screen_projects():
+    # 1. Fetch
+    data = fetch_coins()
+    
+    # 2. Filter funding
+    funded = [c for c in data if c.get('totalRaised', 0) > 1_000_000]
+    
+    # 3. Filter airdrop
+    airdrops = [c for c in funded if has_airdrop(c)]
+    
+    # 4. Score & sort
+    for coin in airdrops:
+        coin['score'] = calculate_score(coin)
+    
+    airdrops.sort(key=lambda c: c['score'], reverse=True)
+    
+    # 5. Export
+    return airdrops[:50]  # top 50
+
+def calculate_score(coin):
+    score = 0
+    score += min(coin.get('totalRaised', 0) / 1_000_000, 30)  # max 30
+    score += 20 if has_top_investor(coin) else 0
+    score += 15 if has_airdrop(coin) else 0
+    stage = coin.get('stage', '').lower()
+    if 'mainnet' in stage: score += 15
+    elif 'testnet' in stage: score += 10
+    return score</code></pre>
+<div class="callout">
+<strong>💡 Pipeline ini jalan tiap hari via cron job.</strong> Setiap pagi jam 9, scanner otomatis fetch data terbaru, filter, dan kirim hasilnya ke Telegram channel. Tidak perlu cek manual lagi.
+</div>
+<h2>Output ke Google Sheets</h2>
+<p>Hasil screening bisa langsung masuk ke Google Sheets untuk tracking:</p>
+<pre><code>import urllib.request
+
+SHEET_URL = "https://script.google.com/macros/s/AKfyc.../exec"
+
+def push_to_sheets(projects):
+    entries = []
+    for p in projects:
+        entries.append({
+            "Project Name": p['name'],
+            "Funding": f"${p['totalRaised']:,.0f}",
+            "Status": p.get('status', 'Unknown'),
+            "Priority Score": p['score']
+        })
+    
+    payload = json.dumps({"entries": entries}).encode()
+    req = urllib.request.Request(SHEET_URL, data=payload, method='POST',
+        headers={"Content-Type": "application/json"})
+    urllib.request.urlopen(req)</code></pre>
+<h2>Kapan Harus Mulai Farming?</h2>
+<table>
+<tr><th>Stage</th><th>Action</th><th>Timing</th></tr>
+<tr><td>Testnet aktif</td><td>Langsung gas — swap, bridge, deploy</td><td>ASAP</td></tr>
+<tr><td>Waitlist open</td><td>Daftar + referral</td><td>ASAP</td></tr>
+<tr><td>Mainnet launch</td><td>Early bird activity</td><td>Minggu 1-2</td></tr>
+<tr><td>Pre-TGE</td><td>Task completion marathon</td><td>2-4 minggu sebelum TGE</td></tr>
+<tr><td>Post-TGE</td><td>Claim + hold/sell</td><td>Hari 1-7</td></tr>
+</table>
+
+<div class="cta-box"><h3>Butuh Bot Automasi?</h3><p>LYID menyediakan bot airdrop siap pakai dengan fitur multi-wallet, auto-claim, dan anti-detect.</p><a href="https://t.me/OG_LYID_bot" class="btn-primary">Chat di @OG_LYID_bot</a> <a href="/lyid-scripts.html" style="display:inline-block;margin-left:12px;color:var(--muted);text-decoration:none;font-weight:600;font-size:.9rem;border:1px solid var(--border);padding:12px 28px;border-radius:10px">Lihat Semua Script →</a></div>
+<div class="author-box"><img src="/foto-profil.jpg" alt="Manday" class="author-avatar"><div><div class="author-name">Manday</div><p class="author-bio">Founder LYID — Layer Airdrop ID. Membangun bot automasi crypto sejak 2024.</p></div></div>
+</div></article>
+<footer><div class="container"><p>&copy; 2026 LYID — Layer Airdrop ID. <a href="/blog.html" style="color:var(--blue)">Kembali ke Blog</a></p></div></footer>
+</body>
+</html>

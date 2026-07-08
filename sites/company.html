@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Digital Company — Layer Airdrop ID</title>
+<meta name="description" content="LYID Digital Company — 4 business lines: Crypto Bot Factory, Web Dev Service, Academic Services, Grant/Product Development. Founded by Manday.">
+<link rel="canonical" href="https://ralies.biz.id/company.html">
+<link rel="icon" href="/favicon.svg">
+<meta name="theme-color" content="#09090b">
+<meta property="og:title" content="LYID Digital Company">
+<meta property="og:description" content="Crypto automation, web development, academic services, and grant-funded product development.">
+<meta property="og:image" content="/LYID_OG_LOGO.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-root: #09090b;
+    --bg-surface: #111113;
+    --bg-card: #18181b;
+    --accent: #3b82f6;
+    --accent-purple: #8b5cf6;
+    --text-primary: #e4e4e7;
+    --text-muted: #71717a;
+    --border: #27272a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-root);
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  .hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #09090b 0%, #1a1a2e 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('/LYID_OG_LOGO.png') center/600px no-repeat;
+    opacity: 0.06;
+    z-index: 0;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: #a1a1aa;
+    max-width: 700px;
+    margin: 0 auto 32px;
+  }
+  .btn {
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+  }
+  .btn-secondary:hover {
+    background: rgba(59,130,246,0.1);
+  }
+  .section {
+    padding: 80px 0;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .section-subtitle {
+    color: #a1a1aa;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.2s;
+  }
+  .card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+  }
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+  }
+  .card p {
+    color: #a1a1aa;
+    margin-bottom: 16px;
+  }
+  .card .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #3b82f6;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .stat {
+    text-align: center;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #3b82f6;
+  }
+  .stat-label {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .team-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 16px;
+  }
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: #71717a;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a {
+    color: #3b82f6;
+    text-decoration: none;
+  }
+  @media(max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 2rem; }
+  }
+
+/* AUTO-FIXED */
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:4px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media(max-width:768px){.nav-links-m{display:none}.hamburger{display:block}.grid{grid-template-columns:1fr}}
+@media(max-width:428px){body{padding:20px 16px}.hero{padding:60px 0 40px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.skip-link:focus{top:16px}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;top:-100%;left:16px;background:#3b82f6;color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem">Skip to content</a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container mx-auto px-6">
+    <h1>LYID Digital Company</h1>
+    <p>Layer Airdrop ID — Membangun otomatisasi crypto, web profesional, dan layanan akademik untuk Indonesia sejak 2025.</p>
+    <p style="font-size:1.1rem;color:#8b5cf6;margin-top:-8px;margin-bottom:32px">Automate Your Crypto Journey</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#services" class="btn btn-primary">Lihat Layanan</a>
+      <a href="https://t.me/rmndkyl" class="btn btn-secondary">Hubungi Kami</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container mx-auto px-6">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-number">19+</div>
+        <div class="stat-label">Bot Scripts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">868+</div>
+        <div class="stat-label">Telegram Members</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">13</div>
+        <div class="stat-label">Demo Websites</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Auto Monitoring</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title">4 Business Lines</h2>
+    <p class="section-subtitle">Setiap layanan dijalankan dengan sistem otomatisasi dan monitoring 24/7.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Crypto Bots -->
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>Crypto Bot Factory</h3>
+        <p>19+ automation scripts untuk airdrop farming, quest completion, dan on-chain volume farming. Multi-wallet, proxy rotation, auto-retry.</p>
+        <div class="price">Mulai Rp 100.000</div>
+        <a href="https://github.com/rmndkyl/lyid-scripts" class="btn btn-secondary" style="margin-top:12px;display:inline-block;padding:10px 20px;font-size:0.9rem">Lihat Scripts →</a>
+      </div>
+
+      <!-- Web Dev -->
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>Jasa website profesional untuk UMKM Indonesia. 13+ demo industri, dark theme, cinematic animations, responsive.</p>
+        <div class="price">Mulai Rp 500.000</div>
+        <a href="https://ralies.biz.id" class="btn btn-secondary" style="margin-top:12px;display:inline-block;padding:10px 20px;font-size:0.9rem">Lihat Portfolio →</a>
+      </div>
+
+      <!-- Academic -->
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3>Academic Services</h3>
+        <p>Bimbingan & editing skripsi, makalah, dan tugas universitas. 14 layanan, anti-AI detection, 3 tier pricing.</p>
+        <div class="price">Mulai Rp 50.000</div>
+        <a href="https://ralies.biz.id/lyid-academic" class="btn btn-secondary" style="margin-top:12px;display:inline-block;padding:10px 20px;font-size:0.9rem">Lihat Layanan →</a>
+      </div>
+
+      <!-- Grants -->
+      <div class="card">
+        <div class="card-icon">🔬</div>
+        <h3>Grant / Product Dev</h3>
+        <p>Membangun open-source products untuk grant funding. Avalanche Agent Hub — Team1 Mini Grant recipient. 88/88 tests.</p>
+        <div class="price">Grant-funded</div>
+        <a href="https://github.com/agenthubavax/avalanche-agent-hub" class="btn btn-secondary" style="margin-top:12px;display:inline-block;padding:10px 20px;font-size:0.9rem">Lihat Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" style="background:var(--bg-surface)">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title">Team</h2>
+    <p class="section-subtitle">Small team, big output. Remote-first, async communication.</p>
+    
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">👨‍💻</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px">Manday</h3>
+        <p style="color:#8b5cf6;font-size:0.85rem;margin-bottom:12px">Founder & Lead Engineer</p>
+        <p style="color:#a1a1aa;font-size:0.9rem">Full-stack builder. Crypto automation since 2024. Avalanche Team1 Mini Grant recipient. 119+ GitHub repos.</p>
+        <div style="margin-top:16px">
+          <a href="https://github.com/rmndkyl" style="color:#3b82f6;text-decoration:none;margin:0 8px">GitHub</a>
+          <a href="https://x.com/mandayXBT" style="color:#3b82f6;text-decoration:none;margin:0 8px">X</a>
+          <a href="https://t.me/rmndkyl" style="color:#3b82f6;text-decoration:none;margin:0 8px">Telegram</a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">🤖</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px">LYID Agents</h3>
+        <p style="color:#8b5cf6;font-size:0.85rem;margin-bottom:12px">Autonomous Workforce</p>
+        <p style="color:#a1a1aa;font-size:0.9rem">24/7 autonomous agents handling content, monitoring, pipeline, and operations. 22 cron jobs running continuously.</p>
+        <div style="margin-top:16px">
+          <span style="color:#71717a;font-size:0.85rem">24 agents active</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">🌐</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px">Community</h3>
+        <p style="color:#8b5cf6;font-size:0.85rem;margin-bottom:12px">1,000+ Members</p>
+        <p style="color:#a1a1aa;font-size:0.9rem">Active Telegram channel + Discord server. Daily content, signals, and support for crypto automation.</p>
+        <div style="margin-top:16px">
+          <a href="https://t.me/layerairdrop" style="color:#3b82f6;text-decoration:none;margin:0 8px">Channel</a>
+          <a href="https://discord.gg/layerairdrop" style="color:#3b82f6;text-decoration:none;margin:0 8px">Discord</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title">Tech Stack</h2>
+    <p class="section-subtitle">Modern, battle-tested tools. Open-source first.</p>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div class="card" style="text-align:center;padding:20px">
+        <div style="font-size:0.85rem;color:#71717a">Languages</div>
+        <div style="font-weight:600;margin-top:4px">Node.js · Python · Solidity</div>
+      </div>
+      <div class="card" style="text-align:center;padding:20px">
+        <div style="font-size:0.85rem;color:#71717a">Blockchain</div>
+        <div style="font-weight:600;margin-top:4px">Ethers.js · Hardhat · Viem</div>
+      </div>
+      <div class="card" style="text-align:center;padding:20px">
+        <div style="font-size:0.85rem;color:#71717a">Infra</div>
+        <div style="font-weight:600;margin-top:4px">PM2 · Vercel · GitHub Actions</div>
+      </div>
+      <div class="card" style="text-align:center;padding:20px">
+        <div style="font-size:0.85rem;color:#71717a">AI/LLM</div>
+        <div style="font-weight:600;margin-top:4px">Bynara · GLM · IAMHC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background: linear-gradient(135deg, #1a1a2e 0%, #09090b 100%)">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="section-title">Siap Kolaborasi?</h2>
+    <p style="color:#a1a1aa;max-width:600px;margin:0 auto 32px">Kami terbuka untuk project freelance, partnership, atau grant collaboration.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://t.me/rmndkyl" class="btn btn-primary">Telegram @rmndkyl</a>
+      <a href="https://t.me/OG_LYID_bot" class="btn btn-secondary">Telegram Bot</a>
+      <a href="https://discord.gg/layerairdrop" class="btn btn-secondary">Discord</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container mx-auto px-6">
+    <p>&copy; 2026 LYID — Layer Airdrop ID. All rights reserved.</p>
+    <p style="margin-top:8px">
+      <a href="https://github.com/rmndkyl">GitHub</a> · 
+      <a href="https://x.com/mandayXBT">X</a> · 
+      <a href="https://t.me/layerairdrop">Telegram</a> · 
+      <a href="https://t.me/layerairdropdiskusi">Discussion</a> · 
+      <a href="https://discord.gg/layerairdrop">Discord</a>
+    </p>
+  </div>
+<div style="text-align:center;padding:24px;background:rgba(37,211,102,.1);border-top:1px solid rgba(37,211,102,.2)">
+<a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20mau%20konsultasi" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.9rem">💬 Chat WhatsApp</a>
+</div>
+</footer>
+
+<footer style="text-align:center;padding:24px;color:#666;font-size:.8rem;border-top:1px solid #eee">© 2026. Dibuat oleh <a href="https://ralies.biz.id" style="color:#3b82f6;text-decoration:none">LYID Web Development</a></footer>
+
+<script>
+const hamburger=document.getElementById('hamburger'),navLinks=document.getElementById('navLinksM');
+if(hamburger){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navLinks.classList.toggle('active');hamburger.setAttribute('aria-expanded',navLinks.classList.contains('active'))})}
+</script>
+</body>
+</html>

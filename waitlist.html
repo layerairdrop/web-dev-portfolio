@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Scripts — Daftar Tunggu Bot Baru</title>
+<meta name="description" content="Daftar tunggu untuk bot airdrop terbaru dari LYID. Dapat notifikasi saat bot baru rilis + diskon eksklusif.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--radius:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:500px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.back{color:var(--muted);text-decoration:none;font-size:.85rem}.back:hover{color:var(--text)}
+.container{max-width:500px;padding:0 24px;text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center;margin:0 auto}
+h1{font-size:2rem;font-weight:900;margin-bottom:12px;line-height:1.2}
+h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+p{color:var(--muted);margin-bottom:32px;font-size:1rem}
+.form-group{display:flex;gap:8px;margin-bottom:16px}
+input{flex:1;background:var(--card);border:1px solid var(--border);color:var(--text);padding:14px 16px;border-radius:12px;font-size:.95rem;font-family:inherit}
+input:focus{outline:none;border-color:var(--blue)}
+button{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:14px 28px;border-radius:12px;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;white-space:nowrap}
+button:hover{opacity:.85}
+.note{font-size:.8rem;color:var(--muted);margin-top:8px}
+.success{display:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:24px}
+.success.show{display:block}
+.success h3{color:#22c55e;margin-bottom:8px}
+.features{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0}
+.feat{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:99px;font-size:.8rem;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+footer a{color:var(--blue);text-decoration:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{padding:0 16px}
+  h1{font-size:1.6rem}
+  .form-group{flex-direction:column}
+  .form-group input{min-height:48px}
+  .form-group button{min-height:48px;width:100%}
+  .features{gap:6px}
+  .feat{padding:6px 12px;font-size:.75rem}
+  footer{padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Scripts</a>
+  <a href="/lyid-scripts.html" class="back">← Bot List</a>
+</div></nav>
+
+<div class="container">
+  <h1><span class="grad">Daftar Tunggu</span><br>Bot Airdrop Terbaru</h1>
+  <p>Dapat notifikasi saat bot baru rilis + diskon eksklusif 20% untuk subscriber.</p>
+  
+  <div class="features">
+    <span class="feat">🔔 Notifikasi Bot Baru</span>
+    <span class="feat">💰 Diskon 20%</span>
+    <span class="feat">🤖 Early Access</span>
+    <span class="feat">📚 Tutorial Gratis</span>
+  </div>
+  
+  <form id="waitlist" onsubmit="event.preventDefault();submitForm()">
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Email kamu..." required>
+      <button type="submit">Daftar</button>
+    </div>
+    <p class="note">Gratis. Unsubscribe kapan saja. No spam.</p>
+  </form>
+  
+  <div id="success" class="success">
+    <h3>✅ Berhasil Daftar!</h3>
+    <p>Kamu akan dapat notifikasi saat bot baru rilis. Cek email untuk konfirmasi.</p>
+  </div>
+</div>
+
+<footer>
+  <p><a href="/">LYID</a> · <a href="/lyid-scripts.html">Bot Scripts</a> · <a href="/community.html">Community</a> · <a href="/blog.html">Blog</a></p>
+  <p style="margin-top:8px">&copy; 2026 LYID — Layer Airdrop ID</p>
+</footer>
+
+<script>
+function submitForm() {
+  document.getElementById('waitlist').style.display = 'none';
+  document.getElementById('success').classList.add('show');
+}
+</script>
+</body>
+</html>

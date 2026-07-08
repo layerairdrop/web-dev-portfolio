@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Order Website — LYID Web Development</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box;margin:0;padding:0}
+a,button{transition:all .2s ease}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:root{
+  --bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;
+  --text:#e4e4e7;--muted:#71717a;
+  --blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--cyan:#06b6d4;
+  --radius:12px;--shadow:0 4px 24px rgba(0,0,0,.4)
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+a{color:var(--blue);text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:800px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.1rem}
+.logo span{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.back{color:var(--muted);font-size:.85rem;transition:color .2s}
+.back:hover{color:var(--text)}
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem}
+.skip-link:focus{top:16px}
+
+/* HERO */
+.hero{text-align:center;padding:60px 0 40px}
+.hero h1{font-size:2rem;font-weight:800;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);max-width:500px;margin:0 auto}
+
+/* FORM */
+.form-wrap{max-width:700px;margin:0 auto;padding-bottom:80px}
+.section-title{font-size:1.1rem;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.section-num{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex-shrink:0}
+.form-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:.8rem;font-weight:600;color:var(--muted)}
+.form-group label .req{color:#ef4444}
+.form-group input,.form-group select,.form-group textarea{padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-family:inherit;font-size:16px;color:var(--text);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.form-group textarea{min-height:100px;resize:vertical}
+.form-group select{cursor:pointer}
+
+/* CHECKBOX GRID */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.check-item{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .2s;font-size:.85rem}
+.check-item:hover{border-color:var(--blue)}
+.check-item:active{transform:scale(.98)}
+.check-item input{accent-color:var(--blue);width:16px;height:16px}
+.check-item.checked{border-color:var(--blue);background:rgba(59,130,246,.08)}
+
+/* RADIO GRID */
+.radio-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.radio-item{padding:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;text-align:center;transition:all .2s;font-size:.85rem}
+.radio-item:hover{border-color:var(--blue)}
+.radio-item:active{transform:scale(.98)}
+.radio-item.selected{border-color:var(--blue);background:rgba(59,130,246,.08)}
+.radio-item input{display:none}
+
+/* PRICE ESTIMATE */
+.price-estimate{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.1));border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px;text-align:center}
+.price-estimate .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.price-estimate .price{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.price-estimate .note{font-size:.8rem;color:var(--muted);margin-top:8px}
+
+/* SUBMIT */
+.btn-submit{display:block;width:100%;padding:16px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:20px}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.3)}
+.btn-submit:active{transform:translateY(0);box-shadow:none}
+.btn-wa{display:block;width:100%;padding:16px;background:#25d366;color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:12px;text-align:center;text-decoration:none}
+.btn-wa:hover{opacity:.85}
+.mascot-cta{position:absolute;right:-40px;bottom:-10px;width:200px;pointer-events:none;z-index:-1;opacity:.1}
+.mascot-cta+*{position:relative;z-index:1}
+@media(max-width:768px){.mascot-cta{width:140px;right:-20px;bottom:-5px}}
+@media(max-width:428px){.mascot-cta{opacity:.05;width:100px;right:-10px;bottom:0}}
+.btn-wa:active{transform:scale(.97)}
+
+/* SUCCESS */
+.success{display:none;text-align:center;padding:60px 0}
+.success.show{display:block}
+.success .icon{font-size:4rem;margin-bottom:16px}
+.success h2{font-size:1.5rem;margin-bottom:12px}
+.success p{color:var(--muted);margin-bottom:24px}
+
+/* PROGRESS */
+.progress{display:flex;justify-content:center;gap:8px;margin-bottom:32px}
+.progress-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .3s}
+.progress-dot.active{background:var(--blue)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .form-row{grid-template-columns:1fr}
+  .check-grid{grid-template-columns:1fr}
+  .radio-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:428px){
+  .radio-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<a href="#orderForm" class="skip-link">Skip to form</a>
+
+<nav>
+<div class="nav-inner">
+  <a href="index.html" class="back">← Kembali ke Portofolio</a>
+  <div class="logo"><span>LYID</span> Web Development</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+  <h1>Order <span>Website</span> Anda</h1>
+  <p>Isi form di bawah, kami akan hubungi Anda via WhatsApp dalam 1x24 jam.</p>
+</div>
+</section>
+
+<div class="progress">
+  <div class="progress-dot active" data-section="1"></div>
+  <div class="progress-dot" data-section="2"></div>
+  <div class="progress-dot" data-section="3"></div>
+  <div class="progress-dot" data-section="4"></div>
+  <div class="progress-dot" data-section="5"></div>
+</div>
+
+<form class="form-wrap" id="orderForm">
+
+<!-- SECTION 1: INFO -->
+<div class="form-section" data-section="1">
+  <div class="section-title"><div class="section-num">1</div> Informasi Kontak</div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Nama Lengkap <span class="req">*</span></label>
+      <input type="text" name="nama" required placeholder="Nama Anda">
+    </div>
+    <div class="form-group">
+      <label>No. WhatsApp <span class="req">*</span></label>
+      <input type="tel" name="wa" required placeholder="08xxx">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="email@domain.com">
+    </div>
+    <div class="form-group">
+      <label>Nama Bisnis/Brand <span class="req">*</span></label>
+      <input type="text" name="brand" required placeholder="Nama bisnis Anda">
+    </div>
+  </div>
+  <div class="form-group full">
+    <label>Website Saat Ini (jika ada)</label>
+    <input type="url" name="website" placeholder="https://...">
+  </div>
+</div>
+
+<!-- SECTION 2: JENIS WEBSITE -->
+<div class="form-section" data-section="2">
+  <div class="section-title"><div class="section-num">2</div> Jenis Website</div>
+  <div class="form-group full" style="margin-bottom:16px">
+    <label>Pilih Paket <span class="req">*</span></label>
+    <div class="radio-grid" id="paketGrid">
+      <label class="radio-item" data-price="1000000">
+        <input type="radio" name="paket" value="Landing Page" required>
+        Landing Page<br><small style="color:var(--muted)">Rp 500K - 1.5jt</small>
+      </label>
+      <label class="radio-item" data-price="2000000">
+        <input type="radio" name="paket" value="Portfolio">
+        Portfolio<br><small style="color:var(--muted)">Rp 750K - 6jt</small>
+      </label>
+      <label class="radio-item" data-price="3500000">
+        <input type="radio" name="paket" value="Company Profile">
+        Company Profile<br><small style="color:var(--muted)">Rp 2.5jt - 15jt</small>
+      </label>
+      <label class="radio-item" data-price="5000000">
+        <input type="radio" name="paket" value="Toko Online">
+        Toko Online<br><small style="color:var(--muted)">Rp 3.5jt - 20jt</small>
+      </label>
+      <label class="radio-item" data-price="10000000">
+        <input type="radio" name="paket" value="Web Application">
+        Web Application<br><small style="color:var(--muted)">Rp 10jt+</small>
+      </label>
+      <label class="radio-item" data-price="0">
+        <input type="radio" name="paket" value="Custom">
+        Custom<br><small style="color:var(--muted)">Konsultasi dulu</small>
+      </label>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Jenis Industri <span class="req">*</span></label>
+      <select name="industri" required>
+        <option value="">Pilih industri...</option>
+        <option>Teknologi / Startup</option>
+        <option>Fashion / Retail</option>
+        <option>F&B / Restoran</option>
+        <option>Jasa / Konsultan</option>
+        <option>Pendidikan</option>
+        <option>Kesehatan / Klinik</option>
+        <option>Creative Agency</option>
+        <option>Crypto / Web3</option>
+        <option>Wedding / Event</option>
+        <option>Properti / Real Estate</option>
+        <option>Lainnya</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Jumlah Halaman</label>
+      <input type="number" name="halaman" placeholder="5" min="1">
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: FITUR -->
+<div class="form-section" data-section="3">
+  <div class="section-title"><div class="section-num">3</div> Fitur yang Dibutuhkan</div>
+  <div class="form-group full">
+    <label>Pilih fitur (bisa lebih dari satu)</label>
+    <div class="check-grid" id="fiturGrid">
+      <label class="check-item"><input type="checkbox" name="fitur" value="Contact Form"> Contact Form</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="WhatsApp Button"> WhatsApp Chat Button</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Payment Gateway"> Payment Gateway</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="User Login"> User Login / Membership</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Blog"> Blog / News</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Multi-language"> Multi-language</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Booking System"> Booking System</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Live Chat"> Live Chat</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Gallery"> Gallery / Portfolio</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Testimonial"> Testimonial Section</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Social Media Feed"> Social Media Feed</label>
+      <label class="check-item"><input type="checkbox" name="fitur" value="Google Maps"> Google Maps</label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: DESAIN -->
+<div class="form-section" data-section="4">
+  <div class="section-title"><div class="section-num">4</div> Desain & Branding</div>
+  <div class="form-group full" style="margin-bottom:16px">
+    <label>Style Desain yang Diinginkan</label>
+    <div class="radio-grid">
+      <label class="radio-item"><input type="radio" name="style" value="Minimalist"> Minimalist & Clean</label>
+      <label class="radio-item"><input type="radio" name="style" value="Modern Bold"> Modern & Bold</label>
+      <label class="radio-item"><input type="radio" name="style" value="Professional"> Professional</label>
+      <label class="radio-item"><input type="radio" name="style" value="Creative"> Creative & Playful</label>
+      <label class="radio-item"><input type="radio" name="style" value="Luxury"> Luxury & Elegant</label>
+      <label class="radio-item"><input type="radio" name="style" value="Dark Theme"> Dark Theme (LYID)</label>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Warna Brand (Primary)</label>
+      <input type="text" name="warna" placeholder="#3b82f6 atau biru">
+    </div>
+    <div class="form-group">
+      <label>Sudah Punya Logo?</label>
+      <select name="logo">
+        <option>Ya, sudah siap</option>
+        <option>Belum, butuh jasa desain (+Rp 500K)</option>
+        <option>Masih draft</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group full">
+    <label>Referensi Website (URL yang Anda suka)</label>
+    <input type="url" name="referensi" placeholder="https://example.com">
+  </div>
+</div>
+
+<!-- SECTION 5: TIMELINE & BUDGET -->
+<div class="form-section" data-section="5">
+  <div class="section-title"><div class="section-num">5</div> Timeline & Budget</div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Kapan Website Harus Selesai?</label>
+      <input type="date" name="deadline">
+    </div>
+    <div class="form-group">
+      <label>Budget Range</label>
+      <select name="budget">
+        <option value="">Pilih budget...</option>
+        <option>< Rp 1jt</option>
+        <option>Rp 1-3jt</option>
+        <option>Rp 3-5jt</option>
+        <option>Rp 5-10jt</option>
+        <option>Rp 10-20jt</option>
+        <option>> Rp 20jt</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group full">
+    <label>Konten (Teks & Gambar) Sudah Siap?</label>
+    <select name="konten">
+      <option>Ya, semua siap</option>
+      <option>Sebagian siap</option>
+      <option>Belum, butuh bantuan content writing</option>
+    </select>
+  </div>
+  <div class="form-group full">
+    <label>Catatan Tambahan</label>
+    <textarea name="catatan" placeholder="Ceritakan detail kebutuhan Anda..."></textarea>
+  </div>
+</div>
+
+<!-- ESTIMATE -->
+<div class="price-estimate">
+  <div class="label">Estimasi Harga</div>
+  <div class="price" id="priceDisplay">Rp 0</div>
+  <div class="note">Harga final akan dikonfirmasi via WhatsApp setelah review brief Anda.</div>
+</div>
+
+<!-- SUBMIT -->
+<div style="position:relative">
+  <div class="mascot-cta"><img src="Mascot-Images/MASCOT-LAUNCHING-ROCKET.webp" alt="LYID mascot launching" loading="lazy"></div>
+  <button type="submit" class="btn-submit">Kirim Order via WhatsApp</button>
+</div>
+<a href="#" class="btn-wa" id="waDirect" target="_blank">💬 Atau Chat WhatsApp Langsung</a>
+
+</form>
+
+<!-- SUCCESS -->
+<div class="success" id="successMsg">
+  <div class="icon">✅</div>
+  <h2>Order Terkirim!</h2>
+  <p>Tim kami akan menghubungi Anda via WhatsApp dalam 1x24 jam.</p>
+  <a href="index.html" class="btn-submit" style="display:inline-block;width:auto;padding:14px 32px">Kembali ke Portofolio</a>
+</div>
+
+<script>
+// Radio selection
+document.querySelectorAll('.radio-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const grid = this.parentElement;
+    grid.querySelectorAll('.radio-item').forEach(i => i.classList.remove('selected'));
+    this.classList.add('selected');
+    this.querySelector('input').checked = true;
+    updatePrice();
+  });
+});
+
+// Checkbox styling
+document.querySelectorAll('.check-item input').forEach(cb => {
+  cb.addEventListener('change', function() {
+    this.closest('.check-item').classList.toggle('checked', this.checked);
+  });
+});
+
+// Progress dots
+document.querySelectorAll('.form-section').forEach(section => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const num = section.dataset.section;
+        document.querySelectorAll('.progress-dot').forEach(d => d.classList.remove('active'));
+        document.querySelector(`.progress-dot[data-section="${num}"]`).classList.add('active');
+      }
+    });
+  }, {threshold: 0.5});
+  observer.observe(section);
+});
+
+// Price estimate
+function updatePrice() {
+  const selected = document.querySelector('input[name="paket"]:checked');
+  if (selected) {
+    const item = selected.closest('.radio-item');
+    const price = parseInt(item.dataset.price);
+    if (price > 0) {
+      document.getElementById('priceDisplay').textContent = 'Rp ' + price.toLocaleString('id-ID');
+    } else {
+      document.getElementById('priceDisplay').textContent = 'Konsultasi Dulu';
+    }
+  }
+}
+
+// Format WA number
+function formatWA(num) {
+  num = num.replace(/\D/g, '');
+  if (num.startsWith('0')) num = '62' + num.substring(1);
+  if (!num.startsWith('62')) num = '62' + num;
+  return num;
+}
+
+// Build WhatsApp message
+function buildMessage() {
+  const f = document.getElementById('orderForm');
+  const nama = f.nama.value;
+  const wa = formatWA(f.wa.value);
+  const brand = f.brand.value;
+  const paket = f.querySelector('input[name="paket"]:checked')?.value || '-';
+  const industri = f.industri.value || '-';
+  const halaman = f.halaman.value || '-';
+  const fitur = Array.from(f.querySelectorAll('input[name="fitur"]:checked')).map(c => c.value).join(', ') || '-';
+  const style = f.querySelector('input[name="style"]:checked')?.value || '-';
+  const budget = f.budget.value || '-';
+  const deadline = f.deadline.value || '-';
+  const konten = f.konten.value || '-';
+  const catatan = f.catatan.value || '-';
+  const referensi = f.referensi.value || '-';
+  const warna = f.warna.value || '-';
+  const logo = f.logo.value || '-';
+
+  let msg = `*ORDER WEBSITE — LYID Web Development*\n\n`;
+  msg += `*1. Info Kontak*\n`;
+  msg += `Nama: ${nama}\nBrand: ${brand}\nWA: ${f.wa.value}\n\n`;
+  msg += `*2. Jenis Website*\nPaket: ${paket}\nIndustri: ${industri}\nHalaman: ${halaman}\n\n`;
+  msg += `*3. Fitur*\n${fitur}\n\n`;
+  msg += `*4. Desain*\nStyle: ${style}\nWarna: ${warna}\nLogo: ${logo}\nReferensi: ${referensi}\n\n`;
+  msg += `*5. Timeline & Budget*\nBudget: ${budget}\nDeadline: ${deadline}\nKonten: ${konten}\n\n`;
+  if (catatan !== '-') msg += `*Catatan*\n${catatan}\n\n`;
+  msg += `_Dikirim dari form order LYID Web Development_`;
+
+  return {wa, msg};
+}
+
+// Submit -> WhatsApp
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const {wa, msg} = buildMessage();
+  const url = `https://wa.me/6287897299985?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+  document.getElementById('successMsg').classList.add('show');
+  document.getElementById('orderForm').style.display = 'none';
+  document.querySelector('.progress').style.display = 'none';
+});
+
+// Direct WA link
+document.getElementById('waDirect').href = 'https://wa.me/6287897299985?text=' + encodeURIComponent('Halo, saya tertarik dengan jasa pembuatan website. Bisa konsultasi?');
+</script>
+<script>document.querySelectorAll('.form-section,.price-estimate,.progress').forEach(function(el,i){el.classList.add('fade-in');el.style.transitionDelay=i*.1+'s'});var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});</script>
+
+</body>
+</html>

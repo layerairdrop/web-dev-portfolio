@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Scripts — Setup Guide</title>
+<meta name="description" content="Panduan setup bot airdrop LYID. Dari download hingga bot berjalan, step by step.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--radius:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:800px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin:60px 0 12px;text-align:center}
+h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--muted);text-align:center;margin-bottom:48px;font-size:1.05rem}
+
+/* Steps */
+.step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:24px;position:relative}
+.step-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.step-num{width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem;flex-shrink:0}
+.step-title{font-size:1.2rem;font-weight:700}
+.step-desc{color:var(--muted);margin-bottom:16px;font-size:.95rem}
+.step-content{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.step-content h4{font-size:.85rem;font-weight:600;color:var(--blue);margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+pre{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;overflow-x:auto;font-size:.85rem;line-height:1.5;font-family:'Fira Code',monospace;margin:12px 0}
+code{background:var(--card);padding:2px 6px;border-radius:4px;font-size:.85rem;font-family:'Fira Code',monospace}
+ul,ol{margin:0 0 16px 20px;font-size:.9rem}li{margin-bottom:6px}
+.tip{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:12px 16px;font-size:.85rem;margin:12px 0}
+.tip::before{content:"💡 ";font-weight:600}
+.warn{background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2);border-radius:8px;padding:12px 16px;font-size:.85rem;margin:12px 0}
+.warn::before{content:"⚠️ ";font-weight:600}
+
+/* Bot selector */
+.bot-selector{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.bot-chip{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:99px;font-size:.8rem;cursor:pointer;transition:all .2s;color:var(--muted)}
+.bot-chip:hover,.bot-chip.active{border-color:var(--blue);color:var(--text);background:rgba(59,130,246,.1)}
+
+/* CTA */
+.cta{text-align:center;padding:48px 0}
+.btn-primary{display:inline-block;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:600}
+
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{padding:0 16px}
+  h1{font-size:1.6rem;margin:40px 0 8px}
+  .subtitle{margin-bottom:32px;font-size:.95rem}
+  .step{padding:20px;margin-bottom:16px}
+  .step-header{gap:12px}
+  .step-num{width:40px;height:40px;font-size:1rem}
+  .step-title{font-size:1rem}
+  pre{font-size:.75rem;padding:12px}
+  .bot-chip{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px}
+  .cta{padding:32px 0}
+  footer{padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Setup Guide</a>
+  <a href="/" style="color:var(--muted);text-decoration:none;font-size:.85rem">← Home</a>
+</div></nav>
+
+<div class="container">
+
+<h1>Setup <span class="grad">Bot LYID</span></h1>
+<p class="subtitle">Panduan lengkap dari download hingga bot berjalan. Ikuti step by step.</p>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">1</div>
+    <div class="step-title">Download & Extract</div>
+  </div>
+  <p class="step-desc">Setelah membeli bot, kamu akan menerima file .zip atau akses ke GitHub repo private.</p>
+  <div class="step-content">
+    <h4>Langkah</h4>
+    <ol>
+      <li>Download file dari link yang diberikan @OG_LYID_bot</li>
+      <li>Extract ke folder yang mudah diakses (contoh: <code>C:\LYID-BOTS\peakai-bot\</code>)</li>
+      <li>Pastikan semua file ada: <code>package.json</code>, <code>src/</code>, <code>config.json.example</code>, <code>README.md</code></li>
+    </ol>
+    <div class="tip">Jika dapat akses GitHub, clone dengan: <code>git clone https://github.com/layerairdrop/[bot-name].git</code></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">2</div>
+    <div class="step-title">Install Dependencies</div>
+  </div>
+  <p class="step-desc">Bot butuh Node.js dan beberapa package. Install semua dependency yang diperlukan.</p>
+  <div class="step-content">
+    <h4>Prasyarat</h4>
+    <ul>
+      <li><strong>Node.js</strong> v18+ — download dari <a href="https://nodejs.org" style="color:var(--blue)">nodejs.org</a></li>
+      <li><strong>Git</strong> (opsional) — untuk clone dari GitHub</li>
+    </ul>
+    <h4>Install</h4>
+    <pre>cd path/to/bot-folder
+npm install</pre>
+    <div class="tip">Jika ada error, coba: <code>npm install --force</code> atau hapus <code>node_modules/</code> lalu install ulang.</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">3</div>
+    <div class="step-title">Configure</div>
+  </div>
+  <p class="step-desc">Copy file contoh config dan isi dengan data kamu.</p>
+  <div class="step-content">
+    <h4>Langkah</h4>
+    <pre>cp config.json.example config.json</pre>
+    <p>Buka <code>config.json</code> dengan text editor (Notepad++, VS Code, dll). Isi:</p>
+    <ul>
+      <li><strong>Wallet address</strong> — wallet Ethereum/EVM kamu</li>
+      <li><strong>Private key</strong> (opsional) — untuk on-chain TX</li>
+      <li><strong>Proxy</strong> (opsional) — format: <code>http://user:pass@ip:port</code></li>
+      <li><strong>Referral code</strong> — jika ada</li>
+      <li><strong>API keys</strong> — Capsolver, 2captcha (jika butuh captcha)</li>
+    </ul>
+    <div class="warn">JANGAN share <code>config.json</code> ke siapa saja. File ini berisi data sensitif.</div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">4</div>
+    <div class="step-title">Run Bot</div>
+  </div>
+  <p class="step-desc">Jalankan bot dan pastikan berjalan dengan baik.</p>
+  <div class="step-content">
+    <h4>Run</h4>
+    <pre>node index.js</pre>
+    <p>Atau untuk beberapa bot Python:</p>
+    <pre>python bot.py</pre>
+    <h4>Run Background (24/7)</h4>
+    <pre>npm install -g pm2
+pm2 start index.js --name my-bot
+pm2 save</pre>
+    <div class="tip">Gunakan PM2 untuk menjalankan bot 24/7. PM2 akan auto-restart jika bot crash.</div>
+    <h4>Monitor</h4>
+    <pre>pm2 status          # cek status semua bot
+pm2 logs my-bot     # lihat log real-time
+pm2 restart my-bot  # restart jika error</pre>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">5</div>
+    <div class="step-title">Verify & Monitor</div>
+  </div>
+  <p class="step-desc">Pastikan bot berjalan dengan benar dan monitor hasilnya.</p>
+  <div class="step-content">
+    <h4>Checklist</h4>
+    <ul>
+      <li>☐ Bot started tanpa error</li>
+      <li>☐ Task pertama completed</li>
+      <li>☐ Reward tercatat (cek di dashboard project)</li>
+      <li>☐ Log menunjukkan progress</li>
+      <li>☐ Tidak ada rate limit / ban</li>
+    </ul>
+    <h4>Common Issues</h4>
+    <ul>
+      <li><strong>"Cannot find module"</strong> → <code>npm install</code> ulang</li>
+      <li><strong>"ECONNREFUSED"</strong> → cek proxy / internet</li>
+      <li><strong>"Rate limit"</strong> → tambah delay di config</li>
+      <li><strong>"Invalid license"</strong> → hubungi admin</li>
+    </ul>
+  </div>
+</div>
+
+<section class="cta">
+  <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:8px">Butuh Bantuan?</h2>
+  <p style="color:var(--muted);margin-bottom:20px">Hubungi admin untuk support teknis atau pertanyaan.</p>
+  <a href="https://t.me/rmndkyl" class="btn-primary">Chat Admin @rmndkyl</a>
+</section>
+
+</div>
+
+<footer><div class="container"><p>&copy; 2026 LYID — Layer Airdrop ID</p></div></footer>
+</body>
+</html>

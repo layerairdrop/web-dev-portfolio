@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="EduAcademy — Platform Pembelajaran Online Terbaik">
+<meta property="og:description" content="EduAcademy — Platform Pembelajaran Online Terbaik">
+<meta property="og:image" content="https://images.unsplash.com/photo-1501504905252-47347d3c7b43?w=1200&q=80">
+<meta property="og:url" content="https://ralies.biz.id/edu-academy">
+<meta property="og:type" content="website">
+<title>EduAcademy — Platform Pembelajaran Online Terbaik</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+a,button{transition:all .2s ease}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+:is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--accent);color:#fff;padding:12px 20px;border-radius:8px;z-index:200;font-weight:600;text-decoration:none;font-size:.85rem}
+.skip-link:focus{top:16px}
+:root{
+  --bg:#fffbf5;--surface:#fff;--text:#1a1a1a;--muted:#6b6b6b;
+  --accent:#d35400;--accent2:#e67e22;--green:#27ae60;
+  --radius:12px;--shadow:0 4px 20px rgba(0,0,0,.08)
+}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'DM Serif Display',serif}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,251,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid #f0e6d6;padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
+.logo{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.btn-wa{background:var(--green);color:#fff;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.85rem;transition:opacity .2s}
+.btn-wa:hover{opacity:.85}
+.btn-wa:active{transform:scale(.97)}
+
+/* HERO — Liquid Glass */
+.hero{padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(59,130,246,.15),transparent 50%),radial-gradient(circle at 80% 20%,rgba(139,92,246,.12),transparent 50%);pointer-events:none}
+.hero::after{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(59,130,246,.06),transparent,rgba(139,92,246,.06),transparent);animation:hero-spin 20s linear infinite;pointer-events:none}
+@keyframes hero-spin{to{transform:rotate(360deg)}}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);margin-bottom:20px;line-height:1.15;color:#fff;position:relative;z-index:1}
+.hero h1 span{background:linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.75);max-width:580px;margin:0 auto 36px;position:relative;z-index:1}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:15px 36px;border-radius:999px;text-decoration:none;font-weight:600;transition:all .25s;box-shadow:0 8px 24px rgba(59,130,246,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,130,246,.35)}
+.btn-outline{border:2px solid rgba(255,255,255,.25);color:#fff;padding:13px 34px;border-radius:999px;text-decoration:none;font-weight:600;transition:all .25s;backdrop-filter:blur(8px);background:rgba(255,255,255,.06)}
+.btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.45)}
+.btn-outline:active{transform:scale(.97)}
+
+/* MENU SECTION */
+.section{padding:100px 0}
+.section-title{text-align:center;font-size:2.2rem;margin-bottom:14px;color:#fff}
+.section-sub{text-align:center;color:rgba(255,255,255,.65);margin-bottom:52px}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.menu-card{background:rgba(255,255,255,.04);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.menu-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.25);border-color:rgba(255,255,255,.15)}
+.menu-img{height:200px;position:relative;overflow:hidden}
+.menu-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.menu-card:hover .menu-img img{transform:scale(1.06)}
+.menu-body{padding:22px}
+.menu-body h3{font-size:1.15rem;margin-bottom:8px;color:#fff}
+.menu-body p{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:14px;line-height:1.55}
+.menu-price{font-weight:700;background:linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.05rem}
+.menu-tag{display:inline-block;background:rgba(59,130,246,.15);color:#60a5fa;padding:5px 12px;border-radius:999px;font-size:.75rem;font-weight:600;margin-bottom:10px;border:1px solid rgba(59,130,246,.2)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-img{height:400px;border-radius:16px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.08)}
+.about-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.about-grid:hover .about-img img{transform:scale(1.04)}
+.about-text h2{font-size:2rem;margin-bottom:18px;color:#fff}
+.about-text p{color:rgba(255,255,255,.7);margin-bottom:16px;line-height:1.7}
+.stats{display:flex;gap:32px;margin-top:28px}
+.stat{background:rgba(255,255,255,.04);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px 24px;text-align:center;transition:border-color .3s}
+.stat:hover{border-color:rgba(59,130,246,.3)}
+.stat h3{font-size:1.8rem;background:linear-gradient(90deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.stat p{font-size:.8rem;color:rgba(255,255,255,.6)}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.testi-card{background:rgba(255,255,255,.04);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.2);border-color:rgba(255,255,255,.12)}
+.testi-card p{font-style:italic;color:rgba(255,255,255,.7);margin-bottom:18px;line-height:1.65}
+.testi-author{font-weight:600;font-size:.9rem;color:#fff}
+.testi-role{font-size:.8rem;color:rgba(255,255,255,.5)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info h3{font-size:1.3rem;margin-bottom:18px;color:#fff}
+.contact-item{display:flex;gap:12px;margin-bottom:16px;color:rgba(255,255,255,.7);font-size:.95rem}
+.contact-item .icon{font-size:1.2rem}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.contact-form input,.contact-form textarea{padding:14px 18px;border:1px solid rgba(255,255,255,.1);border-radius:12px;font-family:inherit;font-size:.95rem;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);color:#fff;transition:border-color .2s}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.35)}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form button{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:15px;border:none;border-radius:12px;font-weight:600;font-size:1rem;cursor:pointer;transition:all .25s;box-shadow:0 8px 24px rgba(59,130,246,.2)}
+.contact-form button:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,130,246,.3)}
+
+/* MAP */
+.map-wrap{margin-top:40px;border-radius:16px;overflow:hidden;height:300px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5)}
+
+/* FOOTER */
+footer{background:rgba(0,0,0,.35);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.6);padding:48px 0;text-align:center}
+footer .logo{color:#fff;margin-bottom:12px;font-size:1.3rem}
+footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:12px;z-index:110;min-height:44px;min-width:44px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hamburger{display:block}
+  .nav-inner{position:relative}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(26,26,46,.98);backdrop-filter:blur(16px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav-links.active{display:flex}
+  .nav-links li{padding:4px 0}
+  .nav-links a{display:block;padding:12px 0;min-height:44px;display:flex;align-items:center;color:rgba(255,255,255,.8)}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-img{height:260px}
+  .stats{flex-direction:column;gap:16px}
+  .contact-form input,.contact-form textarea{font-size:16px!important}
+  .btn-wa{background:var(--green);color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.85rem}
+}
+@media(max-width:428px){
+  .hero{padding:80px 0 50px}
+  .hero h1{font-size:1.75rem}
+  .hero p{font-size:1rem}
+  .section{padding:60px 0}
+  .section-title{font-size:1.6rem}
+  .menu-grid,.testi-grid{grid-template-columns:1fr}
+  .reservasi-row{grid-template-columns:1fr!important}
+}
+
+/* === Premium Animations === */
+.ken-burns{animation:ken-burns 18s ease-in-out infinite alternate;will-change:transform}
+@keyframes ken-burns{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.stagger-item{opacity:0;transform:translateY(25px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+.stagger-item.visible{opacity:1;transform:translateY(0)}
+.zoom-hover{overflow:hidden}
+.zoom-hover img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.zoom-hover:hover img{transform:scale(1.04)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in,.stagger-item{opacity:1!important;transform:none!important}.ken-burns{animation:none!important}}
+
+/* iOS FADE-IN FIX */
+.fade-in{opacity:1!important;transform:none!important;transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1!important;transform:none!important}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#3b82f6,#8b5cf6);z-index:1001;transform-origin:left;transform:scaleX(0);width:100%" id="pb"></div>
+<a href="/" style="position:fixed;top:16px;left:16px;z-index:999;background:rgba(0,0,0,.7);color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;backdrop-filter:blur(8px);transition:background .2s" onmouseover="this.style.background='rgba(0,0,0,.9)'" onmouseout="this.style.background='rgba(0,0,0,.7)'">← Portfolio</a>
+
+<a href="#menu" class="skip-link">Skip to content</a>
+
+<nav>
+<div class="nav-inner">
+  <div class="logo">EduAcademy</div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#ulasan">Ulasan</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+  <a href="https://wa.me/6287897299985" class="btn-wa">Daftar Sekarang</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+  <h1>Belajar Tanpa Batas<br><span>Masa Depan Cerah</span></h1>
+  <p>Platform e-learning terbaik dengan 200+ kursus, mentor berpengalaman, dan sertifikat resmi. Belajar kapan saja, di mana saja.</p>
+  <div class="hero-btns">
+    <a href="#menu" class="btn-primary">Lihat Kursus</a>
+    <a href="#reservasi" class="btn-outline" style="border-color:var(--green);color:var(--green)">Reservasi Meja</a>
+    <a href="https://wa.me/6287897299985" class="btn-outline">Order via WhatsApp</a>
+  </div>
+</div>
+</section>
+
+<section class="section" id="menu">
+<div class="container">
+  <h2 class="section-title">Kursus Populer</h2>
+  <p class="section-sub">Pilihan kursus terbaik untuk mengembangkan karir Anda</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-img"><img src="https://images.unsplash.com/photo-1501504905252-47347d3c7b43?w=400&q=80" alt="Rendang" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="menu-body">
+        <span class="menu-tag">Best Seller</span>
+        <h3>Rendang Sapi Premium</h3>
+        <p>Daging sapi empuk dengan bumbu rendang autentik Padang, dimasak 4 jam.</p>
+        <div class="menu-price">Rp 45.000</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80" alt="Soto" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="menu-body">
+        <span class="menu-tag">Populer</span>
+        <h3>Soto Betawi</h3>
+        <p>Soto khas Jakarta dengan kuah santan gurih, daging sapi, dan jeroan.</p>
+        <div class="menu-price">Rp 35.000</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80" alt="Ikan Bakar" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="menu-body">
+        <span class="menu-tag">Baru</span>
+        <h3>Gurame Bakar Madu</h3>
+        <p>Gurame segar dibakar dengan olesan madu dan sambal kecap pedas.</p>
+        <div class="menu-price">Rp 55.000</div>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-img"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" alt="Minuman" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+      <div class="menu-body">
+        <h3>Es Teh Manis Nusantara</h3>
+        <p>Teh pilihan dengan gula aren asli, segar dan manis alami.</p>
+        <div class="menu-price">Rp 12.000</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="tentang" style="background:#fef3e2">
+<div class="container">
+  <div class="about-grid">
+    <div class="about-img"><img src="https://images.unsplash.com/photo-1501504905252-47347d3c7b43?w=600&q=80" alt="Interior EduAcademy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius)" loading="lazy"></div>
+    <div class="about-text">
+      <h2>Tentang EduAcademy</h2>
+      <p>Didirikan tahun 2019, EduAcademy hadir untuk menghadirkan pendidikan berkualitas untuk siapa saja di mana saja. Kami menggunakan bahan-bahan segar dari pasar lokal setiap hari.</p>
+      <p>Tim kami terdiri dari profesional berpengalaman yang berdedikasi untuk membantu Anda mencapai potensi terbaik.</p>
+      <div class="stats">
+        <div class="stat"><h3>200+</h3><p>Tahun Pengalaman</p></div>
+        <div class="stat"><h3>200+</h3><p>Kursus Tersedia</p></div>
+        <div class="stat"><h3>4.9</h3><p>Rating Google</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="ulasan">
+<div class="container">
+  <h2 class="section-title">Apa Kata Mereka</h2>
+  <p class="section-sub">Ulasan dari pelanggan setia kami</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <p>"Kurikulumnya sangat update dan mentor nya supportive. Sekarang saya sudah kerja di startup ternama!"</p>
+      <div class="testi-author">Rizky</div>
+      <div class="testi-role">Full Stack Developer</div>
+    </div>
+    <div class="testi-card">
+      <p>"EduAcademy membantu saya switch career dari accounting ke data science. Best investment ever!"</p>
+      <div class="testi-author">Putri</div>
+      <div class="testi-role">Data Scientist</div>
+    </div>
+    <div class="testi-card">
+      <p>"Sertifikatnya diakui perusahaan besar. Fresh graduate dengan certified skills!"</p>
+      <div class="testi-author">Ahmad</div>
+      <div class="testi-role">UI/UX Designer</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="kontak" style="background:#fef3e2">
+<div class="container">
+  <h2 class="section-title">Mulai Belajar</h2>
+  <p class="section-sub">Bergabung dengan ribuan siswa yang sudah transformasi karir</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Informasi Kontak</h3>
+      <div class="contact-item"><span class="icon">📍</span> Jl. Sudirman No. 50, Jakarta Selatan</div>
+      <div class="contact-item"><span class="icon">📞</span> +62 878 9729 9985</div>
+      <div class="contact-item"><span class="icon">📧</span> info@eduacademy.id</div>
+      <div class="contact-item"><span class="icon">🕐</span> Senin - Jumat, 09:00 - 17:00 WIB</div>
+      <div class="map-wrap">Google Maps Embed Placeholder</div>
+    </div>
+    <form class="contact-form">
+      <label for="contact-name" class="sr-only">Nama Lengkap</label><input type="text" id="contact-name" placeholder="Nama Lengkap" required style="font-size:16px">
+      <label for="contact-email" class="sr-only">Email</label><input type="email" id="contact-email" placeholder="Email" required style="font-size:16px">
+      <label for="contact-wa" class="sr-only">No. WhatsApp</label><input type="tel" id="contact-wa" placeholder="No. WhatsApp" style="font-size:16px">
+      <label for="contact-msg" class="sr-only">Pesan Anda</label><textarea id="contact-msg" placeholder="Pesan Anda (reservasi, catering, dll)" style="font-size:16px"></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<section class="section" id="reservasi" style="background:#fef3e2">
+<div class="container">
+  <h2 class="section-title">Reservasi Online</h2>
+  <p class="section-sub">Booking meja untuk makan di tempat. Konfirmasi via WhatsApp.</p>
+  <div style="max-width:600px;margin:0 auto;display:grid;gap:12px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <label for="rname" class="sr-only">Nama Lengkap</label><input type="text" id="rname" placeholder="Nama Lengkap" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+      <label for="rwa" class="sr-only">No. WhatsApp</label><input type="tel" id="rwa" placeholder="No. WhatsApp" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+    </div>
+    <div class="reservasi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+      <label for="rdate" class="sr-only">Tanggal</label><input type="date" id="rdate" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+      <label for="rtime" class="sr-only">Jam Kedatangan</label><select id="rtime" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+        <option>Jam Kedatangan</option>
+        <option>11:00</option><option>12:00</option><option>13:00</option>
+        <option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option>
+      </select>
+      <label for="rpeople" class="sr-only">Jumlah Orang</label><select id="rpeople" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+        <option>Jumlah Orang</option>
+        <option>1-2 orang</option><option>3-4 orang</option><option>5-6 orang</option>
+        <option>7-10 orang</option><option>10+ orang (private room)</option>
+      </select>
+    </div>
+    <button onclick="window.open('https://wa.me/6287897299985?text=Reservasi:%20Nama%3A%20'+document.getElementById('rname').value+'%20Tgl%3A%20'+document.getElementById('rdate').value+'%20Jam%3A%20'+document.getElementById('rtime').value+'%20Orang%3A%20'+document.getElementById('rpeople').value)" style="padding:14px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:1rem;cursor:pointer;font-family:inherit">Reservasi via WhatsApp</button>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <div class="logo">EduAcademy</div>
+  <p>EduAcademy</p>
+  <p style="font-size:.75rem;color:var(--muted)">© 2026 EduAcademy. Dibuat oleh LYID Web Development</p>
+</div>
+</footer>
+
+<script>document.querySelector('.hamburger').addEventListener('click',function(){this.classList.toggle('active');var n=document.querySelector('.nav-links');n.classList.toggle('active');this.setAttribute('aria-expanded',n.classList.contains('active'))});
+document.querySelectorAll('.section,.hero,.menu-card,.testi-card,.about-grid,.contact-grid').forEach(function(el,i){el.classList.add('fade-in');el.style.transitionDelay=(i%6)*.08+'s'});var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+</script>
+<script>
+// Scroll progress
+window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;var b=document.getElementById('pb');if(b&&h>0)b.style.transform='scaleX('+window.scrollY/h+')'},{passive:true});
+// Fade in
+document.querySelectorAll('section,.fade-up').forEach(function(el,i){el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .7s ease,transform .7s ease';el.style.transitionDelay=(i%6)*.08+'s'});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';obs.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('section,.fade-up').forEach(function(el){obs.observe(el)});
+
+// Stagger support
+document.querySelectorAll('[data-stagger]').forEach(function(g){g.querySelectorAll('.stagger-item').forEach(function(el,i){el.style.transitionDelay=(i*.08)+'s'})});
+</script>
+</body>
+</html>

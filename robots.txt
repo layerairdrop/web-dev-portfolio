@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.ralies.biz.id/sitemap.xml
+
+User-agent: *
+Disallow: /sites/*/

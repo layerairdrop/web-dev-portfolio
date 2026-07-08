@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID — Community Dashboard</title>
+<meta name="description" content="Real-time stats untuk LYID community. Bots, users, revenue, channels.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--radius:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;padding:0 24px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-size:2rem;font-weight:900;margin:48px 0 12px;text-align:center}
+h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--muted);text-align:center;margin-bottom:48px}
+
+/* Stats Grid */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:48px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}
+.stat-icon{font-size:2rem;margin-bottom:8px}
+.stat-val{font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{color:var(--muted);font-size:.8rem;margin-top:4px}
+.stat-change{font-size:.75rem;margin-top:8px;color:var(--green)}
+
+/* Channels */
+.channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:48px}
+.channel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;align-items:center;gap:16px}
+.channel-icon{width:48px;height:48px;background:var(--card);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.channel-name{font-weight:600;font-size:.95rem}
+.channel-stat{color:var(--muted);font-size:.8rem}
+.channel-link{color:var(--blue);text-decoration:none;font-size:.8rem}
+
+/* Bots */
+.bot-list{margin-bottom:48px}
+.bot-list h2{font-size:1.3rem;font-weight:700;margin-bottom:16px}
+.bot-row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border)}
+.bot-row:last-child{border-bottom:none}
+.bot-name{font-weight:500;font-size:.9rem}
+.bot-status{font-size:.75rem;padding:4px 10px;border-radius:99px;font-weight:600}
+.bot-status.active{background:rgba(34,197,94,.15);color:var(--green)}
+.bot-status.new{background:rgba(59,130,246,.15);color:var(--blue)}
+
+/* Timeline */
+.timeline{margin-bottom:48px}
+.timeline h2{font-size:1.3rem;font-weight:700;margin-bottom:16px}
+.event{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.event-dot{width:12px;height:12px;background:var(--blue);border-radius:50%;margin-top:6px;flex-shrink:0}
+.event-date{color:var(--muted);font-size:.75rem;min-width:80px}
+.event-text{font-size:.9rem}
+
+footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{padding:0 16px}
+  h1{font-size:1.6rem;margin:32px 0 8px}
+  .subtitle{margin-bottom:32px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .stat-card{padding:16px}
+  .stat-val{font-size:1.5rem}
+  .channels{grid-template-columns:1fr}
+  .channel{padding:16px}
+  .bot-row{flex-wrap:wrap;gap:8px;padding:12px 16px}
+  .bot-name{font-size:.85rem}
+  .event{flex-wrap:wrap;gap:8px}
+  .event-date{min-width:auto;font-size:.7rem}
+  footer{padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Community</a>
+  <a href="/" style="color:var(--muted);text-decoration:none;font-size:.85rem">← Home</a>
+</div></nav>
+
+<div class="container">
+<div style="position:relative;overflow:hidden;padding:40px 0">
+<img src="/Mascot-Images/MASCOT-LAUNCHING-ROCKET.png" alt="" style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;opacity:0.07;pointer-events:none;z-index:0">
+<h1>LYID <span class="grad">Community Dashboard</span></h1>
+<p class="subtitle">Real-time stats untuk Layer Airdrop ID community.</p>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-icon">🤖</div>
+    <div class="stat-val">19+</div>
+    <div class="stat-label">Active Bots</div>
+    <div class="stat-change">+3 this month</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">👥</div>
+    <div class="stat-val">50+</div>
+    <div class="stat-label">Active Users</div>
+    <div class="stat-change">+12 this month</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">📦</div>
+    <div class="stat-val">9</div>
+    <div class="stat-label">Licenses Sold</div>
+    <div class="stat-change">+2 this week</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">🔗</div>
+    <div class="stat-val">15+</div>
+    <div class="stat-label">Chains Supported</div>
+  </div>
+</div>
+
+<h2 style="font-size:1.3rem;font-weight:700;margin-bottom:16px">Channels</h2>
+<div class="channels">
+  <div class="channel">
+    <div class="channel-icon">📱</div>
+    <div>
+      <div class="channel-name">Telegram Channel</div>
+      <div class="channel-stat">868+ subscribers</div>
+      <a href="https://t.me/layerairdrop" class="channel-link">@layerairdrop</a>
+    </div>
+  </div>
+  <div class="channel">
+    <div class="channel-icon">💬</div>
+    <div>
+      <div class="channel-name">Telegram Discussion</div>
+      <div class="channel-stat">Active community</div>
+      <a href="https://t.me/layerairdropdiskusi" class="channel-link">@layerairdropdiskusi</a>
+    </div>
+  </div>
+  <div class="channel">
+    <div class="channel-icon">🎮</div>
+    <div>
+      <div class="channel-name">Discord</div>
+      <div class="channel-stat">LYID BOT#5255</div>
+      <a href="https://discord.gg/layerairdrop" class="channel-link">Join Server</a>
+    </div>
+  </div>
+  <div class="channel">
+    <div class="channel-icon">🐦</div>
+    <div>
+      <div class="channel-name">Twitter/X</div>
+      <div class="channel-stat">57 followers</div>
+      <a href="https://x.com/mandayXBT" class="channel-link">@mandayXBT</a>
+    </div>
+  </div>
+  <div class="channel">
+    <div class="channel-icon">💻</div>
+    <div>
+      <div class="channel-name">GitHub</div>
+      <div class="channel-stat">174 followers</div>
+      <a href="https://github.com/rmndkyl" class="channel-link">@rmndkyl</a>
+    </div>
+  </div>
+  <div class="channel">
+    <div class="channel-icon">🌐</div>
+    <div>
+      <div class="channel-name">Website</div>
+      <div class="channel-stat">13 demo sites</div>
+      <a href="https://ralies.biz.id" class="channel-link">ralies.biz.id</a>
+    </div>
+  </div>
+</div>
+
+<div class="bot-list">
+  <h2>Bot Fleet</h2>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden">
+    <div class="bot-row"><span class="bot-name">🤖 PeakAI Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 MeyHub Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Unicity Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Canopy Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 HertzFlow Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Kiedex Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Flpp Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 SimpleChain Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Watt2Trade Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Convallax Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Afyniti Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Orbition Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 UpOnly Bot</span><span class="bot-status active">Active</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Chesto Bot</span><span class="bot-status new">New</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 Fintoq Bot</span><span class="bot-status new">New</span></div>
+    <div class="bot-row"><span class="bot-name">🤖 TG Airdrop Bot</span><span class="bot-status new">New</span></div>
+  </div>
+</div>
+
+<div class="timeline">
+  <h2>Recent Activity</h2>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+    <div class="event">
+      <div class="event-dot"></div>
+      <div class="event-date">6 Jul 2026</div>
+      <div class="event-text">8 Specialist Agents audit completed. Security fixes deployed.</div>
+    </div>
+    <div class="event">
+      <div class="event-dot"></div>
+      <div class="event-date">6 Jul 2026</div>
+      <div class="event-text">Blog page launched with 3 full articles. SEO fixes deployed.</div>
+    </div>
+    <div class="event">
+      <div class="event-dot"></div>
+      <div class="event-date">5 Jul 2026</div>
+      <div class="event-text">TG Airdrop Bot live tested. ZeroE DEX campaign completed.</div>
+    </div>
+    <div class="event">
+      <div class="event-dot"></div>
+      <div class="event-date">4 Jul 2026</div>
+      <div class="event-text">LYID Academic launched. Pricing page live at ralies.biz.id/lyid-academic.</div>
+    </div>
+    <div class="event">
+      <div class="event-dot"></div>
+      <div class="event-date">3 Jul 2026</div>
+      <div class="event-text">PeakAI Bot built and tested. 13 wallets active, daily check-in automation.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<footer><div class="container"><p>&copy; 2026 LYID — Layer Airdrop ID · <a href="/" style="color:var(--blue)">Home</a> · <a href="/lyid-scripts.html" style="color:var(--blue)">Buy Bots</a></p></div></footer>
+</body>
+</html>

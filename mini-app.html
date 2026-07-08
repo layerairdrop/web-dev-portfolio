@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID Scripts — Mini App Telegram</title>
+<meta name="description" content="Beli bot airdrop LYID langsung dari Telegram. Pilih bot, bayar, download — tanpa keluar app.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--radius:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:0 0 80px;overflow-x:hidden}
+.container{max-width:500px;margin:0 auto;padding:0 16px}
+.header{padding:24px 0;text-align:center;border-bottom:1px solid var(--border)}
+.logo{font-weight:800;font-size:1.2rem}
+.logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.page-title{font-size:1.3rem;font-weight:700;margin:24px 0 8px}
+.page-desc{color:var(--muted);font-size:.85rem;margin-bottom:24px}
+.cat-title{font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:24px 0 12px}
+.bot-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.bot-info h3{font-size:.95rem;font-weight:600;margin-bottom:4px}
+.bot-info p{color:var(--muted);font-size:.8rem}
+.bot-price{font-weight:700;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.1rem}
+.btn-buy{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;margin-top:8px;display:block;text-align:center;text-decoration:none}
+.cart{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:16px;display:flex;justify-content:space-between;align-items:center;max-width:500px;margin:0 auto}
+.cart-info{font-size:.85rem}.cart-total{font-weight:700;font-size:1.1rem}
+.btn-checkout{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer}
+.badge-new{background:rgba(34,197,94,.15);color:#22c55e;font-size:.65rem;padding:2px 8px;border-radius:4px;font-weight:600;margin-left:8px}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <a href="/lyid-scripts.html" style="color:var(--muted);text-decoration:none;font-size:.8rem;display:block;text-align:left;margin-bottom:8px">← Kembali ke LYID Scripts</a>
+    <div class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Scripts Store</div>
+  </div>
+  
+  <div class="page-title">Pilih Bot</div>
+  <p class="page-desc">Klik "Tambah" untuk menambah ke keranjang. Bayar langsung dari Telegram.</p>
+  
+  <div class="cat-title">🔥 Populer</div>
+  
+  <div class="bot-item">
+    <div class="bot-info">
+      <h3>PeakAI Bot <span class="badge-new">NEW</span></h3>
+      <p>Daily check-in, referral, Turnstile solver</p>
+    </div>
+    <div style="text-align:right">
+      <div class="bot-price">Rp 80K</div>
+      <a href="https://t.me/OG_LYID_bot?start=buy_peakai" class="btn-buy">Beli</a>
+    </div>
+  </div>
+  
+  <div class="bot-item">
+    <div class="bot-info">
+      <h3>MeyHub Bot</h3>
+      <p>LLM quiz engine, Base chain, auto-task</p>
+    </div>
+    <div style="text-align:right">
+      <div class="bot-price">Rp 80K</div>
+      <a href="https://t.me/OG_LYID_bot?start=buy_meyhub" class="btn-buy">Beli</a>
+    </div>
+  </div>
+  
+  <div class="bot-item">
+    <div class="bot-info">
+      <h3>Unicity Bot</h3>
+      <p>30 quests, ECDSA, GitHub automation</p>
+    </div>
+    <div style="text-align:right">
+      <div class="bot-price">Rp 95K</div>
+      <a href="https://t.me/OG_LYID_bot?start=buy_unicity" class="btn-buy">Beli</a>
+    </div>
+  </div>
+  
+  <div class="cat-title">🤖 Semua Bot</div>
+  
+  <div class="bot-item">
+    <div class="bot-info"><h3>Canopy Bot</h3><p>Daily mining, referral</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 80K</div><a href="https://t.me/OG_LYID_bot?start=buy_canopy" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>HertzFlow Bot</h3><p>Daily rewards, proxy</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 80K</div><a href="https://t.me/OG_LYID_bot?start=buy_hertzflow" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>Kiedex Bot</h3><p>DEX automation</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 80K</div><a href="https://t.me/OG_LYID_bot?start=buy_kiedex" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>Flpp Bot</h3><p>DEX aggregator</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 80K</div><a href="https://t.me/OG_LYID_bot?start=buy_flpp" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>SimpleChain Bot</h3><p>On-chain tasks</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 65K</div><a href="https://t.me/OG_LYID_bot?start=buy_simplechain" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>Watt2Trade Bot</h3><p>Trading automation</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 65K</div><a href="https://t.me/OG_LYID_bot?start=buy_watt2trade" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>Convallax Bot</h3><p>DeFi automation</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 65K</div><a href="https://t.me/OG_LYID_bot?start=buy_convallax" class="btn-buy">Beli</a></div>
+  </div>
+  <div class="bot-item">
+    <div class="bot-info"><h3>Afyniti Bot</h3><p>DeFi farming</p></div>
+    <div style="text-align:right"><div class="bot-price">Rp 65K</div><a href="https://t.me/OG_LYID_bot?start=buy_afyniti" class="btn-buy">Beli</a></div>
+  </div>
+  
+  <div class="cat-title">📦 Paket Hemat</div>
+  
+  <div class="bot-item" style="border-color:var(--purple)">
+    <div class="bot-info">
+      <h3 style="color:var(--purple)">Pro Bundle (Semua Bot)</h3>
+      <p>Semua 19+ bot + update gratis 3 bulan</p>
+    </div>
+    <div style="text-align:right">
+      <div class="bot-price">Rp 500K</div>
+      <a href="https://t.me/OG_LYID_bot?start=buy_bundle_pro" class="btn-buy">Beli</a>
+    </div>
+  </div>
+  
+  <div class="bot-item">
+    <div class="bot-info">
+      <h3>Starter Bundle (3 Bot)</h3>
+      <p>Pilih 3 bot favorit kamu</p>
+    </div>
+    <div style="text-align:right">
+      <div class="bot-price">Rp 200K</div>
+      <a href="https://t.me/OG_LYID_bot?start=buy_bundle_starter" class="btn-buy">Beli</a>
+    </div>
+  </div>
+</div>
+
+<div class="cart">
+  <div class="cart-info">
+    <div style="color:var(--muted);font-size:.75rem">Butuh bantuan?</div>
+    <a href="https://t.me/rmndkyl" style="color:var(--blue);text-decoration:none;font-size:.85rem">Chat Admin</a>
+  </div>
+  <a href="https://t.me/OG_LYID_bot" class="btn-checkout">🛒 Beli via Bot</a>
+</div>
+</body>
+</html>

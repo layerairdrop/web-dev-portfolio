@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LYID — Automation & Development Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;
+  --text:#e4e4e7;--muted:#71717a;
+  --blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--cyan:#06b6d4;
+  --gold:#f59e0b;--pink:#ec4899;
+  --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.5)
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+
+.card{
+  max-width:520px;margin:0 auto;min-height:100vh;
+  background:var(--bg);padding:0;position:relative;overflow:hidden;
+}
+
+/* HEADER */
+.header{
+  text-align:center;padding:32px 24px 24px;
+  background:linear-gradient(135deg,rgba(59,130,246,.12) 0%,rgba(139,92,246,.12) 100%);
+  border-bottom:1px solid var(--border);position:relative;
+}
+.header::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,.1),transparent 70%);pointer-events:none}
+.header-badge{display:inline-block;background:var(--card);border:1px solid var(--border);padding:4px 14px;border-radius:999px;font-size:.7rem;color:var(--muted);margin-bottom:12px;letter-spacing:.05em}
+.header h1{font-size:1.5rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px}
+.header h1 span{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header p{font-size:.8rem;color:var(--muted)}
+.header .by{font-size:.7rem;color:var(--muted);margin-top:8px;opacity:.7}
+
+/* SECTION */
+.section{padding:20px 24px;border-bottom:1px solid var(--border)}
+.section-head{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.section-icon{font-size:1rem}
+.section-title{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.section-title.accent-blue{color:var(--blue)}
+.section-title.accent-purple{color:var(--purple)}
+.section-title.accent-green{color:var(--green)}
+.section-title.accent-gold{color:var(--gold)}
+.section-title.accent-pink{color:var(--pink)}
+
+/* ITEM ROW */
+.item{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(39,39,42,.5)}
+.item:last-child{border:none}
+.item-left{flex:1}
+.item-name{font-size:.82rem;font-weight:600;margin-bottom:2px}
+.item-desc{font-size:.7rem;color:var(--muted);line-height:1.4}
+.item-right{text-align:right;flex-shrink:0;margin-left:12px}
+.item-price{font-size:.85rem;font-weight:700}
+.item-price.highlight{color:var(--green)}
+.item-note{font-size:.65rem;color:var(--muted)}
+
+/* TIER CARD */
+.tier-grid{display:grid;gap:8px}
+.tier{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;display:flex;justify-content:space-between;align-items:center;transition:border-color .2s}
+.tier:hover{border-color:var(--blue)}
+.tier:active{transform:scale(.98)}
+.tier-left{flex:1}
+.tier-name{font-size:.8rem;font-weight:700;margin-bottom:2px}
+.tier-desc{font-size:.68rem;color:var(--muted);line-height:1.3}
+.tier-right{text-align:right;flex-shrink:0;margin-left:12px}
+.tier-price{font-size:.82rem;font-weight:700}
+.tier-time{font-size:.65rem;color:var(--muted)}
+
+/* CHECK */
+.check{display:flex;align-items:center;gap:6px;font-size:.72rem;color:var(--muted);margin-bottom:3px}
+.check::before{content:"✓";color:var(--green);font-weight:700;font-size:.7rem}
+
+/* BUNDLE CARD */
+.bundle{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(139,92,246,.08));border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.bundle-left{flex:1}
+.bundle-name{font-size:.82rem;font-weight:700;margin-bottom:2px}
+.bundle-desc{font-size:.68rem;color:var(--muted)}
+.bundle-right{text-align:right;flex-shrink:0;margin-left:12px}
+.bundle-price{font-size:.9rem;font-weight:800;color:var(--green)}
+.bundle-save{font-size:.6rem;color:var(--gold);font-weight:600}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.why-item{display:flex;align-items:center;gap:6px;font-size:.72rem}
+.why-item .icon{font-size:.8rem}
+
+/* QR + CONTACT */
+.footer-section{padding:20px 24px;border-top:1px solid var(--border);background:var(--surface)}
+.footer-grid{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.qr-box{background:#fff;border-radius:10px;padding:8px;width:100px;height:100px;display:flex;align-items:center;justify-content:center}
+.qr-box img{width:100%;height:100%;image-rendering:pixelated}
+.contact-info{display:flex;flex-direction:column;gap:8px}
+.contact-item{display:flex;align-items:center;gap:8px;font-size:.78rem}
+.contact-item .icon{font-size:.9rem;width:20px;text-align:center}
+.contact-item a{color:var(--blue);text-decoration:none}
+.contact-item .label{color:var(--muted);font-size:.65rem}
+
+/* BOTTOM CTA */
+.bottom-cta{text-align:center;padding:16px 24px 24px;border-top:1px solid var(--border)}
+.cta-text{font-size:.7rem;color:var(--muted);margin-bottom:6px;line-height:1.5}
+.cta-text strong{color:var(--text)}
+.copyright{font-size:.6rem;color:#444;margin-top:8px}
+.mascot{position:absolute;pointer-events:none;z-index:-1;opacity:.1}
+.mascot img{width:100%;height:auto}
+.mascot-pkg{right:-50px;top:-10px;width:200px}
+.mascot-why{left:-50px;top:0;width:200px}
+.mascot-faq{right:-40px;bottom:-10px;width:180px}
+.section{position:relative;overflow:visible}
+.section>*:not(.mascot){position:relative;z-index:1}
+.footer-section>*:not(.mascot){position:relative;z-index:1}
+@media(max-width:428px){.mascot-pkg{opacity:.05;width:120px}.mascot-why{opacity:.05;width:100px}.mascot-faq{opacity:.05;width:100px}}
+
+/* SCAN BADGE */
+.scan-badge{display:inline-flex;align-items:center;gap:4px;background:var(--green);color:#fff;padding:4px 10px;border-radius:999px;font-size:.65rem;font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">AUTOMATION & DEVELOPMENT SERVICES</div>
+  <h1><span>LYID</span> SERVICES</h1>
+  <p>Solusi Otomasi & Pengembangan Digital untuk Bisnis Anda</p>
+  <div class="by">by @rmndkyl | Layer Airdrop ID</div>
+</div>
+
+<!-- AIRDROP SCRIPTS -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-icon">🤖</span>
+    <span class="section-title accent-blue">AIRDROP SCRIPTS</span>
+  </div>
+  <div class="item">
+    <div class="item-left">
+      <div class="item-name">13+ Premium Scripts</div>
+      <div class="item-desc">
+        <span class="check">Free Updates</span>
+        <span class="check">Fully Automated</span>
+        <span class="check">Full Source Code</span>
+        <span class="check">Multi-wallet Support</span>
+        <span class="check">Daily Auto-Run</span>
+        <span class="check">Proxy Rotation</span>
+      </div>
+    </div>
+    <div class="item-right">
+      <div class="item-price highlight">Rp 95K</div>
+      <div class="item-note">Bundle Hemat</div>
+      <div class="item-price" style="margin-top:4px;font-size:.75rem">Rp 200K/bln</div>
+      <div class="item-note">Subscription</div>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOM BOT -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-icon">⚡</span>
+    <span class="section-title accent-purple">CUSTOM BOT DEVELOPMENT</span>
+  </div>
+  <div class="tier-grid">
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">Simple Bot</div>
+        <div class="tier-desc">Telegram / Discord Basic · Fitur Standar</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 300K - 800K</div>
+        <div class="tier-time">2-3 Days</div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">Medium Bot</div>
+        <div class="tier-desc">Payment Gateway · API Integration</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 1.2jt - 3jt</div>
+        <div class="tier-time">1-2 Weeks</div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">Complex Bot</div>
+        <div class="tier-desc">All Integration · Trading / Multi-Platform</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 5jt - 12jt</div>
+        <div class="tier-time">1-2 Months</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WEB DEVELOPMENT -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-icon">🌐</span>
+    <span class="section-title accent-green">WEB DEVELOPMENT</span>
+  </div>
+  <p style="font-size:.7rem;color:var(--muted);margin-bottom:12px">Website Modern, Responsive & SEO Friendly</p>
+  <div class="tier-grid">
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">Landing Page</div>
+        <div class="tier-desc">1-3 Halaman · Desain Premium · Mobile Responsive · SEO Basic</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 500K - 1.5jt</div>
+        <div class="tier-time">3-7 Days</div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">Company Profile</div>
+        <div class="tier-desc">5-10 Halaman · Custom Design · CMS · SEO On-Page</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 2.5jt - 5jt</div>
+        <div class="tier-time">1-3 Weeks</div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">E-Commerce</div>
+        <div class="tier-desc">Toko Online Lengkap · Payment Gateway · Manajemen Produk</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 3.5jt - 10jt</div>
+        <div class="tier-time">2-4 Weeks</div>
+      </div>
+    </div>
+    <div class="tier">
+      <div class="tier-left">
+        <div class="tier-name">Custom Web App</div>
+        <div class="tier-desc">SaaS / Platform · Fitur Custom · API & Database</div>
+      </div>
+      <div class="tier-right">
+        <div class="tier-price">Rp 10jt - 50jt+</div>
+        <div class="tier-time">1-3 Months</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;text-align:center">
+    <div class="scan-badge">📸 Scan untuk Lihat Demo</div>
+    <div style="font-size:.65rem;color:var(--muted)">ralies.biz.id</div>
+  </div>
+</div>
+
+<!-- BUNDLES -->
+<div class="section">
+  <div class="mascot mascot-pkg"><img src="Mascot-Images/MASCOT-HOLDING-PACKAGE.webp" alt="LYID mascot holding package" loading="lazy"></div>
+  <div class="section-head">
+    <span class="section-icon">🎁</span>
+    <span class="section-title accent-gold">PAKET HEMAT</span>
+  </div>
+  <div class="bundle">
+    <div class="bundle-left">
+      <div class="bundle-name">Crypto Business</div>
+      <div class="bundle-desc">3 Scripts + Landing Page + Telegram Bot</div>
+    </div>
+    <div class="bundle-right">
+      <div class="bundle-price">Rp 2.5jt</div>
+      <div class="bundle-save">HEMAT 1.3jt</div>
+    </div>
+  </div>
+  <div class="bundle">
+    <div class="bundle-left">
+      <div class="bundle-name">E-Commerce Complete</div>
+      <div class="bundle-desc">Toko Online + WhatsApp Bot + IG Bot</div>
+    </div>
+    <div class="bundle-right">
+      <div class="bundle-price">Rp 3.5jt</div>
+      <div class="bundle-save">HEMAT 2jt</div>
+    </div>
+  </div>
+  <div class="bundle">
+    <div class="bundle-left">
+      <div class="bundle-name">Startup Package</div>
+      <div class="bundle-desc">6 Bot Medium + Website + Hosting</div>
+    </div>
+    <div class="bundle-right">
+      <div class="bundle-price">Rp 4jt</div>
+      <div class="bundle-save">HEMAT 2jt</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY CHOOSE ME -->
+<div class="section">
+  <div class="mascot mascot-why"><img src="Mascot-Images/MASCOT-CONFIDENT-STANDING.webp" alt="LYID mascot confident" loading="lazy"></div>
+  <div class="section-head">
+    <span class="section-icon">⭐</span>
+    <span class="section-title accent-pink">WHY CHOOSE ME?</span>
+  </div>
+  <div class="why-grid">
+    <div class="why-item"><span class="icon">✓</span> Harga Terjangkau</div>
+    <div class="why-item"><span class="icon">✓</span> Full Source Code</div>
+    <div class="why-item"><span class="icon">✓</span> Dokumentasi Lengkap</div>
+    <div class="why-item"><span class="icon">✓</span> Support After Sales</div>
+    <div class="why-item"><span class="icon">✓</span> Fast Response</div>
+    <div class="why-item"><span class="icon">✓</span> Portfolio Terbukti</div>
+    <div class="why-item"><span class="icon">✓</span> Flexible Payment</div>
+  </div>
+</div>
+
+<!-- FOOTER: QR + CONTACT -->
+<div class="footer-section" style="position:relative;overflow:visible">
+  <div class="mascot mascot-faq"><img src="Mascot-Images/MASCOT-THINKING.webp" alt="LYID mascot thinking" loading="lazy"></div>
+  <div class="footer-grid">
+    <div>
+      <div class="scan-badge">📸 Scan QR</div>
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ralies.biz.id&bgcolor=ffffff&color=09090b" alt="QR Code Portfolio">
+      </div>
+    </div>
+    <div class="contact-info">
+      <div style="font-size:.8rem;font-weight:700;margin-bottom:4px">Kontak & Portofolio</div>
+      <div class="contact-item">
+        <span class="icon">💬</span>
+        <div><a href="https://wa.me/6287897299985">+62 878-9729-9985</a><div class="label">WhatsApp</div></div>
+      </div>
+      <div class="contact-item">
+        <span class="icon">✈️</span>
+        <div><a href="https://t.me/rmndkyl">@rmndkyl</a><div class="label">Telegram</div></div>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📢</span>
+        <div><a href="https://t.me/layerairdrop">@layerairdrop</a><div class="label">Channel</div></div>
+      </div>
+      <div class="contact-item">
+        <span class="icon">💻</span>
+        <div><a href="https://github.com/rmndkyl/lyid-scripts">github.com/rmndkyl</a><div class="label">GitHub</div></div>
+      </div>
+      <div class="contact-item">
+        <span class="icon">🌐</span>
+        <div><a href="https://ralies.biz.id">ralies.biz.id</a><div class="label">Web Portfolio</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <div class="cta-text">
+    <strong>START YOUR PROJECT NOW!</strong><br>
+    Konsultasi Gratis · DP 50% untuk Mulai Proyek · Garansi Bug Fixing · Pengerjaan Cepat & Aman
+  </div>
+  <div class="copyright">LAYER AIRDROP ID © 2024 — All Rights Reserved</div>
+</div>
+
+</div>
+
+</body>
+</html>
