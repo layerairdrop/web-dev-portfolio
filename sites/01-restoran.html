@@ -187,7 +187,7 @@ footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
     <li class="nav-pill"><a href="#ulasan">Ulasan</a></li>
     <li class="nav-pill"><a href="#kontak">Kontak</a></li>
   </ul>
-  <a href="https://wa.me/6287897299985" class="btn-wa">Pesan Sekarang</a>
+  <a href="https://wa.me/6287897299985" class="btn-wa" target="_blank" rel="noopener">Pesan Sekarang</a>
 </div>
 </nav>
 
@@ -198,7 +198,7 @@ footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
   <div class="hero-btns">
     <a href="#menu" class="btn-primary">Lihat Menu</a>
     <a href="#reservasi" class="btn-outline" style="border-color:var(--green);color:var(--green)">Reservasi Meja</a>
-    <a href="https://wa.me/6287897299985" class="btn-outline">Order via WhatsApp</a>
+    <a href="https://wa.me/6287897299985" class="btn-outline" target="_blank" rel="noopener">Order via WhatsApp</a>
   </div>
 </div>
 </section>
@@ -303,9 +303,9 @@ footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
       <div class="map-wrap">Google Maps Embed Placeholder</div>
     </div>
     <form class="contact-form">
-      <label for="contact-name" class="sr-only">Nama Lengkap</label><input type="text" id="contact-name" placeholder="Nama Lengkap" required style="font-size:16px">
-      <label for="contact-email" class="sr-only">Email</label><input type="email" id="contact-email" placeholder="Email" required style="font-size:16px">
-      <label for="contact-wa" class="sr-only">No. WhatsApp</label><input type="tel" id="contact-wa" placeholder="No. WhatsApp" style="font-size:16px">
+      <label for="contact-name" class="sr-only">Nama Lengkap</label><input type="text" id="contact-name" placeholder="Nama Lengkap" required style="font-size:16px" autocomplete="name">
+      <label for="contact-email" class="sr-only">Email</label><input type="email" id="contact-email" placeholder="Email" required style="font-size:16px" autocomplete="email">
+      <label for="contact-wa" class="sr-only">No. WhatsApp</label><input type="tel" id="contact-wa" placeholder="No. WhatsApp" style="font-size:16px" autocomplete="tel">
       <label for="contact-msg" class="sr-only">Pesan Anda</label><textarea id="contact-msg" placeholder="Pesan Anda (reservasi, catering, dll)" style="font-size:16px"></textarea>
       <button type="submit">Kirim Pesan</button>
     </form>
@@ -319,11 +319,11 @@ footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
   <p class="section-sub">Booking meja untuk makan di tempat. Konfirmasi via WhatsApp.</p>
   <div style="max-width:600px;margin:0 auto;display:grid;gap:12px">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-      <label for="rname" class="sr-only">Nama Lengkap</label><input type="text" id="rname" placeholder="Nama Lengkap" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
-      <label for="rwa" class="sr-only">No. WhatsApp</label><input type="tel" id="rwa" placeholder="No. WhatsApp" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+      <label for="rname" class="sr-only">Nama Lengkap</label><input type="text" id="rname" placeholder="Nama Lengkap" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)" autocomplete="name">
+      <label for="rwa" class="sr-only">No. WhatsApp</label><input type="tel" id="rwa" placeholder="No. WhatsApp" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)" autocomplete="tel">
     </div>
     <div class="reservasi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-      <label for="rdate" class="sr-only">Tanggal</label><input type="date" id="rdate" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
+      <label for="rdate" class="sr-only">Tanggal</label><input type="date" id="rdate" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)" autocomplete="on">
       <label for="rtime" class="sr-only">Jam Kedatangan</label><select id="rtime" style="padding:12px 16px;border:1px solid #e0d5c5;border-radius:8px;font-family:inherit;font-size:16px;background:var(--surface)">
         <option>Jam Kedatangan</option>
         <option>11:00</option><option>12:00</option><option>13:00</option>
