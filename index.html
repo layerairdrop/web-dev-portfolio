@@ -77,7 +77,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 
 /* PORTFOLIO SECTION */
 .section{padding:80px 0}
-.section-label{font-size:.8rem;color:var(--blue);text-transform:uppercase;letter-spacing:.15em;text-align:center;margin-bottom:8px}
 .section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:12px}
 .section-sub{text-align:center;color:var(--muted);max-width:550px;margin:0 auto 24px}
 
@@ -158,7 +157,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 
 /* CTA */
 .cta{text-align:center;padding:80px 0;position:relative}
-.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(139,92,246,.06),transparent 70%);pointer-events:none}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(59,130,246,.04),transparent 60%);pointer-events:none}
 .cta h2{font-size:2rem;font-weight:700;margin-bottom:12px;position:relative}
 .cta p{color:var(--muted);margin-bottom:32px;position:relative}
 
@@ -197,6 +196,9 @@ footer .links a:hover{color:var(--text)}
   .process-grid{grid-template-columns:1fr}
   .container{padding:0 16px}
 }
+
+.price-card .tier.featured{color:var(--purple)}
+.btn-card.accent{background:var(--card);border-color:var(--purple);color:var(--purple);margin-top:8px}
 </style>
 <script type="application/ld+json">
 {
@@ -518,9 +520,9 @@ footer .links a:hover{color:var(--text)}
 </div>
 </section>
 
-<section class="section" id="harga" style="background:var(--surface)">
+<section class="section" id="harga">
 <div class="container">
-  <div class="section-label">Pricing</div>
+  
   <h2 class="section-title">Paket & Harga</h2>
   <p class="section-sub">Pilih paket sesuai kebutuhan bisnis Anda</p>
   <div class="pricing-grid">
@@ -539,7 +541,7 @@ footer .links a:hover{color:var(--text)}
       <a href="order.html" class="btn-card outline">Pilih Paket</a>
     </div>
     <div class="price-card featured">
-      <div class="tier" style="color:var(--purple)">Standard ★</div>
+      <div class="tier featured">Standard ★</div>
       <div class="price">Rp 2.5jt - 7jt</div>
       <div class="price-sub">Customized · 1-3 minggu</div>
       <ul>
@@ -565,7 +567,7 @@ footer .links a:hover{color:var(--text)}
         <li>Revisi unlimited</li>
       </ul>
       <a href="order.html" class="btn-card outline">Konsultasi</a>
-    <a href="/lyid-scripts.html" class="btn-card outline" style="margin-top:8px;background:var(--card);border-color:var(--purple);color:var(--purple)">Lihat Semua Layanan</a>
+    <a href="/lyid-scripts.html" class="btn-card outline accent">Lihat Semua Layanan</a>
     </div>
   </div>
 </div>
@@ -622,7 +624,7 @@ footer .links a:hover{color:var(--text)}
 <div class="container">
   <h2>Siap Bikin Website?</h2>
   <p>Konsultasi gratis. Hubungi kami sekarang!</p>
-  <a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">💬 Chat WhatsApp</a>
+  <a href="https://wa.me/6287897299985?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20website" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">→ Chat WhatsApp</a>
 </div>
 </section>
 
