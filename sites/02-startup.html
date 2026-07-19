@@ -64,8 +64,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 .logo-row span{font-size:1.2rem;font-weight:700}
 
 /* FEATURES */
-.section{padding:80px 0}
-.section-title{text-align:center;font-size:2rem;font-weight:700;margin-bottom:12px}
+.section{padding:40px 0 60px 80px}
+.section-title{text-align:left;font-size:2rem;font-weight:700;margin-bottom:12px}
 .section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px}
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s,transform .3s,box-shadow .3s}
@@ -75,7 +75,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 .feat-card p{font-size:.9rem;color:var(--muted)}
 
 /* STATS */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:40px 0 60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stat{text-align:center}
 .stat h3{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat p{font-size:.85rem;color:var(--muted);margin-top:4px}
@@ -99,7 +99,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 .btn-card.primary:active{transform:translateY(0)}
 
 /* CTA */
-.cta{text-align:center;padding:80px 0;background:linear-gradient(180deg,var(--bg) 0%,rgba(139,92,246,.05) 100%)}
+.cta{text-align:center;padding:40px 0 60px 80px;background:linear-gradient(180deg,var(--bg) 0%,rgba(139,92,246,.05) 100%)}
 .cta h2{font-size:2rem;font-weight:700;margin-bottom:12px}
 .cta p{color:var(--muted);margin-bottom:32px}
 
@@ -126,10 +126,10 @@ footer p{font-size:.85rem;color:var(--muted)}
   .pricing-grid,.feat-grid{grid-template-columns:1fr}
 }
 @media(max-width:428px){
-  .hero{padding:60px 0 40px}
+  .hero{padding:40px 0 60px 40px}
   .hero h1{font-size:1.8rem}
   .hero p{font-size:1rem}
-  .section{padding:60px 0}
+  .section{padding:40px 0 60px}
   .section-title{font-size:1.6rem}
   .stats-bar{grid-template-columns:1fr}
 }
