@@ -5,7 +5,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
 <meta charset="UTF-8">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="alternate" hreflang="id" href="https://www.ralies.biz.id/blog.html">
+<link rel="alternate" hreflang="en" href="https://www.ralies.biz.id/blog.html">
+<link rel="canonical" href="https://www.ralies.biz.id/blog.html">
 <title>Blog — LYID | Crypto Automation & Web Development</title>
 <meta name="description" content="Artikel seputar crypto airdrop automation, bot development, web development, dan tips digital marketing dari tim LYID.">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -23,6 +27,15 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 a{transition:background-color .2s, border-color .2s, color .2s ease}
 
 /* NAV */
+/* NAV PILL */
+.nav-links li.nav-pill a{display:inline-block;padding:8px 18px;border-radius:999px;color:var(--muted);font-size:.85rem;font-weight:500;text-decoration:none;transition:all .2s ease}
+.nav-links li.nav-pill a:hover{background:rgba(59,130,246,.08);color:var(--text)}
+.nav-links li.nav-pill.active a{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
+@media(max-width:768px){
+  .nav-links li.nav-pill a{display:block;text-align:center;padding:14px 0;min-height:44px}
+  .nav-links li.nav-pill.active a{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
+}
+
 nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
 .logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text)}
@@ -140,10 +153,10 @@ footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color
 
 <nav>
 <div class="nav-inner">
-  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px"><span class="logo-mark">LYID</span> Web Dev</a>
+  <a href="/" class="logo"><img src="/LYID_OG_LOGO.png" alt="LYID" style="height:32px;width:32px;border-radius:6px" width="32" height="32" loading="lazy"><span class="logo-mark">LYID</span> Web Dev</a>
   <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
-    <li><a href="/#portofolio">Portofolio</a></li>
+    <li class="nav-pill"><a href="/#portofolio">Portofolio</a></li>
     <li><a href="/#harga">Harga</a></li>
     <li><a href="/#proses">Proses</a></li>
     <li><a href="/blog.html" class="active">Blog</a></li>
