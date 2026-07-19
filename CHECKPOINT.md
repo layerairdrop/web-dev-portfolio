@@ -13,6 +13,18 @@
 - Reduced AI-slop gradient usage 6→3 spots per Hallmark audit (commit 4a5d625)
   - Removed gradient from: .btn-cta, .btn-primary, .btn-card.filled, .process-num
   - Kept gradient only for: .logo-mark, .hero h1 .grad, #progressBar
+- Full Hallmark anti-slop batch fix across 31 files (commits e218bfa, b29a818, d45572e)
+  - Inter→Plus Jakarta Sans + DM Serif Display (font pairing)
+  - Gradient headline (.grad)→solid text
+  - Purple hero blob→blue-only radial gradient
+  - Purple CTA blob→blue-only
+  - Section-label eyebrow removal (Portfolio, Pricing, Process, etc.)
+  - Generic emoji badges→text symbols (✦, →, ◆, —)
+  - Purple shadow-glow→tight dark shadow
+  - Hero text-align:left bias (was center)
+  - Fade-in: hero-only (was every section)
+  - transition:all→specific properties
+  - 5 inline styles→CSS classes
 - Repo visibility changed: private → public (Hobby plan cannot link private org repo)
 - Vercel auth token rotated to new account (rmndkyl), then reverted to agenthubavax
 - Deployment via CLI unreliable on Windows/MSYS — prefer Vercel Dashboard manual Redeploy
