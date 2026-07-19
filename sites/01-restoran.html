@@ -33,11 +33,21 @@ h1,h2,h3{font-family:'DM Serif Display',serif}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
 /* NAV */
+
+/* NAV PILL N1aN5 */
+.nav-links li.nav-pill a{display:inline-block;padding:8px 18px;border-radius:999px;color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
+.nav-links li.nav-pill a:hover{background:rgba(59,130,246,.08);color:var(--accent)}
+.nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 4px 12px rgba(59,130,246,.25)}
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+  .nav-links li.nav-pill a{display:block;text-align:center;padding:14px 0;min-height:44px}
+  .nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+}
+
 nav{position:sticky;top:0;z-index:100;background:rgba(255,251,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid #f0e6d6;padding:16px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
 .logo{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--accent)}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links{display:flex;gap:16px;list-style:none;background:transparent;padding:0;margin:0}
+.nav-links a{color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
 .nav-links a:hover{color:var(--accent)}
 .btn-wa{background:var(--green);color:#fff;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.85rem;transition:opacity .2s}
 .btn-wa:hover{opacity:.85}
@@ -61,7 +71,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,251,245,.92);backdrop-
 /* MENU SECTION */
 .section{padding:100px 0}
 .section-title{text-align:left;font-size:2.2rem;margin-bottom:14px;color:#fff}
-.section-sub{text-align:center;color:rgba(255,255,255,.65);margin-bottom:52px}
+.section-sub{text-align:left;color:rgba(255,255,255,.65);margin-bottom:52px}
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
 .menu-card{background:rgba(255,255,255,.04);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
 .menu-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.25);border-color:rgba(255,255,255,.15)}
@@ -123,12 +133,12 @@ footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* MOBILE */
-@media(max-width:768px){
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
   .hamburger{display:block}
   .nav-inner{position:relative}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(26,26,46,.98);backdrop-filter:blur(16px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid rgba(255,255,255,.08)}
   .nav-links.active{display:flex}
-  .nav-links li{padding:4px 0}
+  
   .nav-links a{display:block;padding:12px 0;min-height:44px;display:flex;align-items:center;color:rgba(255,255,255,.8)}
   .about-grid,.contact-grid{grid-template-columns:1fr}
   .about-img{height:260px}
@@ -172,10 +182,10 @@ footer p{font-size:.85rem;color:rgba(255,255,255,.5)}
   <div class="logo">Sajiku Kitchen</div>
   <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#tentang">Tentang</a></li>
-    <li><a href="#ulasan">Ulasan</a></li>
-    <li><a href="#kontak">Kontak</a></li>
+    <li class="nav-pill"><a href="#menu">Menu</a></li>
+    <li class="nav-pill"><a href="#tentang">Tentang</a></li>
+    <li class="nav-pill"><a href="#ulasan">Ulasan</a></li>
+    <li class="nav-pill"><a href="#kontak">Kontak</a></li>
   </ul>
   <a href="https://wa.me/6287897299985" class="btn-wa">Pesan Sekarang</a>
 </div>

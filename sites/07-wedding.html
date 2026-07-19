@@ -37,12 +37,22 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500}
 img{max-width:100%;display:block}
 
 /* NAV */
+
+/* NAV PILL N1aN5 */
+.nav-links li.nav-pill a{display:inline-block;padding:8px 18px;border-radius:999px;color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
+.nav-links li.nav-pill a:hover{background:rgba(59,130,246,.08);color:var(--accent)}
+.nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 4px 12px rgba(59,130,246,.25)}
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+  .nav-links li.nav-pill a{display:block;text-align:center;padding:14px 0;min-height:44px}
+  .nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+}
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,249,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px}
 .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.02em}
 .logo span{color:var(--rose)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links{display:flex;gap:16px;list-style:none;background:transparent;padding:0;margin:0}
+.nav-links a{color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
 .nav-links a:hover{color:var(--rose)}
 .btn-cta{background:var(--rose);color:#fff;padding:10px 24px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.85rem;transition:background-color .2s, border-color .2s, color .2s}
 .btn-cta:hover{background:var(--rose-dark)}
@@ -76,7 +86,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,249,
 /* SERVICES */
 .section{padding:40px 0 60px 80px}
 .section-title{text-align:left;font-size:2.2rem;margin-bottom:12px;font-weight:400}
-.section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px}
+.section-sub{text-align:left;color:var(--muted);max-width:500px;margin:0 auto 48px}
 .serv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
 .serv-card{display:grid;grid-template-columns:180px 1fr;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
 .serv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
@@ -157,12 +167,12 @@ footer{background:var(--text);color:#c4b5a5;padding:48px 0 24px}
 @media(max-width:1024px){
   .hero h1{font-size:2.5rem}
 }
-@media(max-width:768px){
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
   .hamburger{display:block}
   .nav-inner{position:relative}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(253,251,249,.98);backdrop-filter:blur(16px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
   .nav-links.active{display:flex}
-  .nav-links li{padding:4px 0}
+  
   .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center}
   .stats-bar{grid-template-columns:1fr 1fr}
   .serv-card{grid-template-columns:1fr}
@@ -210,10 +220,10 @@ footer{background:var(--text);color:#c4b5a5;padding:48px 0 24px}
   <div class="logo">Ever<span>after</span></div>
   <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
-    <li><a href="#layanan">Layanan</a></li>
-    <li><a href="#galeri">Galeri</a></li>
-    <li><a href="#paket">Paket</a></li>
-    <li><a href="#ulasan">Ulasan</a></li>
+    <li class="nav-pill"><a href="#layanan">Layanan</a></li>
+    <li class="nav-pill"><a href="#galeri">Galeri</a></li>
+    <li class="nav-pill"><a href="#paket">Paket</a></li>
+    <li class="nav-pill"><a href="#ulasan">Ulasan</a></li>
   </ul>
   <a href="https://wa.me/6287897299985" class="btn-cta">Konsultasi Gratis</a>
 </div>

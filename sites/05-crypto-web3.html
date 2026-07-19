@@ -34,12 +34,22 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* NAV */
+
+/* NAV PILL N1aN5 */
+.nav-links li.nav-pill a{display:inline-block;padding:8px 18px;border-radius:999px;color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
+.nav-links li.nav-pill a:hover{background:rgba(59,130,246,.08);color:var(--accent)}
+.nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 4px 12px rgba(59,130,246,.25)}
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+  .nav-links li.nav-pill a{display:block;text-align:center;padding:14px 0;min-height:44px}
+  .nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+}
+
 nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px}
 .logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px}
 .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links{display:flex;gap:16px;list-style:none;background:transparent;padding:0;margin:0}
+.nav-links a{color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
 .nav-links a:hover{color:var(--text)}
 .btn-connect{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;padding:8px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.85rem;display:flex;align-items:center;gap:6px;transition:opacity .2s}
 .btn-connect:hover{opacity:.85}
@@ -84,7 +94,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.8);backdrop-filter
 /* FEATURES */
 .section{padding:40px 0 60px 80px}
 .section-title{text-align:left;font-size:2rem;font-weight:700;margin-bottom:12px}
-.section-sub{text-align:center;color:var(--muted);max-width:500px;margin:0 auto 48px}
+.section-sub{text-align:left;color:var(--muted);max-width:500px;margin:0 auto 48px}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s,transform .2s}
 .feat-card:hover{border-color:var(--blue);transform:translateY(-4px)}
@@ -144,12 +154,12 @@ footer .links a:hover{color:var(--text)}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* MOBILE */
-@media(max-width:768px){
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
   .hamburger{display:block}
   .nav-inner{position:relative}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(9,9,11,.95);backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px;gap:0;border-bottom:1px solid var(--border)}
   .nav-links.active{display:flex}
-  .nav-links li{padding:4px 0}
+  
  .nav-links a{display:block;padding:8px 0;min-height:44px;display:flex;align-items:center}
   .dash-stats{grid-template-columns:1fr 1fr}
   .feat-grid{grid-template-columns:1fr}
@@ -192,10 +202,10 @@ footer .links a:hover{color:var(--text)}
   <div class="logo"><div class="logo-icon">🔐</div> ChainVault</div>
   <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
-    <li><a href="#fitur">Fitur</a></li>
-    <li><a href="#protokol">Protokol</a></li>
-    <li><a href="#harga">Harga</a></li>
-    <li><a href="#">Docs</a></li>
+    <li class="nav-pill"><a href="#fitur">Fitur</a></li>
+    <li class="nav-pill"><a href="#protokol">Protokol</a></li>
+    <li class="nav-pill"><a href="#harga">Harga</a></li>
+    <li class="nav-pill"><a href="#">Docs</a></li>
   </ul>
   <a href="#" class="btn-connect">🔗 Connect Wallet</a>
 </div>

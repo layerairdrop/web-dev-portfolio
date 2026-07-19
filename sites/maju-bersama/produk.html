@@ -5,12 +5,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Produk — PT Maju Bersama</title>
+<meta property="og:title" content="Produk PT Maju Bersama">
+<meta property="og:description" content="Katalog produk alat kesehatan berkualitas untuk rumah sakit, klinik, laboratorium, dan apotek.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1631549916768-4f8c1461e0ff?w=1200&q=80">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ralies.biz.id/sites/maju-bersama/produk.html">
 <meta name="description" content="Katalog produk alat kesehatan PT Maju Bersama. Monitor pasien, USG, tensimeter, alat lab, dan 2000+ produk lainnya.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/sites/maju-bersama/style.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BH106VBQ"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C6BH106VBQ');</script>
+
+/* NAV PILL N1aN5 */
+.nav-links li.nav-pill a{display:inline-block;padding:8px 18px;border-radius:999px;color:var(--muted);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s ease}
+.nav-links li.nav-pill a:hover{background:rgba(59,130,246,.08);color:var(--accent)}
+.nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 4px 12px rgba(59,130,246,.25)}
+@media(max-width:768px){padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+  .nav-links li.nav-pill a{display:block;text-align:center;padding:14px 0;min-height:44px}
+  .nav-links li.nav-pill.active a{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+}
+
 </head>
 <body>
 <div class="progress-bar"></div>
@@ -18,12 +33,12 @@
 <div class="nav-inner">
   <a href="/" class="nav-logo" style="font-size:.75rem;color:var(--text-muted);margin-right:8px">← Portfolio</a> <a href="/sites/maju-bersama/" class="nav-logo">🏥 PT Maju <span>Bersama</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="/sites/maju-bersama/">Beranda</a></li>
-    <li><a href="/sites/maju-bersama/tentang">Tentang</a></li>
-    <li><a href="/sites/maju-bersama/layanan">Layanan</a></li>
-    <li><a href="/sites/maju-bersama/produk" class="active">Produk</a></li>
-    <li><a href="/sites/maju-bersama/galeri">Galeri</a></li>
-    <li><a href="/sites/maju-bersama/kontak">Kontak</a></li>
+    <li class="nav-pill"><a href="/sites/maju-bersama/">Beranda</a></li>
+    <li class="nav-pill"><a href="/sites/maju-bersama/tentang">Tentang</a></li>
+    <li class="nav-pill"><a href="/sites/maju-bersama/layanan">Layanan</a></li>
+    <li class="nav-pill"><a href="/sites/maju-bersama/produk" class="active">Produk</a></li>
+    <li class="nav-pill"><a href="/sites/maju-bersama/galeri">Galeri</a></li>
+    <li class="nav-pill"><a href="/sites/maju-bersama/kontak">Kontak</a></li>
   </ul>
   <a href="https://wa.me/6281234567890?text=Halo%20PT%20Maju%20Bersama%2C%20saya%20ingin%20bertanya." class="nav-cta" target="_blank">Hubungi Kami</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
