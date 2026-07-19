@@ -31,7 +31,9 @@
 - Repo visibility changed: private → public (Hobby plan cannot link private org repo)
 - Vercel auth token rotated to new account (rmndkyl), then reverted to agenthubavax
 - Deployment via CLI unreliable on Windows/MSYS — prefer Vercel Dashboard manual Redeploy
+- Vercel team deploy: author email mismatch resolved via CLI deploy (bypasses GitHub author check)
 - Verified: layerairdrop/web-dev-portfolio is public and Vercel GitHub App linked
+- Production URL live: https://www.ralies.biz.id (alias active)
 
 ## Site Inventory
 | # | Slug | Industry | Pages | Design Tier | Status |
