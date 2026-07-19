@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LYID — Community Dashboard</title>
 <meta name="description" content="Real-time stats untuk LYID community. Bots, users, revenue, channels.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--radius:16px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 .container{max-width:1000px;margin:0 auto;padding:0 24px}
 nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;padding:0 24px}
 .logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
 .logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 h1{font-size:2rem;font-weight:900;margin:48px 0 12px;text-align:center}
-h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1 .grad{color:var(--text);font-weight:800}
 .subtitle{color:var(--muted);text-align:center;margin-bottom:48px}
 
 /* Stats Grid */
@@ -116,7 +116,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color
 <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:16px">Channels</h2>
 <div class="channels">
   <div class="channel">
-    <div class="channel-icon">📱</div>
+    <div class="channel-icon">↗</div>
     <div>
       <div class="channel-name">Telegram Channel</div>
       <div class="channel-stat">868+ subscribers</div>

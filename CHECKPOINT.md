@@ -1,12 +1,22 @@
 # LYID Web Dev Portfolio — Checkpoint
-# Updated: 2026-07-09
+# Updated: 2026-07-19
 # Purpose: Track portfolio site status + audit state
 
 ## Current State
 - **Production URL**: https://www.ralies.biz.id
 - **Vercel Project**: agent-hub-avax/lyid-web-dev-portfolio
+- **GitHub Repo**: layerairdrop/web-dev-portfolio (PUBLIC, branch master)
 - **Total Sites**: 13 demo sites
-- **Audit Status**: 16/16 clean (0 issues) — verified 2026-07-08
+- **Audit Status**: 16/16 clean (2026-07-08) + Hallmark anti-slop gradient audit (2026-07-19)
+
+## Recent Changes (2026-07-19)
+- Reduced AI-slop gradient usage 6→3 spots per Hallmark audit (commit 4a5d625)
+  - Removed gradient from: .btn-cta, .btn-primary, .btn-card.filled, .process-num
+  - Kept gradient only for: .logo-mark, .hero h1 .grad, #progressBar
+- Repo visibility changed: private → public (Hobby plan cannot link private org repo)
+- Vercel auth token rotated to new account (rmndkyl), then reverted to agenthubavax
+- Deployment via CLI unreliable on Windows/MSYS — prefer Vercel Dashboard manual Redeploy
+- Verified: layerairdrop/web-dev-portfolio is public and Vercel GitHub App linked
 
 ## Site Inventory
 | # | Slug | Industry | Pages | Design Tier | Status |

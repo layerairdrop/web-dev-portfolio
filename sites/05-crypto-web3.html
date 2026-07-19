@@ -13,11 +13,11 @@
 <meta property="og:url" content="https://ralies.biz.id/sites/05-crypto-web3.html">
 <meta property="og:type" content="website">
 <title>ChainVault — Secure DeFi Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-a,button{transition:all .2s ease}
+a,button{transition:background-color .2s, border-color .2s, color .2s ease}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
 :is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -30,7 +30,7 @@ a,button{transition:all .2s ease}
   --red:#ef4444;
   --radius:16px;--shadow:0 8px 32px rgba(0,0,0,.6)
 }
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* NAV */
@@ -53,7 +53,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.8);backdrop-filter
 @keyframes hero-pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.8}50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}}
 .hero-badge{position:relative;z-index:1}
 .hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:20px;position:relative;z-index:1;color:#fff;text-shadow:0 0 40px rgba(59,130,246,.25)}
-.hero h1 .grad{background:linear-gradient(135deg,#3b82f6,#8b5cf6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(59,130,246,.3))}
+.hero h1 .grad{color:var(--text);font-weight:800}
 .hero p{font-size:1.15rem;color:rgba(255,255,255,.7);max-width:580px;margin:0 auto 36px;position:relative;z-index:1;text-shadow:0 0 20px rgba(59,130,246,.1)}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .btn-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:15px 36px;border-radius:12px;text-decoration:none;font-weight:600;transition:all .25s;box-shadow:0 8px 24px rgba(59,130,246,.25),inset 0 1px 0 rgba(255,255,255,.1)}
@@ -117,7 +117,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.8);backdrop-filter
 .price-card li{padding:8px 0;font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
 .price-card li:last-child{border:none}
 .price-card li::before{content:"→";color:var(--blue);font-weight:700}
-.btn-card{display:block;width:100%;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s;text-align:center}
+.btn-card{display:block;width:100%;padding:12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.9rem;transition:background-color .2s, border-color .2s, color .2s;text-align:center}
 .btn-card.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
 .btn-card.outline:hover{border-color:var(--blue);background:rgba(59,130,246,.1)}
 .btn-card.filled:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.3)}
@@ -139,7 +139,7 @@ footer .links a:hover{color:var(--text)}
 
 /* HAMBURGER */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px;min-width:44px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:transform .3s, border-color .3s, box-shadow .3s}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}

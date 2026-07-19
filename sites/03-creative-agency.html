@@ -17,7 +17,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-a,button{transition:all .2s ease}
+a,button{transition:background-color .2s, border-color .2s, color .2s ease}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
 :is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--pink);outline-offset:2px;border-radius:4px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -54,7 +54,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0}
 .hero h1 .gradient{background:linear-gradient(135deg,var(--pink),var(--orange),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{font-size:1.2rem;color:var(--muted);max-width:500px;margin-bottom:40px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-big{padding:16px 40px;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .2s}
+.btn-big{padding:16px 40px;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;transition:background-color .2s, border-color .2s, color .2s}
 .btn-filled{background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff}
 .btn-filled:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(236,72,153,.3)}
 .btn-filled:active{transform:translateY(0);box-shadow:none}
@@ -116,7 +116,7 @@ footer p{font-size:.85rem;color:var(--muted)}
 
 /* HAMBURGER */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:10px;z-index:110;min-height:44px;min-width:44px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:transform .3s, border-color .3s, box-shadow .3s}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}

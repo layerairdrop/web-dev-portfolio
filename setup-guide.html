@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LYID Scripts — Setup Guide</title>
 <meta name="description" content="Panduan setup bot airdrop LYID. Dari download hingga bot berjalan, step by step.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#09090b;--surface:#111113;--card:#18181b;--border:#27272a;--text:#e4e4e7;--muted:#71717a;--blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--radius:16px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 .container{max-width:800px;margin:0 auto;padding:0 24px}
 nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:800px;margin:0 auto;padding:0 24px}
 .logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--text)}
 .logo-mark{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 h1{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin:60px 0 12px;text-align:center}
-h1 .grad{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1 .grad{color:var(--text);font-weight:800}
 .subtitle{color:var(--muted);text-align:center;margin-bottom:48px;font-size:1.05rem}
 
 /* Steps */
@@ -37,7 +37,7 @@ ul,ol{margin:0 0 16px 20px;font-size:.9rem}li{margin-bottom:6px}
 
 /* Bot selector */
 .bot-selector{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
-.bot-chip{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:99px;font-size:.8rem;cursor:pointer;transition:all .2s;color:var(--muted)}
+.bot-chip{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:99px;font-size:.8rem;cursor:pointer;transition:background-color .2s, border-color .2s, color .2s;color:var(--muted)}
 .bot-chip:hover,.bot-chip.active{border-color:var(--blue);color:var(--text);background:rgba(59,130,246,.1)}
 
 /* CTA */

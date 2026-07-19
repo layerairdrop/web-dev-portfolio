@@ -12,7 +12,7 @@
 <style>
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 *{box-sizing:border-box;margin:0;padding:0}
-a,button{transition:all .2s ease}
+a,button{transition:background-color .2s, border-color .2s, color .2s ease}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
 :is(a,button,input,select,textarea):focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -22,7 +22,7 @@ a,button{transition:all .2s ease}
   --blue:#3b82f6;--purple:#8b5cf6;--green:#22c55e;--cyan:#06b6d4;
   --radius:12px;--shadow:0 4px 24px rgba(0,0,0,.4)
 }
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 .container{max-width:800px;margin:0 auto;padding:0 24px}
 a{color:var(--blue);text-decoration:none}
 
@@ -39,7 +39,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 .skip-link:focus{top:16px}
 
 /* HERO */
-.hero{text-align:center;padding:60px 0 40px}
+.hero{text-align:left;padding:60px 0 40px}
 .hero h1{font-size:2rem;font-weight:800;margin-bottom:12px}
 .hero h1 span{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{color:var(--muted);max-width:500px;margin:0 auto}
@@ -61,7 +61,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 
 /* CHECKBOX GRID */
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.check-item{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .2s;font-size:.85rem}
+.check-item{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:background-color .2s, border-color .2s, color .2s;font-size:.85rem}
 .check-item:hover{border-color:var(--blue)}
 .check-item:active{transform:scale(.98)}
 .check-item input{accent-color:var(--blue);width:16px;height:16px}
@@ -69,7 +69,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 
 /* RADIO GRID */
 .radio-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.radio-item{padding:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;text-align:center;transition:all .2s;font-size:.85rem}
+.radio-item{padding:12px;background:var(--card);border:1px solid var(--border);border-radius:8px;cursor:pointer;text-align:center;transition:background-color .2s, border-color .2s, color .2s;font-size:.85rem}
 .radio-item:hover{border-color:var(--blue)}
 .radio-item:active{transform:scale(.98)}
 .radio-item.selected{border-color:var(--blue);background:rgba(59,130,246,.08)}
@@ -82,10 +82,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 .price-estimate .note{font-size:.8rem;color:var(--muted);margin-top:8px}
 
 /* SUBMIT */
-.btn-submit{display:block;width:100%;padding:16px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:20px}
+.btn-submit{display:block;width:100%;padding:16px;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;transition:background-color .2s, border-color .2s, color .2s;margin-top:20px}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,.3)}
 .btn-submit:active{transform:translateY(0);box-shadow:none}
-.btn-wa{display:block;width:100%;padding:16px;background:#25d366;color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:12px;text-align:center;text-decoration:none}
+.btn-wa{display:block;width:100%;padding:16px;background:#25d366;color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;transition:background-color .2s, border-color .2s, color .2s;margin-top:12px;text-align:center;text-decoration:none}
 .btn-wa:hover{opacity:.85}
 .mascot-cta{position:absolute;right:-40px;bottom:-10px;width:200px;pointer-events:none;z-index:-1;opacity:.1}
 .mascot-cta+*{position:relative;z-index:1}
@@ -340,7 +340,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(9,9,11,.85);backdrop-filte
 
 <!-- SUCCESS -->
 <div class="success" id="successMsg">
-  <div class="icon">✅</div>
+  <div class="icon">✓</div>
   <h2>Order Terkirim!</h2>
   <p>Tim kami akan menghubungi Anda via WhatsApp dalam 1x24 jam.</p>
   <a href="index.html" class="btn-submit" style="display:inline-block;width:auto;padding:14px 32px">Kembali ke Portofolio</a>
