@@ -13,7 +13,7 @@
 - Reduced AI-slop gradient usage 6→3 spots per Hallmark audit (commit 4a5d625)
   - Removed gradient from: .btn-cta, .btn-primary, .btn-card.filled, .process-num
   - Kept gradient only for: .logo-mark, .hero h1 .grad, #progressBar
-- Full Hallmark anti-slop batch fix across 31 files (commits e218bfa, b29a818, d45572e)
+- Full Hallmark anti-slop batch fix across 42 files (commits e218bfa, b29a818, d45572e, 4390362)
   - Inter→Plus Jakarta Sans + DM Serif Display (font pairing)
   - Gradient headline (.grad)→solid text
   - Purple hero blob→blue-only radial gradient
@@ -25,6 +25,9 @@
   - Fade-in: hero-only (was every section)
   - transition:all→specific properties
   - 5 inline styles→CSS classes
+  - Nav N1a→N5 floating pill (logo + pill nav + CTA, desktop + mobile)
+  - Section titles/subtitles left-align (was center everywhere)
+  - Subfolder sites batch: properti-premium, edu-academy, grand-hotel, hukum-pratama, yayasan-harapan
 - Repo visibility changed: private → public (Hobby plan cannot link private org repo)
 - Vercel auth token rotated to new account (rmndkyl), then reverted to agenthubavax
 - Deployment via CLI unreliable on Windows/MSYS — prefer Vercel Dashboard manual Redeploy
